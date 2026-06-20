@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coral Core Pilates by Karla Deida</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Jost',sans-serif;background:#fff;color:#2a2a2a;}
+:root{
+  --lilac:#c0aed0;--lilac-light:#dcc9ec;--lilac-pale:#f0e8f8;
+  --lilac-dark:#7a5e96;--lilac-deep:#5a3e74;
+  --pale-blue:#ddeaf5;--mid-blue:#b8d4ea;--deep-blue:#4a7fa5;
+  --white:#fff;--text-dark:#2a2a2a;--text-mid:#6b6b6b;--text-light:#aaa;
+}
+
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:16px 40px;border-bottom:0.5px solid #ede6f4;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:0.12em;color:var(--lilac-dark);text-transform:uppercase;text-decoration:none;}
+.nav-logo small{display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.3em;color:var(--text-light);font-weight:300;text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;font-weight:400;}
+.nav-links a:hover{color:var(--lilac-dark);}
+.nav-cta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;background:var(--lilac-dark);color:#fff;border:none;padding:10px 22px;cursor:pointer;font-family:'Jost',sans-serif;}
+.nav-cta:hover{background:var(--lilac-deep);}
+
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;will-change:transform;}
+.hero-bg img{width:100%;height:130%;object-fit:cover;object-position:center 20%;display:block;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(90,62,116,0.78) 0%,rgba(90,62,116,0.45) 55%,rgba(90,62,116,0.15) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 56px;max-width:580px;}
+.eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:20px;font-weight:300;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.0;color:#fff;margin-bottom:22px;}
+.hero h1 em{color:var(--lilac-light);font-style:italic;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.78);line-height:1.85;margin-bottom:36px;font-weight:300;max-width:360px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-hero-solid{background:#fff;color:var(--lilac-dark);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;border:none;padding:14px 32px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;}
+.btn-hero-solid:hover{background:var(--lilac-pale);}
+.btn-hero{background:rgba(255,255,255,0.12);color:#fff;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;border:0.5px solid rgba(255,255,255,0.55);padding:14px 32px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;}
+.btn-hero:hover{background:rgba(255,255,255,0.22);}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;text-align:center;}
+.scroll-hint span{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.45);display:block;margin-bottom:8px;font-weight:300;}
+.scroll-line{width:0.5px;height:40px;background:rgba(255,255,255,0.3);margin:0 auto;animation:sp 2s ease-in-out infinite;}
+@keyframes sp{0%,100%{opacity:0.3;}50%{opacity:0.8;}}
+
+.locations-strip{background:var(--lilac-pale);padding:16px 40px;display:flex;justify-content:center;flex-wrap:wrap;}
+.loc-item{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--lilac-dark);font-weight:400;padding:0 24px;border-right:0.5px solid var(--lilac);}
+.loc-item:last-child{border-right:none;}
+.divider-strip{background:#fff;padding:14px 40px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;border-bottom:0.5px solid #ede6f4;}
+.divider-item{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-mid);font-weight:300;display:flex;align-items:center;gap:8px;}
+.divider-item::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--lilac);}
+
+.about-section{display:grid;grid-template-columns:1fr 1fr;}
+.about-visual{background:var(--lilac-light);min-height:480px;display:flex;align-items:stretch;justify-content:center;padding:48px 40px;align-self:stretch;}
+.about-quote{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;font-style:italic;color:var(--lilac-deep);line-height:1.45;text-align:center;}
+.about-quote cite{display:block;margin-top:16px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--lilac-dark);font-style:normal;font-weight:300;}
+.about-text{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;background:#fff;}
+.sec-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--deep-blue);margin-bottom:14px;font-weight:300;}
+.sec-heading{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;line-height:1.2;color:var(--text-dark);margin-bottom:20px;}
+.sec-heading em{font-style:italic;color:var(--lilac-dark);}
+.body-text{font-size:14px;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:16px;}
+.btn-filled{background:var(--lilac-dark);color:#fff;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:none;padding:13px 28px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;}
+.btn-filled:hover{background:var(--lilac-deep);}
+
+/* SERVICES SECTION */
+.services-section{background:var(--pale-blue);padding:72px 40px;}
+.services-section-header{text-align:center;margin-bottom:12px;}
+.services-note{text-align:center;margin-bottom:40px;}
+.services-note-text{display:inline-block;font-size:12px;color:var(--deep-blue);background:rgba(221,234,245,0.7);border:0.5px solid var(--mid-blue);padding:8px 20px;font-weight:300;letter-spacing:0.04em;font-style:italic;}
+
+/* service blocks — each a titled subsection */
+.service-block{margin-bottom:40px;}
+.service-block:last-child{margin-bottom:0;}
+.service-block-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--lilac-deep);margin-bottom:16px;display:flex;align-items:center;gap:10px;letter-spacing:0.02em;}
+.service-block-title::after{content:'';flex:1;height:0.5px;background:rgba(74,127,165,0.2);}
+.classes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
+.class-card{background:#fff;padding:26px 20px;text-align:center;border:0.5px solid rgba(74,127,165,0.12);}
+.class-tag{display:inline-block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#ed6a46;background:rgba(237,106,70,0.1);padding:3px 10px;border-radius:99px;margin-bottom:12px;font-weight:400;}
+.class-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--text-dark);margin-bottom:8px;line-height:1.2;}
+.class-desc{font-size:12px;color:var(--text-mid);line-height:1.7;font-weight:300;margin-bottom:10px;}
+.class-loc{font-size:11px;color:var(--deep-blue);font-weight:300;}
+
+/* service offer banner (private apparatus + events) */
+.service-banner{background:#fff;border:0.5px solid var(--lilac);padding:22px 28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.sb-icon{width:44px;height:44px;border-radius:50%;background:var(--lilac-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;color:var(--lilac-dark);}
+.sb-text{flex:1;min-width:200px;}
+.sb-text p:first-child{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--text-dark);margin-bottom:4px;}
+.sb-text p:last-child{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.65;}
+.sb-cta{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--lilac-dark);font-weight:400;background:none;border:0.5px solid var(--lilac);padding:10px 18px;cursor:pointer;font-family:'Jost',sans-serif;white-space:nowrap;text-decoration:none;flex-shrink:0;}
+.sb-cta:hover{background:var(--lilac-pale);}
+
+/* event banner — lilac tinted */
+.service-banner.event{background:var(--lilac-pale);border-color:var(--lilac);}
+
+.photo-band{position:relative;height:360px;overflow:hidden;}
+.photo-band img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;}
+.photo-band-overlay{position:absolute;inset:0;background:rgba(90,62,116,0.32);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.photo-band-text{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:#fff;font-style:italic;text-align:center;line-height:1.2;}
+.photo-band-sub{font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.8);font-weight:300;}
+
+/* SCHEDULE */
+.schedule-section{background:var(--lilac-pale);padding:72px 40px;}
+.sched-legend{display:flex;gap:20px;margin-bottom:32px;justify-content:center;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-mid);font-weight:300;}
+.legend-dot{width:10px;height:10px;border-radius:50%;}
+.dot-weekly{background:#2e7d52;}.dot-biweekly{background:#9a6800;}
+.day-block{margin-bottom:26px;}
+.day-block:last-child{margin-bottom:0;}
+.day-header{display:flex;align-items:center;gap:16px;margin-bottom:10px;}
+.day-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--lilac-dark);min-width:120px;}
+.day-line{flex:1;height:0.5px;background:var(--lilac);}
+.day-classes{background:#fff;border:0.5px solid rgba(192,174,208,0.2);}
+/* 6-col grid: time | name | studio | city | badge | book */
+.sched-row{display:grid;grid-template-columns:82px 1fr 145px 110px 90px 70px;align-items:center;padding:12px 20px;border-bottom:0.5px solid #f4eef8;gap:4px;}
+.sched-row:last-child{border-bottom:none;}
+.sched-row:hover{background:var(--lilac-pale);}
+.sched-time{font-size:12px;color:var(--text-mid);font-weight:300;white-space:nowrap;}
+.sched-name{font-size:13px;color:var(--text-dark);font-weight:400;padding-right:8px;line-height:1.3;}
+.sched-studio{font-size:11px;color:var(--lilac-dark);font-weight:500;padding-right:6px;}
+.sched-loc{font-size:11px;color:var(--deep-blue);font-weight:300;padding-right:6px;}
+.sched-badge{font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:99px;font-weight:400;text-align:center;white-space:nowrap;}
+.badge-weekly{background:#e8f5ee;color:#2e7d52;}.badge-biweekly{background:#fff8e8;color:#9a6800;}
+.book-link{font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--lilac-dark);text-decoration:none;font-weight:400;background:var(--lilac-pale);padding:5px 10px;border-radius:99px;text-align:center;white-space:nowrap;}
+.book-link:hover{background:var(--lilac-light);}
+.sched-note{font-size:11px;color:var(--text-light);margin-top:16px;text-align:center;font-weight:300;font-style:italic;}
+.sched-cta{text-align:center;margin-top:28px;}
+
+/* PRICING */
+.pricing-section{background:#fff;padding:72px 40px;}
+.pricing-categories{display:flex;flex-direction:column;gap:44px;max-width:900px;margin:0 auto;}
+.pricing-cat-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--text-dark);margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid #ede6f4;}
+.pricing-cat-title em{font-style:italic;color:var(--lilac-dark);}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+.p-card{border:0.5px solid #ede6f4;padding:24px 16px;text-align:center;}
+.p-card.featured{background:var(--lilac-pale);border-color:var(--lilac);}
+.p-card.special{background:var(--pale-blue);border-color:var(--mid-blue);}
+.p-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;font-weight:300;}
+.p-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--text-dark);margin-bottom:10px;line-height:1.3;}
+.p-price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--lilac-dark);line-height:1;}
+.p-price sup{font-size:17px;vertical-align:super;}
+.p-note{font-size:11px;color:var(--text-light);margin-top:5px;font-weight:300;}
+.p-new{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#2e7d52;background:#e8f5ee;padding:3px 8px;border-radius:99px;display:inline-block;margin-top:6px;font-weight:400;}
+.p-buy{display:inline-block;margin-top:12px;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--lilac-dark);background:none;border:0.5px solid var(--lilac);padding:7px 14px;cursor:pointer;font-family:'Jost',sans-serif;text-decoration:none;}
+.p-buy:hover{background:var(--lilac-pale);}
+.pricing-note{font-size:12px;color:var(--text-mid);font-weight:300;margin-top:14px;font-style:italic;}
+.private-pricing-note{background:var(--lilac-pale);border:0.5px solid var(--lilac);padding:14px 22px;margin-top:16px;font-size:12px;color:var(--lilac-dark);font-weight:300;font-style:italic;text-align:center;line-height:1.6;}
+
+.book-section{background:var(--lilac-dark);padding:80px 40px;text-align:center;}
+.book-eyebrow{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px;font-weight:300;}
+.book-heading{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;line-height:1.1;color:#fff;margin-bottom:14px;}
+.book-heading em{font-style:italic;}
+.book-sub{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:36px;line-height:1.8;font-weight:300;}
+.btn-white{background:#fff;color:var(--lilac-dark);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:none;padding:15px 36px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;margin-right:12px;margin-bottom:10px;}
+.btn-white:hover{background:var(--lilac-pale);}
+.btn-outline-white{background:transparent;color:#fff;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;border:0.5px solid rgba(255,255,255,0.4);padding:15px 28px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;margin-bottom:10px;}
+.btn-outline-white:hover{border-color:rgba(255,255,255,0.8);}
+
+.reviews-section{background:#fff;padding:72px 40px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px;}
+.review-card{background:var(--lilac-pale);padding:26px 22px;border:0.5px solid rgba(192,174,208,0.2);display:flex;flex-direction:column;}
+.review-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;background:var(--lilac-dark);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px;color:#fff;font-weight:400;flex-shrink:0;}
+.reviewer-info{flex:1;}
+.reviewer-name{font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:2px;}
+.reviewer-date{font-size:10px;color:var(--text-light);font-weight:300;}
+.review-stars{color:#e8c44a;font-size:13px;letter-spacing:1px;margin-bottom:10px;}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--text-dark);line-height:1.65;font-weight:300;flex:1;}
+.review-source{font-size:10px;color:var(--text-light);margin-top:12px;display:flex;align-items:center;gap:6px;font-weight:300;}
+.placeholder-notice{background:var(--lilac-pale);border:0.5px solid var(--lilac);padding:14px 22px;text-align:center;margin-bottom:28px;}
+.placeholder-notice p{font-size:12px;color:var(--lilac-dark);font-weight:300;font-style:italic;}
+.google-btn{display:flex;align-items:center;gap:10px;justify-content:center;background:#fff;color:var(--text-dark);border:0.5px solid #dadce0;padding:13px 28px;cursor:pointer;font-size:13px;font-weight:400;margin:0 auto;letter-spacing:0.04em;border-radius:4px;font-family:'Jost',sans-serif;text-decoration:none;}
+.google-btn:hover{background:#f8f9fa;}
+
+.contact-section{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #ede6f4;}
+.contact-left{background:var(--lilac-light);padding:64px 48px;}
+.contact-right{padding:64px 48px;background:#fff;}
+.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px;}
+.c-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--lilac-dark);}
+.c-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--lilac-deep);font-weight:300;margin-bottom:4px;}
+.c-value{font-size:16px;color:var(--text-dark);font-weight:300;line-height:1.5;}
+.c-value a{color:var(--lilac-dark);text-decoration:none;}
+.social-row{display:flex;gap:10px;margin-top:28px;}
+.social-btn{width:36px;height:36px;border:0.5px solid rgba(90,62,116,0.3);display:flex;align-items:center;justify-content:center;color:var(--lilac-deep);background:rgba(255,255,255,0.5);text-decoration:none;}
+.social-btn:hover{background:rgba(255,255,255,0.85);}
+.form-group{margin-bottom:16px;}
+.form-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-light);font-weight:300;display:block;margin-bottom:6px;}
+.form-input{width:100%;padding:11px 14px;border:0.5px solid #ddd;font-size:13px;font-weight:300;font-family:'Jost',sans-serif;color:var(--text-dark);background:#fff;outline:none;}
+.form-input:focus{border-color:var(--lilac);}
+.form-textarea{min-height:90px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-submit{width:100%;background:var(--lilac-dark);color:#fff;border:none;padding:14px;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;font-weight:400;margin-top:6px;}
+.form-submit:hover{background:var(--lilac-deep);}
+.form-note{font-size:10px;color:var(--text-light);margin-top:10px;text-align:center;line-height:1.6;font-weight:300;}
+.footer{background:#1e1e1e;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.1em;color:rgba(255,255,255,0.55);font-weight:300;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;}
+.footer-links a:hover{color:rgba(255,255,255,0.6);}
+.footer-copy{font-size:10px;color:rgba(255,255,255,0.22);font-weight:300;}
+
+@media(max-width:860px){
+  .sched-row{grid-template-columns:72px 1fr 100px 70px;}
+  .sched-studio,.sched-loc{display:none;}
+}
+@media(max-width:768px){
+  .hero h1{font-size:44px;}.hero-content{padding:0 28px;}
+  .about-section,.contact-section{grid-template-columns:1fr;}
+  .about-visual{min-height:320px;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#" class="nav-logo">Coral Core Pilates<small>by Karla Deida</small></a>
+  <div class="nav-links">
+    <a href="#about">About</a><a href="#services">Services</a>
+    <a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="window.open('https://coralcorepilates.punchpass.com/classes','_blank')">Book a class</button>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg">
+    <img src="images/DSCF3675.jpg" style="width:100%;height:130%;object-fit:cover;object-position:center 20%;display:block;" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Contemporary Pilates Services · West Side of Puerto Rico</p>
+    <h1>Find your<br><em>strength</em><br>from within.</h1>
+    <p class="hero-sub">A mindful Pilates experience by Karla Deida — reformer, apparatus &amp; mat classes, and special events across the west side of Puerto Rico.</p>
+    <div class="hero-btns">
+      <button class="btn-hero-solid" onclick="window.open('https://coralcorepilates.punchpass.com/classes','_blank')">View schedule & book</button>
+      <button class="btn-hero" onclick="window.open('https://coralcorepilates.punchpass.com/passes','_blank')">Purchase a pass</button>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="locations-strip">
+  <span class="loc-item">Mayagüez</span><span class="loc-item">Aguadilla</span>
+  <span class="loc-item">Hatillo</span><span class="loc-item">Rincón</span>
+</div>
+<div class="divider-strip">
+  <span class="divider-item">Mat Flow</span>
+  <span class="divider-item">Sunset Sessions</span>
+  <span class="divider-item">Private & Semi-Private</span>
+  <span class="divider-item">Events & Celebrations</span>
+  <span class="divider-item">Weekend Wind Down</span>
+</div>
+
+<section class="about-section" id="about">
+  <div class="about-visual" style="padding:0;overflow:hidden;">
+    <img src="images/karla_about.jpg" alt="Karla Deida — Coral Core Pilates instructor" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;flex:1;">
+  </div>
+  <div class="about-text">
+    <p class="sec-label">About Karla</p>
+    <h2 class="sec-heading">A practice rooted in <em>care</em></h2>
+    <p class="body-text">Karla Deida is an instructor in training bringing mat, reformer &amp; apparatus classes and special events to studios across the west side of Puerto Rico — from Mayagüez to Rincón, Aguadilla, and Hatillo.</p>
+    <p class="body-text">Whether you're a complete beginner or looking to deepen your practice, Karla's classes are designed to meet you where you are and move you forward with intention, strength, and joy.</p>
+    <p class="body-text">Her teaching philosophy centers on form, safety, motivation, and intention — <em>"I want you to feel accompanied in each movement."</em></p>
+    <button class="btn-filled" style="align-self:flex-start;margin-top:8px;" onclick="window.open('https://coralcorepilates.punchpass.com/instructors','_blank')">Meet Karla →</button>
+  </div>
+</section>
+
+<!-- PILATES SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-section-header">
+    <p class="sec-label">What we offer</p>
+    <h2 class="sec-heading">Pilates <em>services</em></h2>
+  </div>
+  <div class="service-block">
+    <p class="service-block-title">Coral Core Pilates</p>
+    <div class="classes-grid">
+      <div class="class-card">
+        <span class="class-tag">Mat · Weekly</span>
+        <p class="class-name">Mat Flow</p>
+        <p class="class-desc">Group mat Pilates on Tuesday &amp; Friday evenings. Core, breath, and full-body mobility — no equipment needed.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/PMknRSYsdomY61VA8" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Litoral, Mayagüez</a></p>
+        <a class="book-link" href="https://coralcorepilates.punchpass.com/calendar?location=Litoral%2C+Mayag%C3%BCez" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+      <div class="class-card">
+        <span class="class-tag">Mat · Biweekly</span>
+        <p class="class-name">Sunset Sessions</p>
+        <p class="class-desc">Mat Pilates at golden hour with Caribbean views. A restorative practice in a breathtaking setting.</p>
+        <p class="class-loc">📍 Rincón · Aguadilla</p>
+        <a class="book-link" href="https://coralcorepilates.punchpass.com/calendar?course=203750&instructor=980271889" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+      <div class="class-card">
+        <span class="class-tag">Mat · Biweekly</span>
+        <p class="class-name">Weekend Wind Down</p>
+        <p class="class-desc">Sunday morning mat for gentle restoration and mindful movement.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/PMknRSYsdomY61VA8" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Litoral, Mayagüez</a></p>
+        <a class="book-link" href="https://coralcorepilates.punchpass.com/calendar?course=203748&instructor=980271889" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+    </div>
+  </div>
+  <div class="service-block">
+    <p class="service-block-title">Studio classes</p>
+    <p style="font-size:12px;color:var(--text-mid);font-weight:300;margin-bottom:28px;line-height:1.7;"><strong style="font-weight:400;color:var(--text-dark);">Apparatus classes</strong> use specialized Pilates equipment — reformer, chair, tower, and other resistance-based machines — for a deeper, full-body workout guided by a trained instructor.</p>
+    <div class="classes-grid">
+      <div class="class-card">
+        <span class="class-tag">Mat · Group</span>
+        <p class="class-name">Centro La Paz</p>
+        <p class="class-desc">Group mat Pilates classes in a welcoming community studio setting.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/qugwUTjRS5gq9Ume7" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Rincón</a></p>
+        <a class="book-link" href="https://www.momoyoga.com/centrolapaz/teacher/2410970" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+      <div class="class-card">
+        <span class="class-tag">Apparatus · Group</span>
+        <p class="class-name">Pilatrópico</p>
+        <p class="class-desc">Full apparatus Pilates — reformer, Cadillac, chairs &amp; barrels in a dedicated studio.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/pKHEmLeB9PcYQ6W79" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Aguadilla</a></p>
+        <a class="book-link" href="https://pilatropico.punchpass.com/calendar?instructor=980268500" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+      <div class="class-card">
+        <span class="class-tag">Apparatus · Group</span>
+        <p class="class-name">Elevate Pilates &amp; Wellness</p>
+        <p class="class-desc">Apparatus-based Pilates in a wellness-centered studio. Intentional practice for all levels.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/WaRVgpz5sDMT8BXG7" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Mayagüez, Puerto Rico</a></p>
+        <a class="book-link" href="https://app.punchpass.com/org/19348/calendar?instructor=980270699" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+      <div class="class-card">
+        <span class="class-tag">Reformer · Group</span>
+        <p class="class-name">11:ONCE</p>
+        <p class="class-desc">Group reformer classes focused on form &amp; safety. Friday evenings and Saturday mornings.</p>
+        <p class="class-loc"><a href="https://maps.app.goo.gl/vCoMjGo3aXNihGoK6" target="_blank" style="color:var(--deep-blue);text-decoration:none;">📍 Hatillo</a></p>
+        <a class="book-link" href="https://coralcorepilates.punchpass.com/calendar?course=203748&location=11%3A11%2C+Hatillo" target="_blank" style="display:inline-block;margin-top:12px;">Book a class →</a>
+      </div>
+    </div>
+  </div>
+    <div class="service-block">
+    <p class="service-block-title">Private & semi-private apparatus classes</p>
+    <div class="service-banner">
+      <div class="sb-text">
+        <p>Personalized one-on-one & small group sessions</p>
+        <p>Private and semi-private apparatus classes are scheduled directly with Karla. Ideal for personalized attention, injury recovery, or deepening your practice at your own pace. New client intro rates available.</p>
+      </div>
+      <a class="sb-cta" href="https://wa.me/7872559986" target="_blank">Schedule with Karla →</a>
+    </div>
+  </div>
+
+  <!-- Events & celebrations -->
+  <div class="service-block">
+    <p class="service-block-title">Private mat classes for events & celebrations</p>
+    <div class="service-banner event">
+      <div class="sb-text">
+        <p>Weddings, bachelorettes & private events</p>
+        <p>We bring the mat to you. Whether it's a bridal morning, a bachelorette experience, or a private group event, Karla offers fully tailored mat Pilates sessions for your special occasion — anywhere in Puerto Rico.</p>
+      </div>
+      <a class="sb-cta" href="https://wa.me/7872559986" target="_blank">Inquire now →</a>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div style="text-align:center;margin-bottom:44px;">
+    <p class="sec-label">Invest in yourself</p>
+    <h2 class="sec-heading">Simple, clear <em>pricing</em></h2>
+  </div>
+  <div class="pricing-categories">
+
+    <div>
+      <p class="pricing-cat-title">Mat Pilates <em>(Mayagüez)</em></p>
+      <div class="pricing-cards">
+        <div class="p-card"><p class="p-label">Drop in</p><p class="p-name">Single Class</p><p class="p-price"><sup>$</sup>16</p><p class="p-note">Pay as you go</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257946" target="_blank">Purchase →</a></div>
+        <div class="p-card"><p class="p-label">Small pack</p><p class="p-name">4 Class Pack</p><p class="p-price"><sup>$</sup>55</p><p class="p-note">$13.75 per class</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257949" target="_blank">Purchase →</a></div>
+        <div class="p-card featured"><p class="p-label">Best value</p><p class="p-name">8 Class Pack</p><p class="p-price"><sup>$</sup>105</p><p class="p-note">$13.13 per class</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257948" target="_blank">Purchase →</a></div>
+        <div class="p-card"><p class="p-label">Max savings</p><p class="p-name">10 Class Pack</p><p class="p-price"><sup>$</sup>120</p><p class="p-note">$12 per class</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257947" target="_blank">Purchase →</a></div>
+      </div>
+    </div>
+
+    <div>
+      <p class="pricing-cat-title"><em>Sunset</em> Mat Classes</p>
+      <div class="pricing-cards">
+        <div class="p-card"><p class="p-label">Single</p><p class="p-name">1 Sunset Class</p><p class="p-price"><sup>$</sup>18</p><p class="p-note">One session</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257953" target="_blank">Purchase →</a></div>
+        <div class="p-card featured"><p class="p-label">Duo</p><p class="p-name">2 Sunset Classes</p><p class="p-price"><sup>$</sup>30</p><p class="p-note">$15 per class</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257954" target="_blank">Purchase →</a></div>
+      </div>
+    </div>
+
+    <div>
+      <p class="pricing-cat-title">Private & Semi-Private <em>Apparatus Classes</em></p>
+      <div class="pricing-cards">
+        <div class="p-card special"><p class="p-label">New client offer</p><p class="p-name">Private — Intro</p><p class="p-price"><sup>$</sup>35</p><p class="p-note">1 apparatus session</p><span class="p-new">New clients only</span><br><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/262154" target="_blank">Purchase →</a></div>
+        <div class="p-card"><p class="p-label">Regular</p><p class="p-name">Private Class</p><p class="p-price"><sup>$</sup>50</p><p class="p-note">1 apparatus session</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/262153" target="_blank">Purchase →</a></div>
+        <div class="p-card special"><p class="p-label">New client offer</p><p class="p-name">Semi-Private — Intro</p><p class="p-price"><sup>$</sup>25</p><p class="p-note">1 apparatus session</p><span class="p-new">New clients only</span><br><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/262156" target="_blank">Purchase →</a></div>
+        <div class="p-card"><p class="p-label">Regular</p><p class="p-name">Semi-Private Class</p><p class="p-price"><sup>$</sup>40</p><p class="p-note">1 apparatus session</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/262155" target="_blank">Purchase →</a></div>
+      </div>
+      <p class="private-pricing-note">Private & semi-private classes are scheduled directly with Karla. Contact her via WhatsApp or the form below to book your session.</p>
+    </div>
+
+    <div>
+      <p class="pricing-cat-title"><em>Special</em> Events</p>
+      <div class="pricing-cards" style="max-width:280px;">
+        <div class="p-card special"><p class="p-label">Limited spots</p><p class="p-name">Pilates & Matcha</p><p class="p-price"><sup>$</sup>30</p><p class="p-note">Per event</p><a class="p-buy" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/257957" target="_blank">Purchase →</a></div>
+      </div>
+      <p class="pricing-note">A unique wellness experience combining Pilates movement with a matcha ceremony. Book early — spots fill quickly.</p>
+    </div>
+
+    <div>
+      <p class="pricing-cat-title">Private Mat Classes for <em>Events & Celebrations</em></p>
+      <div class="service-banner event" style="margin-top:0;">
+          <div class="sb-text">
+          <p>Weddings, bachelorettes & private gatherings</p>
+          <p>Custom pricing based on group size, location, and duration. Contact Karla to design your perfect mat Pilates experience for your special occasion — anywhere in Puerto Rico.</p>
+        </div>
+        <a class="sb-cta" href="https://wa.me/7872559986" target="_blank">Get a quote →</a>
+      </div>
+    </div>
+
+  </div>
+  <p style="font-size:11px;color:var(--text-light);text-align:center;margin-top:32px;font-weight:300;">All online purchases securely processed by Stripe via Punchpass.</p>
+</section>
+
+<section class="book-section">
+  <p class="book-eyebrow">Ready to begin?</p>
+  <h2 class="book-heading">Classes across <em>Puerto Rico</em><br>— find one near you.</h2>
+  <p class="book-sub">Mayagüez · Aguadilla · Hatillo · Rincón<br>Group classes, private sessions, events & more — all with Karla Deida.</p>
+  <button class="btn-white" onclick="window.open('https://coralcorepilates.punchpass.com/classes','_blank')">View full schedule</button>
+  <button class="btn-outline-white" onclick="window.open('https://coralcorepilates.punchpass.com/passes','_blank')">Purchase a pass</button>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div style="text-align:center;margin-bottom:32px;">
+    <p class="sec-label">What our clients say</p>
+    <h2 class="sec-heading">Stories of <em>transformation</em></h2>
+  </div>
+    <div class="reviews-grid" style="grid-template-columns:1fr;max-width:680px;margin:0 auto 32px;">
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer-avatar">N</div><div class="reviewer-info"><p class="reviewer-name">Naomy R.</p><p class="reviewer-date">4 weeks ago · Google Review</p></div></div>
+      <p class="review-stars">★★★★★</p>
+      <p class="review-text">"I've truly enjoyed taking Pilates sessions with Coral Core Pilates. The environment is always welcoming, and Karla is patient, encouraging, and attentive to form throughout every class. Whether it's mat Pilates or reformer, her sessions are always worth it — I even find myself traveling to other towns just to keep taking her classes. Highly recommend!"</p>
+      <p class="review-source"><svg width="12" height="12" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg> via Google</p>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <p style="font-size:11px;color:#aaa;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px;font-weight:300;">Love Coral Core Pilates? Share your experience</p>
+    <a class="google-btn" href="https://g.page/r/CaL_eaxXR8VIEAI/review" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+      Leave us a Google Review
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left">
+    <p class="sec-label">Get in touch</p>
+    <h2 class="sec-heading">We'd love to<br><em>hear</em> from you</h2>
+    <div class="contact-item"><div class="c-icon">📍</div><div><p class="c-label">Locations</p><p class="c-value">Mayagüez · Aguadilla<br>Hatillo · Rincón</p></div></div>
+    <div class="contact-item"><div class="c-icon">✉️</div><div><p class="c-label">Email</p><p class="c-value"><a href="mailto:coralcorepilates@gmail.com">coralcorepilates@gmail.com</a></p></div></div>
+    <div class="contact-item"><div class="c-icon">💬</div><div><p class="c-label">WhatsApp</p><p class="c-value"><a href="https://wa.me/7872559986">(787) 255-9986</a></p></div></div>
+    <div class="contact-item"><div class="c-icon">🗓️</div><div><p class="c-label">Booking</p><p class="c-value"><a href="https://coralcorepilates.punchpass.com" target="_blank">coralcorepilates.punchpass.com</a></p></div></div>
+    <div class="social-row">
+      <a class="social-btn" href="https://www.instagram.com/coralcorepilates" target="_blank" title="Instagram"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-btn" href="https://www.facebook.com" target="_blank" title="Facebook"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-btn" href="https://wa.me/7872559986" target="_blank" title="WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+            <a class="social-btn" href="https://linktr.ee/coralcorepilates" target="_blank" title="Linktree"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="m13.73635 5.85251 4.00467-4.11665 2.3248 2.3808-4.20064 4.00466h5.9085v3.30473h-5.9365l4.22865 4.10766-2.3248 2.3338L12.0005 12.099l-5.74052 5.76852-2.3248-2.3248 4.22864-4.10766h-5.9375V8.12132h5.9085L3.93417 4.11666l2.3248-2.3808 4.00468 4.11665V0h3.4727zm-3.4727 10.30614h3.4727V24h-3.4727z"/></svg></a>
+      <a class="social-btn" href="https://g.page/r/CaL_eaxXR8VIEAI/review" target="_blank" title="Google Review"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <p class="sec-label" style="margin-bottom:20px;">Send us a message</p>
+    <form action="https://formspree.io/f/mjgqbvlj" method="POST">
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" name="first_name" placeholder="Your name"></div>
+      <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" name="last_name" placeholder="Last name"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Email address</label><input class="form-input" type="email" name="email" placeholder="you@email.com" required></div>
+    <div class="form-group"><label class="form-label">WhatsApp / Phone (optional)</label><input class="form-input" type="tel" name="phone" placeholder="(787) 255-9986"></div>
+    <div class="form-group">
+      <label class="form-label">I'm interested in</label>
+      <select class="form-input" name="interest">
+        <option value="">Select a service…</option>
+        <option>Mat Flow Tuesdays — Litoral, Mayagüez</option>
+        <option>Mat Flow Fridays — Litoral, Mayagüez</option>
+        <option>Sunset Sessions — Rincón / Aguadilla</option>
+        <option>Weekend Wind Down — Litoral, Mayagüez</option>
+        <option>Pilatrópico Apparatus — Aguadilla</option>
+        <option>Elevate Apparatus — West Side PR</option>
+        <option>11:ONCE Reformer — Hatillo</option>
+        <option>Private Apparatus Class</option>
+        <option>Semi-Private Apparatus Class</option>
+        <option>Private Mat Class for Event / Wedding / Bachelorette</option>
+        <option>Pilates & Matcha Event</option>
+        <option>General inquiry</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-label">Message</label><textarea class="form-input form-textarea" name="message" placeholder="Tell us about yourself, your event, or your goals…"></textarea></div>
+    <button type="submit" class="form-submit">Send message</button>
+    <p class="form-note">Your message goes directly to Karla's inbox. She typically replies within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <span class="footer-logo">Coral Core Pilates by Karla Deida</span>
+  <div class="footer-links">
+    <a href="https://coralcorepilates.punchpass.com/classes" target="_blank">Schedule</a>
+    <a href="https://coralcorepilates.punchpass.com/passes" target="_blank">Passes</a>
+    <a href="https://wa.me/7872559986" target="_blank">WhatsApp</a>
+    <a href="https://g.page/r/CaL_eaxXR8VIEAI/review" target="_blank">Review us</a>
+  </div>
+  <span class="footer-copy">© 2025 Coral Core Pilates · Puerto Rico</span>
+</footer>
+
+<script>
+(function(){
+  var bg=document.getElementById('heroBg');
+  var hero=document.getElementById('hero');
+  function onScroll(){
+    var s=window.scrollY;
+    if(s<hero.offsetHeight+300){bg.style.transform='translateY('+Math.round(s*0.38)+'px)';}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+</script>
+</body>
+</html>
