@@ -163,13 +163,24 @@ section{scroll-margin-top:70px;}
 .slot-name{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.35;}
 .slot-name b{display:block;font-weight:500;color:var(--text-dark);font-size:13px;}
 .lvl{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px;}
+.sched-specials{background:#fff;border:1.5px solid var(--lilac);border-radius:20px;padding:22px 24px 16px;margin-top:22px;}
+.ss-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text-dark);margin-bottom:8px;}
+.ss-title em{font-style:italic;color:var(--lilac-dark);}
+.ss-list{list-style:none;margin:0;padding:0;}
+.ss-row{display:grid;grid-template-columns:96px 1fr auto auto;grid-template-areas:"date name time book";gap:4px 16px;align-items:center;padding:11px 0;border-top:0.5px solid var(--lilac-pale);}
+.ss-date{grid-area:date;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--deep-blue);font-weight:500;}
+.ss-name{grid-area:name;font-size:14px;color:var(--text-dark);}
+.ss-time{grid-area:time;font-size:12px;color:var(--text-mid);font-weight:300;white-space:nowrap;}
+.ss-book{grid-area:book;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--lilac-dark);padding:6px 12px;border-radius:99px;text-decoration:none;white-space:nowrap;}
+.ss-book:hover{background:var(--lilac-deep);}
+.ss-more{display:inline-block;margin-top:10px;font-size:12px;color:var(--lilac-dark);}
 .sched-where{text-align:center;margin-top:24px;font-size:13px;color:var(--text-mid);font-weight:300;}
 .sched-where a{color:var(--lilac-dark);font-weight:400;}
 .sched-cta{text-align:center;margin-top:24px;}
 .specials-section{background:#fff;padding:56px 40px 16px;}
 .specials{margin-top:44px;background:var(--pale-blue);border:0.5px solid var(--mid-blue);padding:30px 32px;}
 .specials h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:16px;}
-.specials-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;align-items:start;}
+.specials-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:start;}
 .special{background:#fff;display:flex;flex-direction:column;border-top:3px solid var(--deep-blue);}
 .special-flyer{display:block;background:var(--lilac-pale);}
 .special-flyer img{width:100%;height:auto;display:block;}
@@ -220,6 +231,17 @@ details ul{padding:0 22px 20px 40px;}
 details li{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.75;margin-bottom:6px;}
 details li strong{font-weight:500;color:var(--text-dark);}
 
+/* MISSION & VISION */
+.mv-section{background:var(--pale-blue);padding:72px 40px;}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px;align-items:start;}
+.mv-card{background:#fff;padding:36px 34px;border-top:3px solid var(--lilac-dark);}
+.mv-card.vision{border-top-color:var(--deep-blue);}
+.mv-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--lilac-deep);margin-bottom:16px;}
+.mv-card.vision h3{color:var(--deep-blue);}
+.mv-lead{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;line-height:1.45;color:var(--text-dark);margin-bottom:16px;}
+.mv-p{font-size:14px;color:var(--text-mid);font-weight:300;line-height:1.85;margin-bottom:14px;}
+.mv-tagline{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--lilac-dark);line-height:1.45;margin-top:20px;padding-top:16px;border-top:0.5px solid var(--lilac);}
+
 /* REVIEWS */
 .reviews-section{background:#fff;padding:72px 40px;}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1040px;margin:0 auto 36px;align-items:start;}
@@ -269,10 +291,12 @@ details li strong{font-weight:500;color:var(--text-dark);}
   .nav{flex-wrap:wrap;row-gap:10px;}
   .nav-links{order:3;width:100%;gap:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
   .nav-links::-webkit-scrollbar{display:none;}
-  .studio-grid,.about-section,.contact-section{grid-template-columns:1fr;}
+  .studio-grid,.about-section,.contact-section,.mv-grid{grid-template-columns:1fr;}
   .about-visual{min-height:360px;}
 }
 @media(max-width:640px){
+  .sched-specials{padding:18px 16px 12px;}
+  .ss-row{grid-template-columns:1fr auto;grid-template-areas:"date book" "name book" "time book";}
   .gallery-section{padding:56px 18px;}
   .specials-section{padding:40px 18px 8px;}
   .gallery{grid-auto-rows:150px;gap:6px;}
@@ -285,6 +309,8 @@ details li strong{font-weight:500;color:var(--text-dark);}
   .lang-switch button{padding:6px 8px;}
   .hero h1{font-size:44px;}
   .hero-content{padding:56px 22px;}
+  .mv-section{padding:56px 18px;}
+  .mv-card{padding:28px 22px;}
   .studio-section,.classes-section,.schedule-section,.pricing-section,.policies-section,.reviews-section{padding:56px 18px;}
   .about-text,.contact-left,.contact-right{padding:48px 22px;}
   .sec-heading{font-size:32px;}
@@ -338,7 +364,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="studio-address">Val Harbour Building, Suite 110
         <small>445 González Clemente Ave (388 Blvd. Guanajibo)<br>Mayagüez, Puerto Rico 00681</small>
       </p>
-      <p class="studio-note" data-es="&lt;strong style=&quot;font-weight:500;color:#fff;&quot;&gt;Cómo encontrarnos:&lt;/strong&gt; el Edificio Val Harbour aparece tanto como 445 Ave. González Clemente como 388 Blvd. Guanajibo. Es el mismo edificio. Busca &lt;strong style=&quot;font-weight:500;color:#fff;&quot;&gt;“Coral Core Pilates”&lt;/strong&gt; en Google Maps o Waze y el pin te llevará directo a la Suite 110."><strong style="font-weight:500;color:#fff;">Finding us:</strong> the Val Harbour Building is listed under both 445 González Clemente Ave and 388 Blvd. Guanajibo. It's the same building. Search <strong style="font-weight:500;color:#fff;">“Coral Core Pilates”</strong> on Google Maps or Waze and the pin will take you straight to Suite 110.</p>
+      <p class="studio-note" data-es="&lt;strong style=&quot;font-weight:500;color:#fff;&quot;&gt;Cómo encontrarnos:&lt;/strong&gt; busca “Coral Core Pilates” en Google Maps o Waze. El pin te lleva directo a la Suite 110."><strong style="font-weight:500;color:#fff;">Finding us:</strong> search “Coral Core Pilates” on Google Maps or Waze. The pin takes you straight to Suite 110.</p>
       <p class="studio-note" data-es="Todas las clases grupales semanales ahora son en el estudio. Por favor llega de 5 a 10 minutos antes para que tengas tiempo de acomodarte.">All weekly group classes now take place at the studio. Please arrive 5–10 minutes early so you have time to get settled.</p>
       <div class="map-btns">
         <a class="btn btn-coral" href="https://maps.google.com/?cid=5243675783024213922" target="_blank">Google Maps</a>
@@ -361,15 +387,6 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <h3 data-es="Clases especiales">Special classes</h3>
       <div class="specials-list">
         <div class="special">
-          <a class="special-flyer" href="images/events/disney-channel-class.jpg" target="_blank"><img src="images/events/disney-channel-class.jpg" alt="Disney Channel Theme Class flyer, Saturday October 24 at 1:30 PM" loading="lazy"></a>
-          <div class="special-body">
-            <p class="special-date" data-es="Sábado, 24 de octubre · 1:30 PM">Saturday, October 24 · 1:30 PM</p>
-            <p class="special-name" data-es="Clase temática de Disney Channel">Disney Channel Theme Class</p>
-            <p class="special-desc" data-es="Una clase completa de Pilates al ritmo de tus canciones favoritas de Disney Channel.">A full Pilates class set to your favorite Disney Channel throwbacks.</p>
-            <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes/21019948" target="_blank" data-es="Reserva esta clase →">Book this class →</a></div>
-          </div>
-        </div>
-        <div class="special">
           <a class="special-flyer" href="images/events/halloween-costume-event.jpg" target="_blank"><img src="images/events/halloween-costume-event.jpg" alt="Halloween Costume Event flyer, Saturday October 31 at 1:30 and 2:30 PM" loading="lazy"></a>
           <div class="special-body">
             <p class="special-date" data-es="Sábado, 31 de octubre · 1:30 y 2:30 PM">Saturday, October 31 · 1:30 &amp; 2:30 PM</p>
@@ -391,6 +408,25 @@ details li strong{font-weight:500;color:var(--text-dark);}
               <li data-es="&lt;b&gt;10:30 AM – 12:00 PM&lt;/b&gt;Pilates para hombres y movilidad · Karla Deida"><b>10:30 AM – 12:00 PM</b>Pilates for men &amp; mobility · Karla Deida</li>
             </ul>
             <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes/21108260" target="_blank" data-es="Compra tu boleto →">Get your ticket →</a><a class="special-more" href="images/events/movember-program.jpg" target="_blank" data-es="Ver el programa">View program flyer</a></div>
+          </div>
+        </div>
+        <div class="special">
+          <a class="special-flyer" href="images/events/don-omar-themed-class.jpg" target="_blank"><img src="images/events/don-omar-themed-class.jpg" alt="Don Omar Themed Class flyer, Saturday November 14 at 9:00 AM" loading="lazy"></a>
+          <div class="special-body">
+            <p class="special-date" data-es="Sábado, 14 de noviembre · 9:00 AM">Saturday, November 14 · 9:00 AM</p>
+            <p class="special-name" data-es="Clase temática de Don Omar">Don Omar Themed Class</p>
+            <p class="special-desc" data-es="Una clase completa de Pilates al ritmo de clásicos de Don Omar como “Dile”, “Diva Virtual” y “Pobre Diabla”.">A full Pilates class set to Don Omar classics like “Dile,” “Diva Virtual” and “Pobre Diabla.”</p>
+            <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes/21138201" target="_blank" data-es="Reserva esta clase →">Book this class →</a></div>
+          </div>
+        </div>
+        <div class="special">
+          <a class="special-flyer" href="images/events/pilates-for-couples.jpg" target="_blank"><img src="images/events/pilates-for-couples.jpg" alt="Pilates for Couples flyer, Saturday November 21 at 9:30 and 10:30 AM, $30 per couple" loading="lazy"></a>
+          <div class="special-body">
+            <p class="special-date" data-es="Sábado, 21 de noviembre · 9:30 y 10:30 AM">Saturday, November 21 · 9:30 &amp; 10:30 AM</p>
+            <p class="special-name" data-es="Pilates en pareja">Pilates for Couples</p>
+            <p class="special-price">$30 <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--text-mid);letter-spacing:0.1em;text-transform:uppercase;" data-es="por pareja">per couple</span></p>
+            <p class="special-desc" data-es="Trae a tu pareja a una clase de Pilates hecha para dos. Escoge la sesión de las 9:30 o las 10:30 AM.">Bring your partner for a Pilates class made for two. Choose the 9:30 or 10:30 AM session.</p>
+            <div class="special-links"><a class="special-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reserva tu espacio →">Book your spot →</a></div>
           </div>
         </div>
       </div>
@@ -514,10 +550,19 @@ details li strong{font-weight:500;color:var(--text-dark);}
         <div class="slot"><span class="slot-time">6:30 PM</span><span class="slot-name" data-es="&lt;span class=&quot;lvl dot-all&quot;&gt;&lt;/span&gt;Todos los niveles"><span class="lvl dot-all"></span>All Levels</span></div>
       </div>
     </div>
+    <div class="sched-specials">
+      <p class="ss-title" data-es="Clases especiales &lt;em&gt;próximas&lt;/em&gt;">Upcoming <em>special classes</em></p>
+      <ul class="ss-list">
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 31 oct">Sat, Oct 31</span><span class="ss-name" data-es="Evento de disfraces de Halloween 🎃">Halloween Costume Event 🎃</span><span class="ss-time" data-es="1:30 y 2:30 PM">1:30 &amp; 2:30 PM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=213414" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 7 nov">Sat, Nov 7</span><span class="ss-name" data-es="Evento Movember para hombres: MMA, Pilates y Yoga">Movember Men's MMA, Pilates &amp; Yoga Event</span><span class="ss-time" data-es="7:45 AM – 12:00 PM">7:45 AM – 12:00 PM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes/21108260" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 14 nov">Sat, Nov 14</span><span class="ss-name" data-es="Clase temática de Don Omar">Don Omar Themed Class</span><span class="ss-time" data-es="9:00 AM">9:00 AM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes/21138201" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 21 nov">Sat, Nov 21</span><span class="ss-name" data-es="Pilates en pareja">Pilates for Couples</span><span class="ss-time" data-es="9:30 y 10:30 AM">9:30 &amp; 10:30 AM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reservar">Book</a></li>
+      </ul>
+      <a class="ss-more" href="#specials" data-es="Ver detalles y flyers →">See details &amp; flyers →</a>
+    </div>
     <p class="sched-where" data-es="📍 Todas las clases son en el &lt;a href=&quot;#studio&quot;&gt;Edificio Val Harbour, Suite 110 · Mayagüez&lt;/a&gt;">📍 All classes at <a href="#studio">Val Harbour Building, Suite 110 · Mayagüez</a></p>
     <div class="sched-cta"><a class="btn btn-peri" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reserva tu espacio">Reserve your spot</a></div>
 
-    <p class="sched-where" style="margin-top:18px;" data-es="✦ ¿Buscas clases temáticas y eventos especiales? &lt;a href=&quot;#specials&quot;&gt;Ver clases especiales →&lt;/a&gt;">✦ Looking for themed and special events? <a href="#specials">See special classes →</a></p>
   </div>
 </section>
 
@@ -628,6 +673,34 @@ details li strong{font-weight:500;color:var(--text-dark);}
   </div>
 </section>
 
+<!-- MISSION & VISION -->
+<section class="mv-section" id="mission" data-page="about">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="Lo que nos guía">What guides us</p>
+      <h2 class="sec-heading" data-es="Misión y &lt;em&gt;visión&lt;/em&gt;">Mission &amp; <em>vision</em></h2>
+    </div>
+    <div class="mv-grid">
+    <div class="mv-card">
+      <h3 data-es="Nuestra misión">Our mission</h3>
+      <p class="mv-lead" data-es="En Coral Core Pilates, nuestra misión es crear un espacio acogedor, inclusivo y libre de juicios, donde cada cuerpo se sienta visto, respetado y cómodo moviéndose tal y como es.">At Coral Core Pilates, our mission is to create a welcoming, inclusive, and judgment-free space where every body feels seen, respected, and comfortable moving exactly as they are.</p>
+      <p class="mv-p" data-es="Creemos que el Pilates es más que un entrenamiento. Es una oportunidad para crear una conexión más profunda entre la mente y el cuerpo a través del movimiento intencional, la práctica consciente y el entendimiento de cómo se mueve tu cuerpo.">We believe Pilates is more than a workout. It is an opportunity to build a deeper connection between the mind and body through intentional movement, mindful practice, and an understanding of how your body moves.</p>
+      <p class="mv-p" data-es="Nuestra enseñanza se basa en la forma, la postura, la alineación y la seguridad por encima de la competitividad. Animamos a cada cliente a moverse con intención, ofreciendo modificaciones y guía cuando sea necesario para que cada persona pueda vivir el Pilates de una manera segura, efectiva y significativa.">Our teaching is grounded in form, posture, alignment, and safety over competitiveness. We encourage each client to move with intention, offering modifications and guidance when needed so that every person can experience Pilates in a way that feels safe, effective, and meaningful to them.</p>
+      <p class="mv-p" data-es="Honramos y respetamos el método Pilates tal como lo desarrolló Joseph Pilates, reconociendo los principios, la estructura y la intención detrás del método. Al mismo tiempo, creemos que nuestro entendimiento del cuerpo humano, el movimiento y la biomecánica sigue evolucionando. El Pilates contemporáneo nos permite construir sobre esa base con el conocimiento actual, preservando la integridad y el propósito del método. A medida que evoluciona nuestro conocimiento del movimiento, también evoluciona nuestra capacidad de enseñar con mayor conciencia e intención.">We honor and respect the Pilates method as developed by Joseph Pilates, recognizing the principles, structure, and intention behind the method. At the same time, we believe that our understanding of the human body, movement, and biomechanics continues to evolve. Contemporary Pilates allows us to build upon this foundation with current knowledge while preserving the integrity and purpose of the method. As our knowledge of movement evolves, so does our ability to teach with greater awareness and intention.</p>
+      <p class="mv-p" data-es="Como no hay dos cuerpos iguales, ni dos cuerpos que se muevan de la misma forma, el Pilates se sentirá diferente para cada persona. Nuestro rol no es hacer que tu cuerpo se ajuste al movimiento, sino ayudarte a entender tu cuerpo, encontrar el movimiento que funciona para ti y, sobre todo, disfrutar el proceso.">Because no two bodies are the same, and no two bodies move the same way, Pilates will feel different for everyone. Our role is not to make your body fit the movement, but to help you understand your body, find the movement that works for you, and ultimately enjoy the process.</p>
+    </div>
+    <div class="mv-card vision">
+      <h3 data-es="Nuestra visión">Our vision</h3>
+      <p class="mv-lead" data-es="Nuestra visión es construir una comunidad de Pilates fuerte y unida donde todos sientan que pertenecen.">Our vision is to build a strong and connected Pilates community where everyone feels that they belong.</p>
+      <p class="mv-p" data-es="Nos esforzamos por crear un espacio que se sienta de todos: un lugar donde las personas puedan llegar sin juicios, apoyarse unas a otras, celebrar el progreso y sentirse motivadas a perseguir sus propias metas a su propio ritmo.">We strive to create a space that feels like it belongs to all of us—a space where people can come without judgment, support one another, celebrate progress, and feel encouraged to pursue their own goals at their own pace.</p>
+      <p class="mv-p" data-es="Nuestro estudio es un espacio sagrado. Nuestra gente es primero. Estamos comprometidos a cultivar una comunidad basada en la inclusión, el respeto, la conexión y el cuidado genuino, mientras seguimos creciendo y evolucionando juntos.">Our studio is a sacred space. Our people come first. We are committed to cultivating a community rooted in inclusion, respect, connection, and genuine care, while continuing to grow and evolve together.</p>
+      <p class="mv-p" data-es="Ya sea que tu meta sea ser más fuerte, moverte con mayor facilidad, mejorar tu postura, reconectar con tu cuerpo, retarte o simplemente tomar tiempo para ti, aquí hay un lugar para ti.">Whether your goal is to become stronger, move with greater ease, improve your posture, reconnect with your body, challenge yourself, or simply take time for yourself, there is a place for you here.</p>
+      <p class="mv-tagline" data-es="Ven tal como eres. Muévete con intención. Sal sintiéndote en mayor conexión contigo y con tu comunidad.">Come as you are. Move with intention. Leave feeling more connected to yourself and your community.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
 <section class="reviews-section" data-page="about">
   <div class="center" style="margin-bottom:32px;">
@@ -644,7 +717,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="review-text" style="margin-top:12px;">I feel stronger and more in balance with my body and energy levels. If you’re looking to enhance your physical and mental well-being through Pilates, Karla and her Coral Core studio is the right place to be!"</p>
     </div>
     <div class="review-card">
-      <div class="review-header"><div class="reviewer-avatar">N</div><div><p class="reviewer-name">Naomy R.</p><p class="reviewer-date" data-es="Reseña de Google">Google Review</p></div></div>
+      <div class="review-header"><div class="reviewer-avatar">N</div><div><p class="reviewer-name">Naomy R.</p><p class="reviewer-date" data-es="Mayo 2026 · Reseña de Google">May 2026 · Google Review</p></div></div>
       <p class="review-stars">★★★★★</p>
       <p class="review-text">"I've truly enjoyed taking Pilates sessions with Coral Core Pilates. The environment is always welcoming, and Karla is patient, encouraging, and attentive to form throughout every class. Whether it's mat Pilates or reformer, her sessions are always worth it — I even find myself traveling to other towns just to keep taking her classes. Highly recommend!"</p>
     </div>
@@ -702,6 +775,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
           <option data-es="Sesión privada en equipos">Private apparatus session</option>
           <option data-es="Sesión semiprivada en equipos">Semi-private apparatus session</option>
           <option data-es="Clases especiales / eventos">Special classes / events</option>
+          <option data-es="Pilates en pareja — 21 de noviembre">Pilates for Couples — November 21</option>
           <option data-es="Evento Movember para hombres — 7 de noviembre">Movember Men's Event — November 7</option>
           <option data-es="Evento privado / boda / despedida de soltera">Private event / wedding / bachelorette</option>
           <option data-es="Consulta general">General inquiry</option>
