@@ -214,6 +214,16 @@ section{scroll-margin-top:70px;}
 .p-price sup{font-size:17px;vertical-align:super;}
 .p-price small{font-size:15px;color:var(--text-mid);}
 .p-note{font-size:11px;color:var(--text-mid);margin-top:8px;font-weight:300;line-height:1.5;}
+.perks-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;}
+.perk-card{background:var(--lilac-pale);border:0.5px solid var(--lilac);padding:26px 28px;}
+.perk-card.bday{background:var(--pale-blue);border-color:var(--mid-blue);}
+.perk-icon{font-size:22px;color:var(--lilac-dark);margin-bottom:6px;line-height:1;}
+.perk-title{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:400;color:var(--text-dark);margin-bottom:8px;}
+.perk-text{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.75;}
+.perk-text strong{font-weight:500;color:var(--text-dark);}
+.perk-link{display:inline-block;margin-top:12px;font-size:12px;color:var(--deep-blue);}
+.p-save{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:0.06em;color:#2e7d52;background:#e8f5ee;padding:4px 10px;border-radius:99px;font-weight:500;line-height:1.4;}
+.pricing-save-note{font-size:12px;color:var(--text-light);font-style:italic;font-weight:300;margin-top:10px;}
 .p-new{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--deep-blue);background:#fff;padding:3px 9px;border-radius:99px;margin-bottom:8px;font-weight:500;}
 .member-perks{margin-top:14px;font-size:12px;color:var(--lilac-deep);font-weight:300;font-style:italic;text-align:center;line-height:1.6;}
 .pricing-fine{font-size:11px;color:var(--text-light);margin-top:14px;font-weight:300;line-height:1.6;}
@@ -291,7 +301,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
   .nav{flex-wrap:wrap;row-gap:10px;}
   .nav-links{order:3;width:100%;gap:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
   .nav-links::-webkit-scrollbar{display:none;}
-  .studio-grid,.about-section,.contact-section,.mv-grid{grid-template-columns:1fr;}
+  .studio-grid,.about-section,.contact-section,.mv-grid,.perks-grid{grid-template-columns:1fr;}
   .about-visual{min-height:360px;}
 }
 @media(max-width:640px){
@@ -351,6 +361,8 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <div class="hero-btns">
       <a class="btn btn-white" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Ver horario y reservar">View schedule &amp; book</a>
       <a class="btn btn-ghost" href="https://maps.google.com/?cid=5243675783024213922" target="_blank" data-es="Cómo llegar">Get directions</a>
+      <a class="btn btn-ghost" href="tel:+17872559986" data-es="Llama al estudio">Call the studio</a>
+      <a class="btn btn-ghost" href="https://wa.me/message/7YYFCVTKVGQQB1" target="_blank">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -573,17 +585,18 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="sec-label" data-es="Invierte en ti">Invest in yourself</p>
       <h2 class="sec-heading" data-es="Precios y &lt;em&gt;paquetes&lt;/em&gt;">Pricing &amp; <em>packages</em></h2>
       <p class="body-text" style="max-width:520px;margin:0 auto;" data-es="Encuentra el nivel de compromiso que va con tu vida y deja que tu cuerpo haga el resto. Cada paquete es un paso hacia una versión más fuerte y constante de ti.">Find the commitment level that fits your life, and let your body do the rest. Every package is a step toward a stronger, more consistent you.</p>
+      <p class="pricing-save-note" data-es="Los ahorros se calculan comparando con los precios regulares de $20 por clase y $70 por clase privada.">Savings are compared with the regular $20 single class and $70 private class prices.</p>
     </div>
 
     <div class="pricing-cat">
       <p class="pricing-cat-title" data-es="Clases de mat &lt;em&gt;en el estudio&lt;/em&gt;">Studio <em>mat classes</em></p>
       <p class="pricing-cat-sub" data-es="Los paquetes funcionan como una tarjeta de ponches. Usa tus clases al ritmo que prefieras dentro del periodo de tiempo.">Packages work like a punch card. Use your classes at whatever pace you like within the time frame.</p>
       <div class="pricing-cards">
-        <div class="p-card"><p class="p-label" data-es="Clase suelta">Drop in</p><p class="p-name" data-es="1 clase de mat">Single Mat Class</p><p class="p-price"><sup>$</sup>20</p><p class="p-note" data-es="No expira">Never expires</p></div>
-        <div class="p-card"><p class="p-label" data-es="Para comenzar">Getting started</p><p class="p-name" data-es="4 clases de mat">4 Mat Classes</p><p class="p-price"><sup>$</sup>75</p><p class="p-note" data-es="4 semanas · aprox. 1× por semana">4 weeks · about 1× per week</p></div>
-        <div class="p-card featured"><p class="p-label" data-es="El balance ideal">Sweet spot</p><p class="p-name" data-es="8 clases de mat">8 Mat Classes</p><p class="p-price"><sup>$</sup>135</p><p class="p-note" data-es="6 semanas · 1–2× por semana">6 weeks · 1–2× per week</p></div>
-        <div class="p-card"><p class="p-label" data-es="Rutina">Routine</p><p class="p-name" data-es="12 clases de mat">12 Mat Classes</p><p class="p-price"><sup>$</sup>185</p><p class="p-note" data-es="8 semanas · 2–3× por semana">8 weeks · 2–3× per week</p></div>
-        <div class="p-card"><p class="p-label" data-es="Sin límites">All in</p><p class="p-name" data-es="Clases de mat ilimitadas">Unlimited Mat Classes</p><p class="p-price"><sup>$</sup>225</p><p class="p-note" data-es="4 semanas · clases ilimitadas">4 weeks · unlimited classes</p></div>
+        <div class="p-card"><p class="p-label" data-es="Clase suelta">Drop in</p><p class="p-name" data-es="1 clase de mat">Single Mat Class</p><p class="p-price"><sup>$</sup>20</p><p class="p-note" data-es="Úsala en 4 semanas">Use within 4 weeks</p></div>
+        <div class="p-card"><p class="p-label" data-es="Para comenzar">Getting started</p><p class="p-name" data-es="4 clases de mat">4 Mat Classes</p><p class="p-price"><sup>$</sup>75</p><p class="p-save" data-es="Ahorras $5 · $18.75 por clase">Save $5 · $18.75 per class</p><p class="p-note" data-es="Úsalas en 4 semanas · recomendado 1× por semana">Use within 4 weeks · recommended 1× per week</p></div>
+        <div class="p-card featured"><p class="p-label" data-es="El balance ideal">Sweet spot</p><p class="p-name" data-es="8 clases de mat">8 Mat Classes</p><p class="p-price"><sup>$</sup>135</p><p class="p-save" data-es="Ahorras $25 · $16.88 por clase">Save $25 · $16.88 per class</p><p class="p-note" data-es="Úsalas en 6 semanas · recomendado 1–2× por semana">Use within 6 weeks · recommended 1–2× per week</p></div>
+        <div class="p-card"><p class="p-label" data-es="Rutina">Routine</p><p class="p-name" data-es="12 clases de mat">12 Mat Classes</p><p class="p-price"><sup>$</sup>185</p><p class="p-save" data-es="Ahorras $55 · $15.42 por clase">Save $55 · $15.42 per class</p><p class="p-note" data-es="Úsalas en 8 semanas · recomendado 2–3× por semana">Use within 8 weeks · recommended 2–3× per week</p></div>
+        <div class="p-card"><p class="p-label" data-es="Sin límites">All in</p><p class="p-name" data-es="Clases de mat ilimitadas">Unlimited Mat Classes</p><p class="p-price"><sup>$</sup>225</p><p class="p-save" data-es="Se paga sola a partir de tu clase 12">Pays for itself by your 12th class</p><p class="p-note" data-es="Clases ilimitadas por 4 semanas">Unlimited classes for 4 weeks</p></div>
       </div>
     </div>
 
@@ -591,9 +604,9 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="pricing-cat-title" data-es="&lt;em&gt;Membresías&lt;/em&gt;"><em>Memberships</em></p>
       <p class="pricing-cat-sub" data-es="Se factura cada 4 semanas con un compromiso de 3 meses.">Billed every 4 weeks with a 3-month commitment.</p>
       <div class="pricing-cards">
-        <div class="p-card member"><p class="p-label">Mat</p><p class="p-name" data-es="Membresía de 12 clases de mat">12 Mat Classes Membership</p><p class="p-price"><sup>$</sup>165</p><p class="p-note" data-es="cada 4 semanas · 3 clases por semana, con clases acumulables">every 4 weeks · 3 classes per week, with rollover classes</p></div>
-        <div class="p-card member"><span class="p-new" data-es="Nuevo">New</span><p class="p-name" data-es="4 clases de mat + 3 privadas">4 Mat Classes + 3 Privates</p><p class="p-price"><sup>$</sup>265</p><p class="p-note" data-es="cada 4 semanas · 1 clase grupal de mat semanal + 3 sesiones privadas">every 4 weeks · 1 weekly group mat class + 3 private sessions</p></div>
-        <div class="p-card member"><span class="p-new" data-es="Nuevo">New</span><p class="p-name" data-es="8 clases de mat + 2 privadas">8 Mat Classes + 2 Privates</p><p class="p-price"><sup>$</sup>240</p><p class="p-note" data-es="cada 4 semanas · 2 clases grupales de mat semanales + 2 sesiones privadas">every 4 weeks · 2 weekly group mat classes + 2 private sessions</p></div>
+        <div class="p-card member"><p class="p-label">Mat</p><p class="p-name" data-es="Membresía de 12 clases de mat">12 Mat Classes Membership</p><p class="p-price"><sup>$</sup>165</p><p class="p-save" data-es="Ahorras $75 · $13.75 por clase">Save $75 · $13.75 per class</p><p class="p-note" data-es="cada 4 semanas · 3 clases por semana, con clases acumulables">every 4 weeks · 3 classes per week, with rollover classes</p></div>
+        <div class="p-card member"><span class="p-new" data-es="Nuevo">New</span><p class="p-name" data-es="4 clases de mat + 3 privadas">4 Mat Classes + 3 Privates</p><p class="p-price"><sup>$</sup>265</p><p class="p-save" data-es="Ahorras $25 cada 4 semanas">Save $25 every 4 weeks</p><p class="p-note" data-es="cada 4 semanas · 1 clase grupal de mat semanal + 3 sesiones privadas">every 4 weeks · 1 weekly group mat class + 3 private sessions</p></div>
+        <div class="p-card member"><span class="p-new" data-es="Nuevo">New</span><p class="p-name" data-es="8 clases de mat + 2 privadas">8 Mat Classes + 2 Privates</p><p class="p-price"><sup>$</sup>240</p><p class="p-save" data-es="Ahorras $60 cada 4 semanas">Save $60 every 4 weeks</p><p class="p-note" data-es="cada 4 semanas · 2 clases grupales de mat semanales + 2 sesiones privadas">every 4 weeks · 2 weekly group mat classes + 2 private sessions</p></div>
       </div>
       <p class="member-perks" data-es="Cada membresía incluye un tote bag de Coral Core Pilates de cortesía y un pase para que un amigo tome una clase grupal de mat una vez por ciclo de membresía.">Every membership includes a complimentary Coral Core Pilates tote bag and a friend pass to a group mat class once per membership cycle.</p>
     </div>
@@ -602,10 +615,24 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="pricing-cat-title" data-es="Clases privadas y semiprivadas &lt;em&gt;en equipos&lt;/em&gt;">Private &amp; semi-private <em>apparatus classes</em></p>
       <p class="pricing-cat-sub" data-es="Sesiones personalizadas en reformer y torre, coordinadas directamente con Karla.">Personalized reformer and tower apparatus sessions, scheduled directly with Karla.</p>
       <div class="pricing-cards">
-        <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase privada en equipos">Private Apparatus Class</p><p class="p-price"><sup>$</sup>55</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
+        <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase privada en equipos">Private Apparatus Class</p><p class="p-price"><sup>$</sup>55</p><p class="p-save" data-es="Ahorras $15">Save $15</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
         <div class="p-card"><p class="p-label" data-es="Individual">One-on-one</p><p class="p-name" data-es="Clase privada en equipos">Private Apparatus Class</p><p class="p-price"><sup>$</sup>70</p><p class="p-note" data-es="Por sesión">Per session</p></div>
-        <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase semiprivada en equipos">Semi-Private Apparatus Class</p><p class="p-price"><sup>$</sup>35</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
+        <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase semiprivada en equipos">Semi-Private Apparatus Class</p><p class="p-price"><sup>$</sup>35</p><p class="p-save" data-es="Ahorras $15">Save $15</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
         <div class="p-card"><p class="p-label" data-es="Grupo pequeño">Small group</p><p class="p-name" data-es="Clase semiprivada en equipos">Semi-Private Apparatus Class</p><p class="p-price"><sup>$</sup>50</p><p class="p-note" data-es="Por sesión">Per session</p></div>
+      </div>
+    </div>
+
+    <div class="perks-grid">
+      <div class="perk-card">
+        <p class="perk-icon">☆</p>
+        <h3 class="perk-title" data-es="Tarjeta de lealtad">Loyalty punch card</h3>
+        <p class="perk-text" data-es="Recoge tu tarjeta de ponches física en el estudio y ponchéala en cada clase. Al completar &lt;strong&gt;10 clases&lt;/strong&gt;, recibes &lt;strong&gt;50% de descuento en una clase suelta&lt;/strong&gt; o &lt;strong&gt;$10 de descuento&lt;/strong&gt; en tu próxima compra de paquete.">Pick up your physical punch card at the studio and get it punched at every class. Once you complete <strong>10 classes</strong>, you get <strong>50% off a drop-in class</strong> or <strong>$10 off</strong> your next package purchase.</p>
+      </div>
+      <div class="perk-card bday">
+        <p class="perk-icon">🎂</p>
+        <h3 class="perk-title" data-es="Una clase gratis en tu cumpleaños">A free class on your birthday</h3>
+        <p class="perk-text" data-es="No olvides añadir tu fecha de nacimiento en tu cuenta de Punchpass. Te regalaremos una &lt;strong&gt;clase gratis en tu cumpleaños&lt;/strong&gt;.">Don't forget to add your birth date to your Punchpass account. We'll gift you a <strong>free class on your birthday</strong>.</p>
+        <a class="perk-link" href="https://coralcorepilates.punchpass.com" target="_blank" data-es="Actualiza tu cuenta de Punchpass →">Update your Punchpass account →</a>
       </div>
     </div>
 
