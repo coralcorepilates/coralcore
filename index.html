@@ -44,6 +44,9 @@ img{max-width:100%;}
 /* ANNOUNCEMENT BAR */
 .announce{background:var(--deep-blue);color:#fff;text-align:center;padding:10px 20px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400;}
 .announce a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.6);padding-bottom:1px;margin-left:6px;}
+.announce-item{display:inline-block;margin:2px 14px;}
+.announce.closure{background:var(--lilac-pale);color:var(--lilac-deep);padding:7px 20px;font-size:10px;}
+.announce.closure a{color:var(--lilac-deep);border-bottom-color:var(--lilac-deep);}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:14px 40px;border-bottom:0.5px solid var(--lilac-pale);gap:16px;}
@@ -110,6 +113,14 @@ section{scroll-margin-top:70px;}
 .storefront{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;display:block;border:6px solid rgba(255,255,255,0.18);}
 .map-frame{position:relative;width:100%;aspect-ratio:4/3;border:6px solid rgba(255,255,255,0.18);background:var(--lilac-pale);}
 .map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.apple-card{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.35);padding:10px 14px 10px 10px;text-decoration:none;color:#fff;transition:background .2s;}
+.apple-card:hover{background:rgba(255,255,255,0.2);}
+.apple-mini{width:96px;height:72px;flex-shrink:0;display:block;}
+.apple-meta{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.apple-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;opacity:0.8;}
+.apple-name{font-family:'Cormorant Garamond',serif;font-size:19px;}
+.apple-addr{font-size:12px;font-weight:300;opacity:0.9;}
+.apple-open{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;margin-top:4px;border-bottom:1px solid rgba(255,255,255,0.6);align-self:flex-start;padding-bottom:1px;}
 
 /* GALLERY */
 .gallery-section{background:#fff;padding:72px 40px;}
@@ -120,7 +131,12 @@ section{scroll-margin-top:70px;}
 .g-wide{grid-column:span 2;}
 .g-tall{grid-row:span 2;}
 .g-wide3{grid-column:span 3;}
+.g-full{grid-column:1/-1;grid-row:span 3;}
 .service-banner .sb-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 60%;display:block;}
+.sb-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;}
+.sb-photos .sb-photo{aspect-ratio:4/3;}
+.sb-figure{margin:0;width:100%;}
+.sb-figure figcaption{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);margin-top:8px;}
 .photo-band{position:relative;height:420px;overflow:hidden;}
 .photo-band img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;}
 .photo-band-overlay{position:absolute;inset:0;background:rgba(90,62,116,0.28);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:0 20px;}
@@ -130,7 +146,7 @@ section{scroll-margin-top:70px;}
 /* ABOUT */
 .about-section{display:grid;grid-template-columns:1fr 1fr;}
 .about-visual{min-height:520px;overflow:hidden;}
-.about-visual img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.about-visual img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;}
 .about-text{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;background:var(--lilac-pale);}
 .about-text h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--lilac-deep);margin:18px 0 10px;}
 
@@ -139,16 +155,22 @@ section{scroll-margin-top:70px;}
 .classes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:36px;}
 .class-card{background:var(--lilac-pale);padding:30px 24px;border-top:3px solid var(--lilac-dark);}
 .class-card.fire{background:var(--pale-blue);border-top-color:var(--deep-blue);}
+.class-card.apparatus{border-top-color:var(--mid-blue);}
 .class-tag{display:inline-block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#ed6a46;background:rgba(237,106,70,0.1);padding:4px 10px;border-radius:99px;margin-bottom:14px;font-weight:400;}
 
 .class-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:8px;line-height:1.2;}
 .class-desc{font-size:13px;color:var(--text-mid);line-height:1.75;font-weight:300;}
 .more-soon{margin-top:22px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text-mid);}
-.service-banners{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:40px;}
-.service-banner{background:var(--lilac-pale);border:0.5px solid var(--lilac);padding:24px 26px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;}
-.service-banner.butter{background:var(--pale-blue);border-color:var(--mid-blue);}
-.service-banner h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;}
-.service-banner p{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;}
+.service-banners{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:40px;align-items:start;}
+.service-banner{background:#fff;border:0.5px solid var(--lilac-pale);border-top:2px solid var(--lilac);padding:20px 22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.service-banner.butter{background:#fff;border-color:var(--lilac-pale);border-top-color:var(--mid-blue);}
+.service-banner h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;}
+.service-banner p{font-size:12.5px;color:var(--text-mid);font-weight:300;line-height:1.7;}
+.service-banner .sb-photo,.service-banner .sb-photos{opacity:0.95;}
+.service-banner .sb-figure .sb-photo{aspect-ratio:2/1!important;}
+.service-banner .btn{background:none;border:none;padding:4px 0;font-size:10px;letter-spacing:0.16em;color:var(--lilac-dark);border-bottom:1px solid var(--lilac);}
+.service-banner .btn:hover{background:none;color:var(--lilac-deep);border-bottom-color:var(--lilac-deep);}
+.service-banner .special-links{gap:18px;}
 
 /* SCHEDULE */
 .schedule-section{background:var(--lilac-pale);padding:72px 40px;}
@@ -179,6 +201,9 @@ section{scroll-margin-top:70px;}
 .sched-where{text-align:center;margin-top:24px;font-size:13px;color:var(--text-mid);font-weight:300;}
 .sched-where a{color:var(--lilac-dark);font-weight:400;}
 .sched-cta{text-align:center;margin-top:24px;}
+.tutorial-link{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--text-mid);margin-top:12px;}
+.tutorial-link a,.tutorial-mini,details li a{color:var(--lilac-dark);}
+.tutorial-mini{font-size:11px;letter-spacing:0.04em;margin-top:-2px;}
 .specials-section{background:#fff;padding:0 40px 72px;}
 .specials{margin-top:44px;background:var(--pale-blue);border:0.5px solid var(--mid-blue);padding:30px 32px;}
 .specials h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:16px;}
@@ -210,6 +235,9 @@ section{scroll-margin-top:70px;}
 .p-card.featured{background:var(--lilac-pale);border-color:var(--lilac);}
 .p-card.member{background:var(--lilac-pale);border-color:var(--lilac);}
 .p-card.private{background:var(--pale-blue);border-color:var(--deep-blue);}
+.p-card.event-card{max-width:420px;}
+.p-list{list-style:none;padding:0;margin:4px 0 12px;font-size:12px;font-weight:300;color:var(--text-mid);line-height:1.7;}
+.p-list li::before{content:"· ";color:var(--lilac-dark);}
 .p-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
 .p-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;margin-bottom:10px;line-height:1.25;}
 .p-price{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--lilac-dark);line-height:1;}
@@ -231,6 +259,148 @@ section{scroll-margin-top:70px;}
 .pricing-fine{font-size:11px;color:var(--text-light);margin-top:14px;font-weight:300;line-height:1.6;}
 .pricing-cta{text-align:center;margin-top:40px;}
 
+/* SEASONAL PROMO */
+.promo-section{background:var(--pale-blue);padding:36px 40px 40px;}
+.promo-section .wrap{max-width:880px;}
+.promo-section .sec-label{margin-bottom:8px;}
+.promo-section .sec-heading{font-size:30px;margin-bottom:8px;}
+.promo-section .body-text{font-size:13px;line-height:1.6;}
+.promo-section .pricing-cards{margin-top:18px!important;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.promo-section .p-card{background:#fff;padding:16px 12px;}
+.promo-section .p-new{margin-bottom:5px;}
+.promo-section .p-name{font-size:16px;margin-bottom:4px;}
+.promo-section .p-price{font-size:30px;}
+.promo-section .p-price sup{font-size:13px;}
+.promo-section .p-save{margin-top:6px;}
+.promo-section .p-note{margin-top:5px;}
+.promo-cta{text-align:center;margin-top:18px;}
+.promo-deadline{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--deep-blue);font-weight:500;margin-top:10px;}
+.p-buy{margin-top:auto;padding-top:10px;}
+.sched-closures{background:var(--pale-blue);border:1.5px solid var(--deep-blue);border-radius:20px;padding:20px 24px;margin:0 0 26px;}
+.sched-closures .ss-title{margin-bottom:8px;}
+.sched-closures ul{list-style:none;padding:0;margin:0;}
+.sched-closures li{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;padding:6px 0;border-bottom:0.5px solid var(--mid-blue);}
+.sched-closures li:last-child{border-bottom:none;}
+.sched-closures li strong{font-weight:500;color:var(--text-dark);}
+.faq{max-width:780px;margin:56px auto 0;}
+.faq .sec-heading{text-align:center;margin-bottom:24px;}
+
+/* NEW TO PILATES */
+.start-section{background:#fff;padding:64px 40px;}
+.start-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:30px;}
+.start-step{background:var(--lilac-pale);border-top:3px solid var(--lilac-dark);padding:24px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.start-num{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1;color:var(--lilac-dark);}
+.start-step h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;}
+.start-step p{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;flex:1;}
+
+/* COMMUNITY */
+.community-section{background:var(--lilac-pale);padding:64px 40px;}
+.comm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px;}
+.comm-photo{background:#fff;padding:8px 8px 10px;margin:0;}
+.comm-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.comm-photo figcaption{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);text-align:center;margin-top:8px;}
+@media(max-width:900px){.comm-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.community-section{padding:48px 18px;}.comm-grid{gap:8px;}}
+
+/* INSTAGRAM */
+.ig-section{background:#fff;padding:56px 40px 64px;}
+.ig-card{max-width:860px;margin:0 auto;border:0.5px solid var(--lilac);padding:22px;}
+.ig-profile{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+.ig-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--lilac-dark);}
+.ig-meta{flex:1;min-width:0;}
+.ig-handle{font-size:15px;font-weight:500;}
+.ig-name{font-size:12px;color:var(--text-mid);}
+.ig-bio{font-size:12px;color:var(--text-mid);font-weight:300;margin-top:2px;}
+.ig-follow{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;}
+.ig-tile{display:block;aspect-ratio:1;overflow:hidden;background:var(--lilac-pale);}
+.ig-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s;}
+.ig-tile:hover img{opacity:0.85;}
+@media(max-width:640px){.ig-section{padding:44px 18px 52px;}.ig-card{padding:16px;}.ig-profile{flex-wrap:wrap;}.ig-follow{width:100%;justify-content:center;}.ig-grid{grid-template-columns:repeat(3,1fr);}}
+
+/* PACKAGE QUIZ */
+.pkg-quiz{max-width:860px;margin:32px auto 0;background:#fff;border:1.5px solid var(--lilac-dark);}
+.pq-summary{padding:16px 22px;}
+.pq-summary>span{display:flex;flex-direction:column;gap:2px;}
+.pq-kicker{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--deep-blue);}
+.pq-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;}
+.pq-title em{color:var(--lilac-dark);}
+.pkg-quiz[open] .pq-summary{border-bottom:0.5px solid var(--lilac-pale);}
+.pq-body{padding:6px 24px 24px;}
+.pq-sub{font-size:12px;color:var(--text-mid);font-weight:300;margin:8px 0 4px;}
+.pq-q{padding:12px 0;border-top:0.5px solid var(--lilac-pale);}
+.pq-label{font-size:13px;margin-bottom:8px;display:flex;gap:10px;align-items:baseline;}
+.pq-num{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--lilac-dark);}
+.pq-form .qz-choices{padding-left:22px;}
+.pq-q.missing{background:#fff4f4;}
+.pq-result{margin-top:18px;}
+.pq-main{background:var(--lilac-pale);border-top:3px solid var(--lilac-dark);padding:20px 22px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.pq-main .pq-tag{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--deep-blue);}
+.pq-main h4{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin:2px 0;}
+.pq-price{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--lilac-dark);}
+.pq-price small{font-family:'Jost',sans-serif;font-size:11px;color:var(--text-mid);letter-spacing:0.06em;}
+.pq-why{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;margin-top:6px;max-width:520px;}
+.pq-deal{display:inline-block;margin-top:8px;font-size:11px;color:#b3404a;background:#fff;padding:4px 10px;border-radius:99px;}
+.pq-also{margin-top:10px;font-size:12px;color:var(--text-mid);line-height:1.7;}
+.pq-also a{color:var(--lilac-dark);}
+@media(max-width:640px){.pq-body{padding:4px 14px 18px;}.pq-title{font-size:19px;}.pq-form .qz-choices{padding-left:0;}.pq-main .btn{width:100%;text-align:center;}}
+
+/* READINESS QUESTIONNAIRE */
+.qz-callout{max-width:780px;margin:56px auto 0;background:var(--pale-blue);border:1.5px solid var(--deep-blue);border-radius:20px;padding:28px 30px;text-align:center;}
+.qz-callout h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:8px;}
+.qz-callout p:not(.sec-label){font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;max-width:540px;margin:0 auto 18px;}
+.quiz-section{background:var(--lilac-pale);padding:72px 40px;}
+.qz-intro,.qz-form,.qz-results{max-width:780px;margin:0 auto;}
+.qz-intro{margin-top:20px;}
+.qz-note{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.7;margin-top:12px;}
+.qz-note strong{font-weight:500;color:var(--text-dark);}
+.qz-block{background:#fff;border:0.5px solid var(--lilac);padding:24px 26px;margin-top:22px;}
+.qz-sec{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--lilac-deep);margin-bottom:4px;}
+.qz-sec-note{display:block;font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.6;margin-bottom:10px;}
+.qz-q{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-top:0.5px solid var(--lilac-pale);}
+.qz-q.missing{background:#fff4f4;}
+.qz-num{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--lilac-dark);}
+.qz-text{font-size:13px;line-height:1.6;}
+.qz-yn,.qz-choices{display:flex;gap:6px;flex-wrap:wrap;}
+.qz-opt{cursor:pointer;}
+.qz-opt input{position:absolute;opacity:0;pointer-events:none;}
+.qz-opt span{display:inline-block;font-size:11px;letter-spacing:0.08em;padding:7px 14px;border:0.5px solid var(--lilac);border-radius:99px;color:var(--text-mid);background:#fff;}
+.qz-opt input:checked+span{background:var(--lilac-dark);border-color:var(--lilac-dark);color:#fff;}
+.qz-opt input:focus-visible+span{outline:2px solid var(--deep-blue);outline-offset:2px;}
+.qz-group{padding:12px 0;border-top:0.5px solid var(--lilac-pale);}
+.qz-group .qz-text{margin-bottom:8px;}
+.qz-other{padding:4px 0 8px 40px;}
+.qz-other textarea{width:100%;resize:vertical;}
+.qz-error{color:#b3404a;font-size:13px;margin-top:16px;text-align:center;}
+.qz-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
+.qz-results{margin-top:28px;}
+.qz-result{background:#fff;border-left:3px solid var(--lilac-dark);padding:18px 22px;margin-bottom:12px;}
+.qz-result.ok{border-left-color:#5a9a6e;}
+.qz-result.doctor{border-left-color:#b3404a;}
+.qz-result h4{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;margin-bottom:6px;}
+.qz-result p{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.7;}
+.qz-warn{background:var(--pale-blue);border:0.5px solid var(--deep-blue);padding:14px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
+.qz-cta{text-align:center;margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.qz-print{display:none;}
+.qz-print h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:2px;}
+.qz-print h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--lilac-deep);margin:16px 0 4px;}
+.qz-print p{font-size:11px;color:var(--text-mid);margin-bottom:8px;}
+.qz-print table{width:100%;border-collapse:collapse;font-size:10.5px;}
+.qz-print td{padding:4px 6px;border-bottom:0.5px solid #ddd;vertical-align:top;}
+.qz-print td:first-child{width:22px;color:var(--lilac-dark);}
+.qz-print td:last-child{width:40px;font-weight:500;text-align:right;}
+@media print{
+  @page{margin:14mm;}
+  .announce,.nav,.footer,[data-page]:not(#ready),#ready .center,.qz-intro,.qz-form,.qz-cta{display:none!important;}
+  .quiz-section{background:#fff!important;padding:0!important;}
+  .qz-print{display:block!important;}
+  .qz-results{margin-top:12px;}
+  .qz-result{border:0.5px solid #ccc;border-left-width:3px;padding:10px 14px;margin-bottom:8px;break-inside:avoid;}
+  .qz-result p,.qz-warn{font-size:11px;}
+  .qz-warn{border:0.5px solid #ccc;padding:10px 14px;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
 /* POLICIES */
 .policies-section{background:var(--lilac-pale);padding:72px 40px;}
 .policies{max-width:780px;margin:32px auto 0;}
@@ -242,6 +412,59 @@ details[open] summary::after{content:'–';}
 details ul{padding:0 22px 20px 40px;}
 details li{font-size:13px;color:var(--text-mid);font-weight:300;line-height:1.75;margin-bottom:6px;}
 details li strong{font-weight:500;color:var(--text-dark);}
+
+.terms-card{background:#fff;border:1.5px solid var(--lilac-dark);padding:22px 24px;margin-bottom:18px;display:flex;gap:20px;align-items:center;justify-content:space-between;}
+.terms-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin:2px 0 6px;}
+.terms-card p:not(.sec-label){font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.7;}
+.terms-card .btn{flex-shrink:0;}
+.doc-btns{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
+.doc-btns .btn{text-align:center;}
+@media(max-width:640px){.doc-btns{flex-direction:row;}}
+.guide-card{border-color:var(--deep-blue);background:var(--pale-blue);}
+@media(max-width:640px){.terms-card{flex-direction:column;align-items:flex-start;}}
+
+/* EMAIL SIGNUP */
+.signup-section{background:var(--deep-blue);color:#fff;padding:52px 40px;}
+.signup-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;}
+.signup-section .sec-label{color:rgba(255,255,255,0.75);}
+.signup-section h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;line-height:1.15;margin:4px 0 8px;}
+.signup-sub{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,0.85);}
+.signup-section .form-label{color:rgba(255,255,255,0.7);}
+.signup-row{display:flex;gap:8px;}
+.signup-row .form-input{flex:1;min-width:0;}
+.signup-row .btn{flex-shrink:0;}
+.signup-msg{font-size:13px;margin-top:10px;}
+@media(max-width:760px){.signup-section{padding:44px 18px;}.signup-inner{grid-template-columns:1fr;gap:18px;}.signup-row{flex-direction:column;}}
+
+.edu-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--deep-blue);}
+
+/* TRAINING & EDUCATION */
+.training-section{background:linear-gradient(180deg,#fff 0%,var(--lilac-pale) 100%);padding:80px 40px;}
+.tr-block{margin-top:48px;background:#fff;border-top:4px solid var(--lilac-dark);padding:34px 34px 30px;box-shadow:0 18px 40px -28px rgba(80,50,110,0.35);}
+.tr-block-b{border-top-color:var(--deep-blue);}
+.tr-head{display:flex;gap:18px;align-items:flex-end;margin-bottom:14px;}
+.tr-num{font-family:'Cormorant Garamond',serif;font-size:64px;line-height:0.8;color:var(--lilac);font-style:italic;}
+.tr-block-b .tr-num{color:var(--mid-blue);}
+.tr-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;line-height:1.15;margin-top:4px;}
+.tr-body{max-width:820px;}
+.tr-text{font-size:14px;color:var(--text-mid);font-weight:300;line-height:1.8;margin-bottom:10px;}
+.tr-text strong{font-weight:500;color:var(--text-dark);}
+.tr-collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:10px;margin-top:22px;}
+.tr-collage-a .t-big{grid-column:span 2;grid-row:span 2;}
+.tr-collage-a .t-wide{grid-column:span 2;}
+.tr-collage-b .t-big{grid-column:span 2;grid-row:span 2;}
+.tr-collage-b .t-tall{grid-row:span 2;}
+.tr-tile{position:relative;margin:0;overflow:hidden;background:var(--lilac-pale);}
+.tr-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.tr-tile:hover img{transform:scale(1.03);}
+.tr-tile figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:28px 14px 12px;background:linear-gradient(180deg,rgba(30,20,40,0) 0%,rgba(30,20,40,0.65) 100%);color:#fff;font-size:11px;letter-spacing:0.08em;}
+.tr-badge{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;background:var(--lilac-dark);color:#fff;padding:4px 10px;border-radius:99px;}
+.tr-block-b .tr-badge{background:var(--deep-blue);}
+.tr-collage-a .t-big{outline:3px solid var(--lilac-dark);outline-offset:-3px;}
+@media(max-width:900px){.tr-collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;}}
+@media(max-width:640px){.training-section{padding:56px 18px;}.tr-block{padding:24px 16px 20px;margin-top:32px;}.tr-num{font-size:46px;}.tr-title{font-size:24px;}.tr-collage{grid-auto-rows:150px;gap:6px;}}
+
+.class-soon{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-top:10px;opacity:0.85;}
 
 /* MISSION & VISION */
 .mv-section{background:var(--pale-blue);padding:72px 40px;}
@@ -269,11 +492,18 @@ details li strong{font-weight:500;color:var(--text-dark);}
 .google-btn:hover{background:#f8f9fa;}
 
 /* CONTACT */
+.join-strip{grid-column:1/-1;background:#fff;border-bottom:0.5px solid var(--lilac);padding:18px 40px;}
+.join-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.join-title{font-family:'Cormorant Garamond',serif;font-size:22px;}
+.join-title em{color:var(--lilac-dark);}
+.join-text{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.6;}
+.join-strip .btn{flex-shrink:0;}
+@media(max-width:640px){.join-strip{padding:18px;}.join-inner{flex-direction:column;align-items:flex-start;gap:12px;}}
 .contact-section{display:grid;grid-template-columns:1fr 1fr;}
 .contact-left{background:var(--lilac-light);padding:64px 48px;}
 .contact-right{padding:64px 48px;background:#fff;}
 .contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
-.c-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
+.c-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--lilac-dark);}
 .c-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--lilac-deep);margin-bottom:4px;}
 .c-value{font-size:15px;font-weight:300;line-height:1.55;}
 .c-value a{color:var(--lilac-deep);}
@@ -300,6 +530,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
 @media(max-width:900px){
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;}
   .g-wide3{grid-column:span 1;}
+  .g-full{grid-row:span 2;}
   .nav{flex-wrap:wrap;row-gap:10px;}
   .nav-links{order:3;width:100%;gap:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
   .nav-links::-webkit-scrollbar{display:none;}
@@ -311,6 +542,15 @@ details li strong{font-weight:500;color:var(--text-dark);}
   .ss-row{grid-template-columns:1fr auto;grid-template-areas:"date book" "name book" "time book";}
   .gallery-section{padding:56px 18px;}
   .specials-section{padding:0 18px 56px;}
+  .promo-section{padding:32px 18px;}
+  .promo-section .pricing-cards{grid-template-columns:repeat(2,1fr);}
+  .quiz-section{padding:56px 18px;}
+  .start-section{padding:48px 18px;}
+  .qz-block{padding:20px 16px;}
+  .qz-q{grid-template-columns:24px 1fr;}
+  .qz-yn{grid-column:2;}
+  .qz-other{padding-left:0;}
+  .qz-callout{padding:24px 18px;}
   .gallery{grid-auto-rows:150px;gap:6px;}
   .photo-band{height:300px;}
   .photo-band-text{font-size:30px;}
@@ -334,7 +574,8 @@ details li strong{font-weight:500;color:var(--text-dark);}
 </head>
 <body>
 
-<div class="announce" data-es="✦ Nuestro nuevo estudio ya abrió en Mayagüez &lt;a href=&quot;#studio&quot;&gt;Encuéntranos →&lt;/a&gt;">✦ Our new studio is now open in Mayagüez <a href="#studio">Find us →</a></div>
+<div class="announce"><span class="announce-item" data-es="✦ Early Black Friday · hasta 4 clases gratis · hasta el 6 de dic. &lt;a href=&quot;#black-friday&quot;&gt;Compra ahora →&lt;/a&gt;">✦ Early Black Friday · up to 4 free classes · until Dec 6 <a href="#black-friday">Shop now →</a></span><span class="announce-item" data-es="Regala Pilates esta temporada &lt;a href=&quot;#gift&quot;&gt;Ver gift cards →&lt;/a&gt;">Gift Pilates this season <a href="#gift">See gift cards →</a></span></div>
+<div class="announce closure" data-es="Cierres por días festivos: 25–29 nov · 20 dic–3 ene · 6–7 ene &lt;a href=&quot;#closures&quot;&gt;Detalles →&lt;/a&gt;">Holiday closures: Nov 25–29 · Dec 20–Jan 3 · Jan 6–7 <a href="#closures">Details →</a></div>
 
 <nav class="nav">
   <a href="#home" class="nav-logo"><img src="images/logo-text-bykarla-black-trim.png" alt="Coral Core Pilates by Karla Deida"></a>
@@ -357,7 +598,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <h1 data-es="Encuentra tu&lt;br&gt;&lt;em&gt;fuerza&lt;/em&gt;&lt;br&gt;desde adentro.">Find your<br><em>strength</em><br>from within.</h1>
     <p class="hero-sub" data-es="Coral Core Pilates tiene casa. Pilates contemporáneo en mat con Karla Deida, ahora en nuestro propio estudio en Mayagüez, Puerto Rico.">Coral Core Pilates has a home. Contemporary mat Pilates with Karla Deida, now in our own studio in Mayagüez, Puerto Rico.</p>
     <a class="hero-address" href="#studio">
-      <span class="pin">📍</span>
+      <span class="pin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
       <span><strong>Val Harbour Building, Suite 110</strong><span>445 González Clemente Ave (388 Blvd. Guanajibo)<br>Mayagüez, PR 00681</span></span>
     </a>
     <div class="hero-btns">
@@ -370,6 +611,42 @@ details li strong{font-weight:500;color:var(--text-dark);}
 </section>
 
 <!-- STUDIO LOCATION -->
+<!-- EARLY BLACK FRIDAY -->
+<section class="promo-section" id="black-friday" data-page="home">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="Oferta por tiempo limitado">Limited-time offer</p>
+      <h2 class="sec-heading" data-es="Early &lt;em&gt;Black Friday&lt;/em&gt;">Early <em>Black Friday</em></h2>
+      <p class="body-text" style="max-width:560px;margin:0 auto;" data-es="Nuestros mejores precios de la temporada en paquetes de clases de mat. Límite de uno por cliente, hasta agotar paquetes. Clases válidas hasta el 31 de enero de 2027.">Our best prices of the season on mat class packages. Limit one per customer, while packages last. Classes valid until January 31, 2027.</p>
+      <p class="promo-deadline" data-es="La oferta termina el 6 de diciembre">Offer ends December 6</p>
+    </div>
+    <div class="pricing-cards" style="margin-top:28px;">
+      <div class="p-card"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Oferta de introducción: 2 clases de mat">Intro Offer: 2 Mat Classes</p><p class="p-price"><sup>$</sup>30</p><p class="p-save" data-es="$15 por clase">$15 per class</p><p class="p-note" data-es="Solo para estudiantes nuevos">New students only</p></div>
+      <div class="p-card"><span class="p-new" data-es="Early Black Friday">Early Black Friday</span><p class="p-name" data-es="4 clases de mat">4 Mat Classes</p><p class="p-price"><sup>$</sup>60</p><p class="p-save" data-es="Paga 3 y la 4ta es gratis">Pay 3, get the 4th free</p><p class="p-note" data-es="$15 por clase">$15 per class</p></div>
+      <div class="p-card featured"><span class="p-new" data-es="Early Black Friday">Early Black Friday</span><p class="p-name" data-es="8 clases de mat">8 Mat Classes</p><p class="p-price"><sup>$</sup>120</p><p class="p-save" data-es="Paga 6 y llévate 2 gratis">Pay 6, get 2 free</p><p class="p-note" data-es="$15 por clase">$15 per class</p></div>
+      <div class="p-card"><span class="p-new" data-es="Mejor precio">Best price</span><p class="p-name" data-es="12 clases de mat">12 Mat Classes</p><p class="p-price"><sup>$</sup>160</p><p class="p-save" data-es="Paga 8 y llévate 4 gratis">Pay 8, get 4 free</p><p class="p-note" data-es="$13.33 por clase">$13.33 per class</p></div>
+    </div>
+    <div class="promo-cta"><a class="btn btn-peri" href="https://coralcorepilates.punchpass.com/passes" target="_blank" data-es="Compra ahora">Buy now</a></div>
+  </div>
+</section>
+
+<!-- NEW TO PILATES -->
+<section class="start-section" id="start" data-page="home">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="¿Nueva en Pilates?">New to Pilates?</p>
+      <h2 class="sec-heading" data-es="Empieza &lt;em&gt;aquí&lt;/em&gt;">Start <em>here</em></h2>
+      <p class="body-text" style="max-width:520px;margin:0 auto;" data-es="No necesitas experiencia. Tres pasos fáciles para tu primera clase.">No experience needed. Three easy steps to your first class.</p>
+    </div>
+    <div class="start-steps">
+      <div class="start-step"><span class="start-num">1</span><h3 data-es="¿Es el Pilates para mí?">Is Pilates right for me?</h3><p data-es="Toma nuestro cuestionario de 3 minutos para saber si puedes empezar ya y qué clase va mejor contigo.">Take our 3-minute questionnaire to see if you can start right away and which class fits you best.</p><a class="special-book" href="#ready" data-es="Toma el cuestionario →">Take the questionnaire →</a></div>
+      <div class="start-step"><span class="start-num">2</span><h3 data-es="Prueba la oferta de introducción">Try the Intro Offer</h3><p data-es="2 clases de mat por $30, solo para estudiantes nuevos. Grupos pequeños de máximo 8 personas.">2 mat classes for $30, just for new students. Small groups of 8 people max.</p><a class="special-book" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/275282" target="_blank" data-es="Obtén la oferta →">Get the Intro Offer →</a></div>
+      <div class="start-step"><span class="start-num">3</span><h3 data-es="Reserva una clase Basic">Book a Basic class</h3><p data-es="Contemporary Mat Pilates – Basic enseña los fundamentos a un ritmo cómodo. Trae toalla y agua.">Contemporary Mat Pilates – Basic teaches the fundamentals at a comfortable pace. Bring a towel and water.</p><a class="special-book" href="#schedule" data-es="Ver el horario →">See the schedule →</a><a class="tutorial-mini" href="https://www.instagram.com/reel/DXomNKEBuL_/" target="_blank" data-es="Tutorial de reservas en Instagram">Booking tutorial on Instagram</a></div>
+    </div>
+    <p class="center" style="margin-top:22px;"><a class="ss-more" href="#faq" data-es="¿Tienes preguntas? Lee las preguntas frecuentes →">Have questions? Read the FAQ →</a></p>
+  </div>
+</section>
+
 <section class="studio-section" id="studio" data-page="home">
   <div class="wrap studio-grid">
     <div>
@@ -378,12 +655,12 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="studio-address">Val Harbour Building, Suite 110
         <small>445 González Clemente Ave (388 Blvd. Guanajibo)<br>Mayagüez, Puerto Rico 00681</small>
       </p>
-      <p class="studio-note" data-es="&lt;strong style=&quot;font-weight:500;color:#fff;&quot;&gt;Cómo encontrarnos:&lt;/strong&gt; busca “Coral Core Pilates” en Google Maps o Waze. El pin te lleva directo a la Suite 110."><strong style="font-weight:500;color:#fff;">Finding us:</strong> search “Coral Core Pilates” on Google Maps or Waze. The pin takes you straight to Suite 110.</p>
+      <p class="studio-note" data-es="&lt;strong style=&quot;font-weight:500;color:#fff;&quot;&gt;Cómo encontrarnos:&lt;/strong&gt; busca “Coral Core Pilates” en Google Maps, Apple Maps o Waze. El pin te lleva directo a la Suite 110."><strong style="font-weight:500;color:#fff;">Finding us:</strong> search “Coral Core Pilates” on Google Maps, Apple Maps, or Waze. The pin takes you straight to Suite 110.</p>
       <p class="studio-note" data-es="Todas las clases grupales semanales ahora son en el estudio. Por favor llega de 5 a 10 minutos antes para que tengas tiempo de acomodarte.">All weekly group classes now take place at the studio. Please arrive 5–10 minutes early so you have time to get settled.</p>
       <div class="map-btns">
         <a class="btn btn-coral" href="https://maps.google.com/?cid=5243675783024213922" target="_blank">Google Maps</a>
         <a class="btn btn-ghost" href="https://waze.com/ul?q=Coral%20Core%20Pilates%20Mayaguez&ll=18.1827,-67.1708&navigate=yes" target="_blank">Waze</a>
-        <a class="btn btn-ghost" href="https://maps.apple.com/?q=Coral+Core+Pilates&address=445+Gonzalez+Clemente+Ave,+Mayaguez,+PR+00681" target="_blank">Apple Maps</a>
+        <a class="btn btn-ghost" href="https://maps.apple/p/ybnMGpRzgo.dzZ" target="_blank">Apple Maps</a>
       </div>
     </div>
     <div class="studio-visual">
@@ -392,6 +669,10 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <iframe title="Map to Coral Core Pilates" data-es-title="Mapa a Coral Core Pilates" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4906.0526514885905!2d-67.17080762383056!3d18.182700082846633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa4366cc67decbccd%3A0x48c54757ac79ffa2!2sCoral%20Core%20Pilates!5e1!3m2!1sen!2spr!4v1792803787097!5m2!1sen!2spr" allowfullscreen></iframe>
     </div>
+      <a class="apple-card" href="https://maps.apple/p/ybnMGpRzgo.dzZ" target="_blank">
+        <svg class="apple-mini" viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="10" fill="#f2efe9"/><path d="M0 0h34c-6 18-4 34 4 52 6 14 4 26-6 38H0z" fill="#a9d3f0"/><path d="M38 0c6 30 30 44 82 46" stroke="#fff" stroke-width="7" fill="none"/><path d="M38 0c6 30 30 44 82 46" stroke="#f6d77a" stroke-width="3" fill="none"/><path d="M60 90c4-20 10-40 30-60M44 70h76M70 0v30" stroke="#fff" stroke-width="4" fill="none"/><rect x="84" y="56" width="22" height="16" rx="3" fill="#cfe6c4"/><g transform="translate(70 40)"><circle r="11" fill="#e8564b"/><circle r="4" fill="#fff"/></g></svg>
+        <span class="apple-meta"><span class="apple-label" data-es="Apple Maps">Apple Maps</span><span class="apple-name">Coral Core Pilates</span><span class="apple-addr" data-es="Edificio Val Harbour, Suite 110 · Mayagüez">Val Harbour Building, Suite 110 · Mayagüez</span><span class="apple-open" data-es="Abrir en Apple Maps →">Open in Apple Maps →</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -409,7 +690,41 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <figure class="g-tall"><img src="images/studio/leg-lift-bands.jpg" alt="Mat exercise with resistance band, ankle weights and hand weights" loading="lazy"></figure>
       <figure class="g-tall"><img src="images/studio/blue-socks-ring.jpg" alt="Pilates ring exercise with blue grip socks" loading="lazy"></figure>
       <figure class="g-wide3 g-tall"><img src="images/studio/mat-weights.jpg" alt="Wave Pilates mat with light hand weights" loading="lazy"></figure>
+      <figure class="g-full"><img src="images/studio/group-class-side-stretch.jpg" alt="Group class reaching into a side stretch under the draped ceiling at Coral Core Pilates" data-es-alt="Clase grupal haciendo un estiramiento lateral bajo el techo de telas en Coral Core Pilates" loading="lazy"></figure>
     </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section" id="community" data-page="home">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="Nuestra comunidad">Our community</p>
+      <h2 class="sec-heading" data-es="Momentos que &lt;em&gt;compartimos&lt;/em&gt;">Moments we <em>share</em></h2>
+    </div>
+    <div class="comm-grid">
+      <figure class="comm-photo"><a href="images/community/movember-group-kneeling.jpg" target="_blank"><img src="images/community/movember-group-kneeling.jpg" alt="Group photo from the Movember Men&#x27;s MMA, Pilates and Yoga Event in front of the coral reef mural" data-es-alt="Foto grupal del evento Movember para hombres frente al mural de arrecife de coral" loading="lazy" style="object-position:center 45%;"></a><figcaption data-es="Evento Movember para hombres">Movember Men's Event</figcaption></figure>
+      <figure class="comm-photo"><a href="images/community/halloween-costumes-five.jpg" target="_blank"><img src="images/community/halloween-costumes-five.jpg" alt="Clients in costume at the Halloween Costume Event" data-es-alt="Clientas disfrazadas en el evento de disfraces de Halloween" loading="lazy" style="object-position:center 55%;"></a><figcaption data-es="Evento de disfraces de Halloween">Halloween Costume Event</figcaption></figure>
+      <figure class="comm-photo"><a href="images/community/movember-group-standing.jpg" target="_blank"><img src="images/community/movember-group-standing.jpg" alt="Movember event participants standing on mats in front of the mural" data-es-alt="Participantes del evento Movember de pie sobre los mats frente al mural" loading="lazy" style="object-position:center 60%;"></a><figcaption data-es="Evento Movember para hombres">Movember Men's Event</figcaption></figure>
+      <figure class="comm-photo"><a href="images/community/halloween-costumes-group.jpg" target="_blank"><img src="images/community/halloween-costumes-group.jpg" alt="Halloween class group photo in costumes under the draped ceiling" data-es-alt="Foto grupal de la clase de Halloween con disfraces bajo el techo de telas" loading="lazy" style="object-position:center 62%;"></a><figcaption data-es="Evento de disfraces de Halloween">Halloween Costume Event</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- INSTAGRAM -->
+<section class="ig-section" id="instagram" data-page="home">
+  <div class="ig-card">
+    <div class="ig-profile">
+      <img class="ig-avatar" src="images/logo_brand.png" alt="Coral Core Pilates logo" data-es-alt="Logo de Coral Core Pilates">
+      <div class="ig-meta">
+        <p class="ig-handle">@coralcorepilates</p>
+        <p class="ig-name">Coral Core Pilates · Mayagüez, PR</p>
+        <p class="ig-bio" data-es="Clases, detrás de cámaras, eventos especiales y noticias del estudio.">Classes, behind the scenes, special events, and studio news.</p>
+      </div>
+      <a class="btn btn-line ig-follow" href="https://www.instagram.com/coralcorepilates" target="_blank"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span data-es="Síguenos">Follow us</span></a>
+    </div>
+    <div class="ig-grid"><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/studio/group-class-side-stretch.jpg" alt="" loading="lazy"></a><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/studio/side-lying-loops.jpg" alt="" loading="lazy"></a><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/community/halloween-costumes-five.jpg" alt="" loading="lazy"></a><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/studio/private-session-tower.jpg" alt="" loading="lazy"></a><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/community/movember-group-kneeling.jpg" alt="" loading="lazy"></a><a class="ig-tile" href="https://www.instagram.com/coralcorepilates" target="_blank" aria-label="Instagram"><img src="images/studio/bridge-mural.jpg" alt="" loading="lazy"></a></div>
   </div>
 </section>
 
@@ -421,34 +736,10 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <h3 data-es="Clases especiales">Special classes</h3>
       <div class="specials-list">
         <div class="special">
-          <a class="special-flyer" href="images/events/halloween-costume-event.jpg" target="_blank"><img src="images/events/halloween-costume-event.jpg" alt="Halloween Costume Event flyer, Saturday October 31 at 1:30 and 2:30 PM" loading="lazy"></a>
-          <div class="special-body">
-            <p class="special-date" data-es="Sábado, 31 de octubre · 1:30 y 2:30 PM">Saturday, October 31 · 1:30 &amp; 2:30 PM</p>
-            <p class="special-name" data-es="Evento de disfraces de Halloween 🎃">Halloween Costume Event 🎃</p>
-            <p class="special-desc" data-es="Dos sesiones de Pilates terroríficas con dulces, bebidas y concurso de disfraces.">Two spooky Pilates sessions with candy, drinks, and a costume contest.</p>
-            <div class="special-links"><a class="special-book" href="https://app.punchpass.com/instances?course=213414" target="_blank" data-es="Reserva una sesión →">Book a session →</a></div>
-          </div>
-        </div>
-        <div class="special">
-          <a class="special-flyer" href="images/events/movember-mens-event.jpg" target="_blank"><img src="images/events/movember-mens-event.jpg" alt="Movember Men's MMA, Pilates and Yoga Event flyer, Saturday November 7" loading="lazy"></a>
-          <div class="special-body">
-            <p class="special-date" data-es="Sábado, 7 de noviembre · 7:45 AM – 12:00 PM">Saturday, November 7 · 7:45 AM – 12:00 PM</p>
-            <p class="special-name" data-es="Evento Movember para hombres: MMA, Pilates y Yoga">Movember Men's MMA, Pilates &amp; Yoga Event</p>
-            <p class="special-price">$35 <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--text-mid);letter-spacing:0.1em;text-transform:uppercase;" data-es="boleto">ticket</span></p>
-            <ul class="special-program">
-              <li data-es="&lt;b&gt;7:45 – 8:00 AM&lt;/b&gt;Recibimiento y registro"><b>7:45 – 8:00 AM</b>Check-in &amp; registration</li>
-              <li data-es="&lt;b&gt;8:00 – 9:00 AM&lt;/b&gt;Yoga restaurativo · Lionel Orama"><b>8:00 – 9:00 AM</b>Restorative yoga · Lionel Orama</li>
-              <li data-es="&lt;b&gt;9:10 – 10:20 AM&lt;/b&gt;Clase de MMA · Walfreddy Castillo"><b>9:10 – 10:20 AM</b>MMA class · Walfreddy Castillo</li>
-              <li data-es="&lt;b&gt;10:30 AM – 12:00 PM&lt;/b&gt;Pilates para hombres y movilidad · Karla Deida"><b>10:30 AM – 12:00 PM</b>Pilates for men &amp; mobility · Karla Deida</li>
-            </ul>
-            <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes/21108260" target="_blank" data-es="Compra tu boleto →">Get your ticket →</a><a class="special-more" href="images/events/movember-program.jpg" target="_blank" data-es="Ver el programa">View program flyer</a></div>
-          </div>
-        </div>
-        <div class="special">
           <a class="special-flyer" href="images/events/don-omar-themed-class.jpg" target="_blank"><img src="images/events/don-omar-themed-class.jpg" alt="Don Omar Themed Class flyer, Saturday November 14 at 9:00 AM" loading="lazy"></a>
           <div class="special-body">
             <p class="special-date" data-es="Sábado, 14 de noviembre · 9:00 AM">Saturday, November 14 · 9:00 AM</p>
-            <p class="special-name" data-es="Clase temática de Don Omar">Don Omar Themed Class</p>
+            <p class="special-name" data-es="Don Omar - Clase temática">Don Omar - Themed Class</p>
             <p class="special-desc" data-es="Una clase completa de Pilates al ritmo de clásicos de Don Omar como “Dile”, “Diva Virtual” y “Pobre Diabla”.">A full Pilates class set to Don Omar classics like “Dile,” “Diva Virtual” and “Pobre Diabla.”</p>
             <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes/21138201" target="_blank" data-es="Reserva esta clase →">Book this class →</a></div>
           </div>
@@ -457,7 +748,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
           <a class="special-flyer" href="images/events/pilates-for-couples.jpg" target="_blank"><img src="images/events/pilates-for-couples.jpg" alt="Pilates for Couples flyer, Saturday November 21 at 9:30 and 10:30 AM, $30 per couple" loading="lazy"></a>
           <div class="special-body">
             <p class="special-date" data-es="Sábado, 21 de noviembre · 9:30 y 10:30 AM">Saturday, November 21 · 9:30 &amp; 10:30 AM</p>
-            <p class="special-name" data-es="Pilates en pareja">Pilates for Couples</p>
+            <p class="special-name" data-es="Pilates en pareja">Pilates for couples</p>
             <p class="special-price">$30 <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--text-mid);letter-spacing:0.1em;text-transform:uppercase;" data-es="por pareja">per couple</span></p>
             <p class="special-desc" data-es="Trae a tu pareja a una clase de Pilates hecha para dos. Escoge la sesión de las 9:30 o las 10:30 AM.">Bring your partner for a Pilates class made for two. Choose the 9:30 or 10:30 AM session.</p>
             <div class="special-links"><a class="special-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reserva tu espacio →">Book your spot →</a></div>
@@ -479,7 +770,8 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <p class="body-text" data-es="Coral Core Pilates es un estudio de Pilates y una comunidad de movimiento fundada por Karla Deida en Mayagüez, Puerto Rico, inspirada en la fuerza, la resiliencia y la interconexión de los ecosistemas de arrecifes de coral.">Coral Core Pilates is a Pilates studio and movement community founded by Karla Deida in Mayagüez, Puerto Rico, inspired by the strength, resilience, and interconnectedness of coral reef ecosystems.</p>
     <p class="body-text" data-es="Nuestro enfoque se basa en el Pilates contemporáneo, respetando los principios y el propósito del método mientras incorporamos nuestro conocimiento, siempre en evolución, del cuerpo humano, el movimiento y la biomecánica. Nuestra práctica comienza con tu centro: a través del movimiento intencional, desarrollamos fuerza, estabilidad, movilidad, postura, balance y conciencia corporal como un sistema conectado.">Our approach is rooted in contemporary Pilates, respecting the principles and purpose of the method while incorporating our evolving understanding of the human body, movement, and biomechanics. Our practice begins with your center: through intentional movement, we develop strength, stability, mobility, posture, balance, and body awareness as a connected system.</p>
     <h3 data-es="Conoce a Karla">Meet Karla</h3>
-    <p class="body-text" data-es="Instructora en formación con más de 200 horas de experiencia enseñando, actualmente completando el programa de formación de instructores Lolita&#x27;s Legacy. Su formación combina el método clásico de Pilates con un enfoque contemporáneo, incorporando movimientos inspirados en el ballet para crear experiencias de movimiento conscientes, dinámicas e intencionales.">An instructor in training with over 200 hours of teaching experience, currently completing the Lolita's Legacy Teacher Training Program. Her training blends the classical Pilates method with a contemporary approach, incorporating ballet-inspired movements to create mindful, dynamic, and intentional movement experiences.</p>
+    <p class="body-text" data-es="Karla se formó en The Lolita&#x27;s Legacy™ Teacher Training Program bajo la guía de Maria Teresa Robles, donde completó 408 horas de entrenamiento en Pilates, y cuenta con más de 300 horas de experiencia enseñando. Su formación combina el método clásico de Pilates con un enfoque contemporáneo, incorporando movimientos inspirados en el ballet para crear experiencias de movimiento conscientes, dinámicas e intencionales.">Karla trained through The Lolita's Legacy™ Teacher Training Program under Maria Teresa Robles, completing 408 hours of Pilates training, and brings over 300 hours of teaching experience. Her training blends the classical Pilates method with a contemporary approach, incorporating ballet-inspired movements to create mindful, dynamic, and intentional movement experiences.</p>
+    <p class="body-text" data-es="Karla está comprometida con la educación continua. En septiembre de 2026 completó &lt;em&gt;“A Contrology Experience”&lt;/em&gt;, un adiestramiento inmersivo de 3 días en el método tradicional de Pilates con Classic Pilates PR.">Karla is committed to continuing education. In September 2026 she completed <em>“A Contrology Experience,”</em> a 3-day immersive training in the traditional Pilates method with Classic Pilates PR.</p>
   </div>
 </section>
 
@@ -502,25 +794,99 @@ details li strong{font-weight:500;color:var(--text-dark);}
         <p class="class-desc" data-es="Una práctica dinámica de Pilates diseñada para retar a todos los niveles.">A dynamic Pilates practice designed to challenge every level.</p>
       </div>
       <div class="class-card fire">
-        <span class="class-tag" data-es="Próximamente">Coming soon</span>
+        <span class="class-tag" data-es="Llega en 2027">Coming in 2027</span>
         <p class="class-name">CoralFire</p>
         <p class="class-desc" data-es="Una clase de alta energía inspirada en Pilates, creada para retar tu fuerza, resistencia y control.">A high-energy, Pilates-inspired class created to challenge your strength, endurance, and control.</p>
+        <p class="class-soon" data-es="Más información en 2027.">More info in 2027.</p>
+      </div>
+      <div class="class-card apparatus">
+        <span class="class-tag" data-es="Próximamente">Coming soon</span>
+        <p class="class-name" data-es="Clases en equipos">Apparatus Classes</p>
+        <p class="class-desc" data-es="Clases de Pilates en grupos pequeños en los equipos, llevando el trabajo del reformer y la torre a una clase compartida.">Small-group Pilates classes on the apparatus, bringing the work of the reformer and tower to a shared class setting.</p>
       </div>
     </div>
     <p class="more-soon center" data-es="Más clases muy pronto…">More coming soon…</p>
 
     <div class="service-banners">
       <div class="service-banner">
-        <img class="sb-photo" src="images/studio/reformer.jpg" alt="Reformer apparatus for private sessions at Coral Core Pilates" loading="lazy">
+        <div class="sb-photos">
+          <img class="sb-photo" src="images/studio/private-session-tower.jpg" alt="Karla guiding a client through a leg exercise on the tower during a private session" data-es-alt="Karla guiando a una clienta en un ejercicio de piernas en la torre durante una sesión privada" loading="lazy" style="object-position:center 30%;">
+          <img class="sb-photo" src="images/studio/reformer.jpg" alt="Reformer apparatus for private sessions at Coral Core Pilates" data-es-alt="Reformer para sesiones privadas en Coral Core Pilates" loading="lazy">
+        </div>
         <h3 data-es="Sesiones privadas y semiprivadas en equipos">Private &amp; semi-private apparatus sessions</h3>
-        <p data-es="Sesiones individuales o en grupo pequeño con Karla, con atención personalizada en técnica, alineación y tus metas. Disponibles por separado o como parte de una membresía.">One-on-one or small-group sessions with Karla for personalized attention on technique, alignment, and your individual goals. Available on their own or as part of a membership.</p>
-        <a class="btn btn-line" href="https://wa.me/17872559986" target="_blank" data-es="Coordina con Karla →">Schedule with Karla →</a>
+        <p data-es="Sesiones individuales o en grupo pequeño con atención personalizada en técnica, alineación y tus metas. Disponibles por separado o como parte de una membresía.">One-on-one or small-group sessions with personalized attention on technique, alignment, and your individual goals. Available on their own or as part of a membership.</p>
+        <a class="btn btn-line" href="https://wa.me/17872559986" target="_blank" data-es="Coordina con el estudio →">Schedule with the studio →</a>
       </div>
       <div class="service-banner butter">
+        <figure class="sb-figure">
+          <img class="sb-photo" src="images/community/puppy-pilates-rumar-uprm.jpg" alt="Participants holding rescue puppies after a Puppy Pilates event with RUMAR at UPRM" data-es-alt="Participantes con cachorros rescatados después del evento Puppy Pilates con RUMAR en el RUM" loading="lazy" style="aspect-ratio:16/9;object-position:center;">
+          <figcaption data-es="Puppy Pilates con RUMAR en el RUM · 2 de noviembre de 2026">Puppy Pilates with RUMAR at UPRM · November 2, 2026</figcaption>
+        </figure>
         <h3 data-es="Eventos y celebraciones">Events &amp; celebrations</h3>
-        <p data-es="Bodas, despedidas de soltera y reuniones privadas. Karla ofrece sesiones de Pilates en mat totalmente personalizadas para tu ocasión especial.">Weddings, bachelorettes, and private gatherings. Karla offers fully tailored mat Pilates sessions for your special occasion.</p>
-        <a class="btn btn-line" href="https://wa.me/17872559986" target="_blank" data-es="Pregunta ahora →">Inquire now →</a>
+        <p data-es="Cumpleaños, despedidas de soltera y reuniones con amigas. Reserva un &lt;strong&gt;evento grupal privado&lt;/strong&gt;: 2 horas de uso exclusivo del estudio con una clase privada de Pilates en mat de 45 minutos solo para tu grupo de hasta 8 personas. &lt;strong&gt;$145&lt;/strong&gt;, y la cumpleañera entra gratis. Un depósito de $25 reserva tu fecha.">Birthdays, bachelorettes, and get-togethers with friends. Book a <strong>Private Group Event</strong>: 2 hours of exclusive studio use with a 45-minute private mat Pilates class just for your group of up to 8. <strong>$145</strong>, and the birthday guest is free. A $25 deposit reserves your date.</p>
+        <p data-es="&lt;strong&gt;Pilates en tu evento:&lt;/strong&gt; Coral Core Pilates también lleva sesiones de Pilates a eventos fuera del estudio, como universidades, organizaciones, lugares de trabajo y actividades comunitarias. Envía tu solicitud para planificar el tuyo."><strong>Pilates at your event:</strong> Coral Core Pilates also brings Pilates sessions to events outside the studio, such as universities, organizations, workplaces, and community events. Send an inquiry to plan yours.</p>
+        <div class="special-links"><a class="btn btn-line" href="#events" data-es="Precios y más detalles →">Pricing &amp; more details →</a><a class="btn btn-line" href="https://wa.me/17872559986" target="_blank" data-es="Coordina con el estudio →">Schedule with the studio →</a><a class="btn btn-line" href="#contact" data-es="Solicita un evento fuera del estudio →">Inquire about an off-site event →</a></div>
       </div>
+    </div>
+    <div class="qz-callout">
+      <p class="sec-label" data-es="¿Nueva en Pilates?">New to Pilates?</p>
+      <h3 data-es="¿Es el Pilates para mí?">Is Pilates right for me?</h3>
+      <p data-es="Toma nuestro cuestionario de 3 minutos para saber si puedes empezar ya, qué clase va mejor contigo y qué compartir con tu instructora antes de tu primera clase.">Take our 3-minute health readiness questionnaire to see if you can start right away, which class fits you best, and what to share with your instructor before your first class.</p>
+      <a class="btn btn-peri" href="#ready" data-es="Toma el cuestionario">Take the questionnaire</a>
+    </div>
+    <div class="faq" id="faq">
+      <p class="sec-label" style="text-align:center;" data-es="¿Primera vez?">First time?</p>
+      <h2 class="sec-heading" data-es="Preguntas &lt;em&gt;frecuentes&lt;/em&gt;">Frequently asked <em>questions</em></h2>
+      <details>
+        <summary data-es="¿Qué clase debo escoger?">Which class should I choose?</summary>
+        <ul>
+          <li data-es="&lt;strong&gt;Contemporary Mat Pilates – Basic&lt;/strong&gt; es el mejor lugar para comenzar si eres nueva en Pilates o quieres crear una base sólida."><strong>Contemporary Mat Pilates – Basic</strong> is the best place to start if you are new to Pilates or want to build a strong foundation.</li>
+          <li data-es="&lt;strong&gt;Contemporary Mat Class – All Levels&lt;/strong&gt; es una clase más dinámica abierta a todos, con opciones para hacer cada ejercicio más fácil o más retante."><strong>Contemporary Mat Class – All Levels</strong> is a more dynamic class open to everyone, with options to make each exercise easier or more challenging.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿Cómo reservo una clase?">How do I book a class?</summary>
+        <ul>
+          <li data-es="Todas las reservas se hacen por &lt;a href=&quot;https://coralcorepilates.punchpass.com/classes&quot; target=&quot;_blank&quot;&gt;Punchpass&lt;/a&gt;. Crea tu cuenta gratis, escoge una clase y usa un pase o compra uno al reservar.">All bookings are made through <a href="https://coralcorepilates.punchpass.com/classes" target="_blank">Punchpass</a>. Create your free account, choose a class, and use a pass or buy one at checkout.</li>
+          <li data-es="¿Necesitas ayuda? &lt;a href=&quot;https://www.instagram.com/reel/DXomNKEBuL_/&quot; target=&quot;_blank&quot;&gt;Mira nuestro tutorial paso a paso en Instagram&lt;/a&gt;.">Need help? <a href="https://www.instagram.com/reel/DXomNKEBuL_/" target="_blank">Watch our step-by-step booking tutorial on Instagram</a>.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿Necesito experiencia?">Do I need experience?</summary>
+        <ul>
+          <li data-es="No necesitas experiencia. Tu instructora te guía en cada movimiento y se adapta a tu ritmo.">No experience needed. Your instructor guides you through every movement and adapts to your pace.</li>
+          <li data-es="¿Nueva en el estudio? Prueba la &lt;strong&gt;oferta de introducción: 2 clases de mat por $30&lt;/strong&gt;.">New to the studio? Try the <strong>Intro Offer: 2 mat classes for $30</strong>.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿El Pilates es para todos? ¿Hay límite de género o edad?">Is Pilates for everyone? Is there a gender or age limit?</summary>
+        <ul>
+          <li data-es="&lt;strong&gt;El Pilates es para todos.&lt;/strong&gt; El método fue creado por Joseph Pilates, y muchos de sus primeros estudiantes fueron hombres, incluyendo boxeadores y atletas. Hoy desarrolla fuerza, movilidad y balance para todo tipo de cuerpo."><strong>Pilates is for everybody.</strong> The method was created by Joseph Pilates, and many of his first students were men, including boxers and athletes. Today it builds strength, mobility, and balance for every body.</li>
+          <li data-es="Nuestras clases reciben a personas de &lt;strong&gt;todos los géneros y todas las edades&lt;/strong&gt;, tipos de cuerpo y niveles de condición física, seas hombre, mujer o como te identifiques. Aquí todos son bienvenidos, y cada ejercicio se puede adaptar a ti.">Our classes welcome people of <strong>every gender and every age</strong>, body type, and fitness level, whether you are a man, a woman, or however you identify. Everyone is welcome here, and each exercise can be adapted to you.</li>
+          <li data-es="Los participantes menores de 18 años necesitan autorización escrita de su madre, padre o tutor legal.">Participants under 18 need written authorization from a parent or legal guardian.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿Qué debo usar y traer?">What should I wear and bring?</summary>
+        <ul>
+          <li data-es="Usa ropa cómoda y ajustada que te permita moverte libremente.">Wear comfortable, fitted clothing that lets you move freely.</li>
+          <li data-es="Se recomiendan medias antideslizantes (grip socks), pero no son requeridas.">Grip socks are recommended but not required.</li>
+          <li data-es="Trae una toalla (requerida) y agua. ¿Se te olvidó la toalla? Puedes alquilar una por $2.">Bring a towel (required) and water. Forgot your towel? You can rent one for $2.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿Cuántas personas hay en cada clase?">How many people are in each class?</summary>
+        <ul>
+          <li data-es="Las clases grupales tienen un máximo de &lt;strong&gt;8 personas&lt;/strong&gt;, para que recibas atención personalizada en un espacio íntimo y acogedor.">Group classes have a maximum of <strong>8 people</strong>, so you get personal attention in an intimate, welcoming space.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="¿Y si tengo una lesión o estoy embarazada?">What if I have an injury or am pregnant?</summary>
+        <ul>
+          <li data-es="Déjale saber a tu instructora antes de la clase sobre cualquier lesión, condición de salud o embarazo para que pueda ofrecerte modificaciones.">Let your instructor know before class about any injuries, health conditions, or pregnancy so she can offer modifications.</li>
+          <li data-es="Si estás embarazada, en recuperación de una cirugía o manejando una lesión, consulta con tu médico antes de comenzar. Una sesión privada puede ser una excelente forma de empezar.">If you are pregnant, recovering from surgery, or managing an injury, check with your doctor before starting. A private session can be a great way to begin.</li>
+        </ul>
+      </details>
     </div>
   </div>
 </section>
@@ -533,6 +899,69 @@ details li strong{font-weight:500;color:var(--text-dark);}
   </div>
 </div>
 
+<!-- READINESS QUESTIONNAIRE -->
+<section class="quiz-section" id="ready" data-page="ready">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="Cuestionario de preparación">Health readiness questionnaire</p>
+      <h2 class="sec-heading" data-es="¿Es el Pilates &lt;em&gt;para mí?&lt;/em&gt;">Is Pilates <em>right for me?</em></h2>
+    </div>
+    <div class="qz-intro">
+      <p class="body-text" data-es="El Pilates es seguro para la mayoría de las personas, y este cuestionario corto te ayuda a saber si puedes empezar ya o si debes hablar primero con tu médico o con el estudio. Toma unos 3 minutos. Contesta Sí o No según cómo te sientes hoy.">Pilates is safe for most people, and this short questionnaire helps you check whether you can start right away or should talk to your doctor or to the studio first. It takes about 3 minutes. Answer each question with Yes or No based on how you feel today.</p>
+      <p class="qz-note" data-es="&lt;strong&gt;Importante:&lt;/strong&gt; Este cuestionario es una autoevaluación, no una evaluación médica. No sustituye el consejo de tu médico u otro profesional de la salud. Si tienes dudas, consulta con tu proveedor de salud antes de comenzar cualquier programa de ejercicio nuevo."><strong>Please note:</strong> This questionnaire is a self-check, not a medical evaluation. It does not replace advice from your doctor or another healthcare provider. If you are ever unsure, check with your provider before starting any new exercise program.</p>
+      <p class="qz-note" data-es="&lt;strong&gt;Tus respuestas son privadas.&lt;/strong&gt; Se quedan en tu dispositivo y no se envían ni se guardan en ningún lugar. No tienes que compartirlas con nadie, pero informarle a tu instructora sobre cualquier condición o lesión le ayuda a adaptar la clase de forma segura para ti."><strong>Your answers are private.</strong> They stay on your device and are not sent or saved anywhere. You do not need to share them with anyone, but telling your instructor about any condition or injury helps her adapt the class safely for you.</p>
+    </div>
+    <form class="qz-form" id="qz-form" novalidate>
+      <div class="qz-block">
+        <h3 class="qz-sec" data-es="Sección 1: Salud general">Section 1: General health</h3>
+        <p class="qz-sec-note" data-es="Si contestas Sí en esta sección, debes obtener la aprobación de tu médico antes de tu primera clase.">A Yes in this section means you should get your doctor's okay before your first class.</p>
+        <div class="qz-q" id="qz-q1"><span class="qz-num">1</span><p class="qz-text" data-es="¿Algún médico te ha dicho que tienes una condición del corazón, o que solo debes hacer ejercicio bajo supervisión médica?">Has a doctor ever told you that you have a heart condition, or that you should only exercise under medical supervision?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q1" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q1" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q2"><span class="qz-num">2</span><p class="qz-text" data-es="¿Sientes dolor, presión o apretazón en el pecho al hacer actividad física o en reposo?">Do you feel pain, pressure or tightness in your chest during physical activity or at rest?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q2" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q2" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q3"><span class="qz-num">3</span><p class="qz-text" data-es="En el último año, ¿has perdido el conocimiento, te has desmayado o te has mareado al punto de perder el balance?">In the past year, have you lost consciousness, fainted, or felt dizzy to the point of losing your balance?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q3" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q3" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q4"><span class="qz-num">4</span><p class="qz-text" data-es="¿Tienes presión alta que no está controlada actualmente?">Do you have high blood pressure that is not currently controlled?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q4" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q4" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q5"><span class="qz-num">5</span><p class="qz-text" data-es="¿Tienes alguna condición crónica (como diabetes, una condición pulmonar o neurológica) que no está estable o que tu médico todavía está ajustando?">Do you have a chronic condition (such as diabetes, a lung condition or a neurological condition) that is not stable or is still being adjusted by your doctor?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q5" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q5" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q6"><span class="qz-num">6</span><p class="qz-text" data-es="¿Algún médico te ha recomendado limitar o evitar la actividad física por alguna razón?">Has a doctor advised you to limit or avoid physical activity for any reason?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q6" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q6" value="no"><span data-es="No">No</span></label></div></div>
+      </div>
+      <div class="qz-block">
+        <h3 class="qz-sec" data-es="Sección 2: Músculos, huesos y articulaciones">Section 2: Muscles, bones and joints</h3>
+        <p class="qz-sec-note" data-es="Un Sí aquí normalmente no te impide practicar, pero tu instructora necesita saberlo para modificar los ejercicios.">A Yes here usually does not stop you from practicing, but your instructor will need to know so she can modify exercises for you.</p>
+        <div class="qz-q" id="qz-q7"><span class="qz-num">7</span><p class="qz-text" data-es="¿Tienes dolor actualmente en la espalda, cuello, hombros, caderas, rodillas u otra articulación?">Do you currently have pain in your back, neck, shoulders, hips, knees or another joint?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q7" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q7" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q8"><span class="qz-num">8</span><p class="qz-text" data-es="¿Has tenido alguna cirugía en los últimos 6 meses?">Have you had surgery in the past 6 months?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q8" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q8" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q9"><span class="qz-num">9</span><p class="qz-text" data-es="¿Has tenido alguna lesión (esguince, distensión, fractura) en los últimos 6 meses que todavía está sanando?">Have you had an injury (sprain, strain, fracture) in the past 6 months that is still healing?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q9" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q9" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q10"><span class="qz-num">10</span><p class="qz-text" data-es="¿Te han diagnosticado una hernia discal, ciática, escoliosis u otra condición de la columna?">Have you been diagnosed with a herniated or bulging disc, sciatica, scoliosis or another spine condition?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q10" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q10" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q11"><span class="qz-num">11</span><p class="qz-text" data-es="¿Te han diagnosticado osteoporosis u osteopenia (baja densidad ósea)?">Have you been diagnosed with osteoporosis or osteopenia (low bone density)?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q11" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q11" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q12"><span class="qz-num">12</span><p class="qz-text" data-es="¿Tienes algún reemplazo de articulación (como cadera, rodilla u hombro)?">Do you have a joint replacement (such as hip, knee or shoulder)?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q12" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q12" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q13"><span class="qz-num">13</span><p class="qz-text" data-es="¿Tienes articulaciones muy flexibles o laxas que se dislocan o se sienten inestables?">Do you have very flexible or loose joints that dislocate or feel unstable?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q13" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q13" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q14"><span class="qz-num">14</span><p class="qz-text" data-es="¿Tienes artritis u otra condición que cause dolor o rigidez en las articulaciones?">Do you have arthritis or another condition that causes joint pain or stiffness?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q14" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q14" value="no"><span data-es="No">No</span></label></div></div>
+      </div>
+      <div class="qz-block">
+        <h3 class="qz-sec" data-es="Sección 3: Consideraciones especiales">Section 3: Special considerations</h3>
+        <p class="qz-sec-note" data-es="Estas situaciones son comunes y el Pilates puede ayudar mucho, pero algunas requieren aprobación médica o cuidado adicional en clase.">These situations are common and Pilates can be very helpful for them, but some need a doctor's okay first or extra care in class.</p>
+        <div class="qz-q" id="qz-q15"><span class="qz-num">15</span><p class="qz-text" data-es="¿Estás embarazada actualmente?">Are you currently pregnant?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q15" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q15" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q16"><span class="qz-num">16</span><p class="qz-text" data-es="¿Has dado a luz en los últimos 12 meses?">Have you given birth in the past 12 months?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q16" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q16" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q17"><span class="qz-num">17</span><p class="qz-text" data-es="¿Te han dicho que tienes diástasis de rectos (separación de los músculos abdominales)?">Have you been told you have diastasis recti (separation of the abdominal muscles)?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q17" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q17" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q18"><span class="qz-num">18</span><p class="qz-text" data-es="¿Tienes síntomas del piso pélvico, como escape de orina al toser, saltar o reír, o presión o dolor pélvico?">Do you experience pelvic floor symptoms, such as leaking urine when you cough, jump or laugh, or pelvic pressure or pain?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q18" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q18" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q19"><span class="qz-num">19</span><p class="qz-text" data-es="¿Has estado enferma, con fiebre u hospitalizada en las últimas 2 semanas?">Have you been sick, had a fever, or been hospitalized in the past 2 weeks?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q19" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q19" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-q" id="qz-q20"><span class="qz-num">20</span><p class="qz-text" data-es="¿Hay algo más sobre tu salud que crees que tu instructora debe saber?">Is there anything else about your health that you think your instructor should know?</p><div class="qz-yn"><label class="qz-opt"><input type="radio" name="q20" value="yes"><span data-es="Sí">Yes</span></label><label class="qz-opt"><input type="radio" name="q20" value="no"><span data-es="No">No</span></label></div></div>
+        <div class="qz-other" id="qz-other" hidden><label class="qz-sec-note" for="qz-other-text" data-es="Si contestaste Sí a la pregunta 20, escríbelo aquí (es solo para ti, no se envía a ningún lugar):">If you answered Yes to question 20, write it here (just for you, it is not sent anywhere):</label><textarea class="form-input" id="qz-other-text" rows="3"></textarea></div>
+      </div>
+      <div class="qz-block">
+        <h3 class="qz-sec" data-es="Sección 4: Tu actividad y tus metas">Section 4: Your activity and goals</h3>
+        <p class="qz-sec-note" data-es="No hay respuestas correctas o incorrectas. Esto te ayuda a escoger la clase que mejor va contigo.">There are no right or wrong answers here. This helps you choose the class that fits you best.</p>
+        <div class="qz-group"><p class="qz-text" data-es="¿Qué tan activa eres ahora?">How active are you right now?</p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="activity" value="0"><span data-es="Nada activa: casi nunca hago ejercicio">Not active: I rarely exercise</span></label><label class="qz-opt"><input type="radio" name="activity" value="1"><span data-es="Poco activa: camino o me muevo 1 a 2 días a la semana">Lightly active: I walk or move 1 to 2 days a week</span></label><label class="qz-opt"><input type="radio" name="activity" value="2"><span data-es="Activa: hago ejercicio 3 días o más a la semana">Active: I exercise 3 or more days a week</span></label></div></div>
+        <div class="qz-group"><p class="qz-text" data-es="¿Has hecho Pilates antes?">Have you done Pilates before?</p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="experience" value="0"><span data-es="Nunca">Never</span></label><label class="qz-opt"><input type="radio" name="experience" value="1"><span data-es="Algunas veces">A few times</span></label><label class="qz-opt"><input type="radio" name="experience" value="2"><span data-es="Regularmente (mat, reformer o ambos)">Regularly (mat, reformer or both)</span></label></div></div>
+        <div class="qz-group"><p class="qz-text" data-es="¿Qué te gustaría lograr con el Pilates? (escoge todas las que apliquen)">What would you like to get out of Pilates? (choose all that apply)</p><div class="qz-choices"><label class="qz-opt"><input type="checkbox" name="goals" value="0"><span data-es="Un core más fuerte">Stronger core</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="1"><span data-es="Mejor postura">Better posture</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="2"><span data-es="Más flexibilidad y movilidad">More flexibility and mobility</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="3"><span data-es="Menos molestias en la espalda o articulaciones">Less back or joint discomfort</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="4"><span data-es="Mejor balance">Better balance</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="5"><span data-es="Alivio del estrés y conexión mente-cuerpo">Stress relief and mind-body connection</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="6"><span data-es="Apoyo durante el embarazo o después del parto">Support during pregnancy or after giving birth</span></label><label class="qz-opt"><input type="checkbox" name="goals" value="7"><span data-es="Complemento para otro deporte o actividad">A complement to another sport or activity</span></label></div></div>
+      </div>
+      <p class="qz-error" id="qz-error" hidden data-es="Por favor contesta todas las preguntas de las Secciones 1 a 3.">Please answer every question in Sections 1 to 3.</p>
+      <div class="qz-actions"><button class="btn btn-peri" type="submit" data-es="Ver mis resultados">See my results</button><button class="btn btn-line" type="reset" data-es="Empezar de nuevo">Start over</button></div>
+    </form>
+    <div class="qz-print" id="qz-print-head"></div>
+    <div class="qz-results" id="qz-results" hidden aria-live="polite"></div>
+    <div class="qz-print" id="qz-print-answers"></div>
+    <p class="center" style="margin-top:28px;"><a class="ss-more" href="#faq" data-es="← Volver a las clases">← Back to classes</a></p>
+  </div>
+</section>
+
 <!-- SCHEDULE -->
 <section class="schedule-section" id="schedule" data-page="schedule">
   <div class="wrap">
@@ -542,14 +971,23 @@ details li strong{font-weight:500;color:var(--text-dark);}
     </div>
     <div class="sched-legend">
       <span class="legend-item" data-es="&lt;span class=&quot;legend-dot dot-basic&quot;&gt;&lt;/span&gt;Pilates contemporáneo en mat — Básico"><span class="legend-dot dot-basic"></span>Contemporary Mat Pilates — Basic</span>
-      <span class="legend-item" data-es="&lt;span class=&quot;legend-dot dot-all&quot;&gt;&lt;/span&gt;Pilates contemporáneo en mat — Todos los niveles"><span class="legend-dot dot-all"></span>Contemporary Mat Pilates — All Levels</span>
+      <span class="legend-item" data-es="&lt;span class=&quot;legend-dot dot-all&quot;&gt;&lt;/span&gt;Clase contemporánea en mat — Todos los niveles"><span class="legend-dot dot-all"></span>Contemporary Mat Class — All Levels</span>
+    </div>
+    <div class="sched-closures" id="closures">
+      <p class="ss-title" data-es="Cierres por &lt;em&gt;días festivos&lt;/em&gt;">Holiday <em>closures</em></p>
+      <ul>
+        <li><span data-es="&lt;strong&gt;Lun, 16 nov:&lt;/strong&gt; no hay clases"><strong>Mon, Nov 16:</strong> no classes</span></li>
+        <li><span data-es="&lt;strong&gt;Mié, 25 nov – dom, 29 nov:&lt;/strong&gt; cerrado por el fin de semana de Acción de Gracias"><strong>Wed, Nov 25 – Sun, Nov 29:</strong> closed for Thanksgiving weekend</span></li>
+        <li><span data-es="&lt;strong&gt;Dom, 20 dic – dom, 3 ene:&lt;/strong&gt; cerrado por las fiestas. Reabrimos el &lt;strong&gt;lunes, 4 de enero&lt;/strong&gt;"><strong>Sun, Dec 20 – Sun, Jan 3:</strong> closed for the holidays. We reopen <strong>Monday, January 4</strong></span></li>
+        <li><span data-es="&lt;strong&gt;Mié, 6 ene – jue, 7 ene:&lt;/strong&gt; cerrado por el Día de Reyes"><strong>Wed, Jan 6 – Thu, Jan 7:</strong> closed for Three Kings Day</span></li>
+      </ul>
     </div>
     <div class="sched-grid">
       <div class="day-card">
         <p class="day-name" data-es="Lunes">Monday</p>
         <div class="slot"><span class="slot-time">6:00 AM</span><span class="slot-name" data-es="&lt;span class=&quot;lvl dot-basic&quot;&gt;&lt;/span&gt;Básico"><span class="lvl dot-basic"></span>Basic</span></div>
         <div class="slot"><span class="slot-time">8:00 AM</span><span class="slot-name" data-es="&lt;span class=&quot;lvl dot-basic&quot;&gt;&lt;/span&gt;Básico"><span class="lvl dot-basic"></span>Basic</span></div>
-        <div class="slot"><span class="slot-time">4:30 PM</span><span class="slot-name" data-es="&lt;span class=&quot;lvl dot-basic&quot;&gt;&lt;/span&gt;Básico"><span class="lvl dot-basic"></span>Basic</span></div>
+        <div class="slot"><span class="slot-time">4:30 PM</span><span class="slot-name" data-es="&lt;span class=&quot;lvl dot-all&quot;&gt;&lt;/span&gt;Todos los niveles"><span class="lvl dot-all"></span>All Levels</span></div>
       </div>
       <div class="day-card">
         <p class="day-name" data-es="Martes">Tuesday</p>
@@ -570,15 +1008,13 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <div class="sched-specials">
       <p class="ss-title" data-es="Clases especiales &lt;em&gt;próximas&lt;/em&gt;">Upcoming <em>special classes</em></p>
       <ul class="ss-list">
-        <li class="ss-row"><span class="ss-date" data-es="Sáb, 31 oct">Sat, Oct 31</span><span class="ss-name" data-es="Evento de disfraces de Halloween 🎃">Halloween Costume Event 🎃</span><span class="ss-time" data-es="1:30 y 2:30 PM">1:30 &amp; 2:30 PM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=213414" target="_blank" data-es="Reservar">Book</a></li>
-        <li class="ss-row"><span class="ss-date" data-es="Sáb, 7 nov">Sat, Nov 7</span><span class="ss-name" data-es="Evento Movember para hombres: MMA, Pilates y Yoga">Movember Men's MMA, Pilates &amp; Yoga Event</span><span class="ss-time" data-es="7:45 AM – 12:00 PM">7:45 AM – 12:00 PM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes/21108260" target="_blank" data-es="Reservar">Book</a></li>
-        <li class="ss-row"><span class="ss-date" data-es="Sáb, 14 nov">Sat, Nov 14</span><span class="ss-name" data-es="Clase temática de Don Omar">Don Omar Themed Class</span><span class="ss-time" data-es="9:00 AM">9:00 AM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes/21138201" target="_blank" data-es="Reservar">Book</a></li>
-        <li class="ss-row"><span class="ss-date" data-es="Sáb, 21 nov">Sat, Nov 21</span><span class="ss-name" data-es="Pilates en pareja">Pilates for Couples</span><span class="ss-time" data-es="9:30 y 10:30 AM">9:30 &amp; 10:30 AM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 14 nov">Sat, Nov 14</span><span class="ss-name" data-es="Don Omar - Clase temática">Don Omar - Themed Class</span><span class="ss-time" data-es="9:00 AM">9:00 AM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes/21138201" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row"><span class="ss-date" data-es="Sáb, 21 nov">Sat, Nov 21</span><span class="ss-name" data-es="Pilates en pareja">Pilates for couples</span><span class="ss-time" data-es="9:30 y 10:30 AM">9:30 &amp; 10:30 AM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reservar">Book</a></li>
       </ul>
       <a class="ss-more" href="#specials" data-es="Ver detalles y flyers →">See details &amp; flyers →</a>
     </div>
-    <p class="sched-where" data-es="📍 Todas las clases son en el &lt;a href=&quot;#studio&quot;&gt;Edificio Val Harbour, Suite 110 · Mayagüez&lt;/a&gt;">📍 All classes at <a href="#studio">Val Harbour Building, Suite 110 · Mayagüez</a></p>
-    <div class="sched-cta"><a class="btn btn-peri" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reserva tu espacio">Reserve your spot</a></div>
+    <p class="sched-where" data-es="Todas las clases son en el &lt;a href=&quot;#studio&quot;&gt;Edificio Val Harbour, Suite 110 · Mayagüez&lt;/a&gt;">All classes at <a href="#studio">Val Harbour Building, Suite 110 · Mayagüez</a></p>
+    <div class="sched-cta"><a class="btn btn-peri" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reserva tu espacio">Reserve your spot</a><p class="tutorial-link" data-es="&lt;svg width=&quot;13&quot; height=&quot;13&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.7&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;20&quot; height=&quot;20&quot; rx=&quot;5&quot;/&gt;&lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;17.5&quot; cy=&quot;6.5&quot; r=&quot;1&quot; fill=&quot;currentColor&quot; stroke=&quot;none&quot;/&gt;&lt;/svg&gt; ¿Primera vez reservando en Punchpass? &lt;a href=&quot;https://www.instagram.com/reel/DXomNKEBuL_/&quot; target=&quot;_blank&quot;&gt;Mira nuestro tutorial →&lt;/a&gt;"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> First time booking on Punchpass? <a href="https://www.instagram.com/reel/DXomNKEBuL_/" target="_blank">Watch our booking tutorial →</a></p></div>
 
   </div>
 </section>
@@ -593,10 +1029,38 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="pricing-save-note" data-es="Los ahorros se calculan comparando con los precios regulares de $20 por clase y $70 por clase privada.">Savings are compared with the regular $20 single class and $70 private class prices.</p>
     </div>
 
+    <details class="pkg-quiz" id="package-quiz">
+      <summary class="pq-summary"><span><span class="pq-kicker" data-es="¿No sabes qué paquete escoger?">Not sure which package?</span><span class="pq-title" data-es="Toma el quiz de 30 segundos: &lt;em&gt;¿qué paquete es para mí?&lt;/em&gt;">Take the 30-second quiz: <em>which package is right for me?</em></span></span></summary>
+      <div class="pq-body">
+        <p class="pq-sub" data-es="Contesta unas preguntas rápidas y te sugerimos la mejor opción para ti.">Answer a few quick questions and we will suggest the best option for you.</p>
+      <form class="pq-form" id="pq-form" novalidate>
+        <div class="pq-q"><p class="pq-label"><span class="pq-num">1</span><span data-es="¿Para quién es?">Who is it for?</span></p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="who" value="me"><span data-es="Para mí">For me</span></label><label class="qz-opt"><input type="radio" name="who" value="gift"><span data-es="Un regalo para alguien">A gift for someone</span></label></div></div>
+        <div class="pq-q"><p class="pq-label"><span class="pq-num">2</span><span data-es="¿Has tomado clase con nosotros antes?">Have you taken a class with us before?</span></p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="new" value="yes"><span data-es="No, soy nuevo/a">No, I am new</span></label><label class="qz-opt"><input type="radio" name="new" value="no"><span data-es="Sí, ya he tomado">Yes, I have</span></label></div></div>
+        <div class="pq-q"><p class="pq-label"><span class="pq-num">3</span><span data-es="¿Qué tipo de clases?">What kind of classes?</span></p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="type" value="mat"><span data-es="Clases grupales de mat">Group mat classes</span></label><label class="qz-opt"><input type="radio" name="type" value="mix"><span data-es="Mat + algunas sesiones privadas">Mat + some private sessions</span></label><label class="qz-opt"><input type="radio" name="type" value="private"><span data-es="Mayormente sesiones privadas">Mostly private sessions</span></label></div></div>
+        <div class="pq-q"><p class="pq-label"><span class="pq-num">4</span><span data-es="¿Con qué frecuencia te gustaría venir?">How often would you like to come?</span></p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="freq" value="try"><span data-es="Solo quiero probar">Just trying it out</span></label><label class="qz-opt"><input type="radio" name="freq" value="1"><span data-es="1 vez a la semana">1× a week</span></label><label class="qz-opt"><input type="radio" name="freq" value="2"><span data-es="2 veces a la semana">2× a week</span></label><label class="qz-opt"><input type="radio" name="freq" value="3"><span data-es="3 veces a la semana">3× a week</span></label><label class="qz-opt"><input type="radio" name="freq" value="4"><span data-es="4+ veces a la semana">4+ a week</span></label></div></div>
+        <div class="pq-q"><p class="pq-label"><span class="pq-num">5</span><span data-es="¿Te interesa una membresía mensual (compromiso de 3 meses)?">Are you open to a monthly membership (3-month commitment)?</span></p><div class="qz-choices"><label class="qz-opt"><input type="radio" name="commit" value="yes"><span data-es="Sí, quiero el mejor precio">Yes, I want the best value</span></label><label class="qz-opt"><input type="radio" name="commit" value="no"><span data-es="No, prefiero flexibilidad">No, I prefer flexibility</span></label></div></div>
+        <p class="qz-error" id="pq-error" hidden data-es="Por favor contesta todas las preguntas.">Please answer every question.</p>
+        <div class="qz-actions"><button class="btn btn-peri" type="submit" data-es="Ver mi paquete">Show my package</button><button class="btn btn-line" type="reset" data-es="Empezar de nuevo">Start over</button></div>
+      </form>
+        <div class="pq-result" id="pq-result" hidden aria-live="polite"></div>
+      </div>
+    </details>
+
+    <div class="pricing-cat">
+      <p class="pricing-cat-title" data-es="Early &lt;em&gt;Black Friday&lt;/em&gt;">Early <em>Black Friday</em></p>
+      <p class="pricing-cat-sub" data-es="Oferta limitada hasta el 6 de diciembre o hasta agotar paquetes. Límite de uno por cliente. Clases válidas hasta el 31 de enero de 2027. ¿Lo quieres regalar? &lt;a href=&quot;#gift&quot;&gt;Ver gift cards&lt;/a&gt;.">Limited offer until December 6, or while packages last. Limit one per customer. Classes valid until January 31, 2027. Want to give it as a gift? <a href="#gift">See gift cards</a>.</p>
+      <div class="pricing-cards">
+        <div class="p-card private"><span class="p-new" data-es="Tiempo limitado">Limited time</span><p class="p-name" data-es="4 clases de mat">4 Mat Classes</p><p class="p-price"><sup>$</sup>60</p><p class="p-save" data-es="Ahorras $20 · $15 por clase">Save $20 · $15 per class</p><p class="p-note" data-es="Paga 3 y la 4ta es gratis">Pay 3, get the 4th free</p></div>
+        <div class="p-card private"><span class="p-new" data-es="Tiempo limitado">Limited time</span><p class="p-name" data-es="8 clases de mat">8 Mat Classes</p><p class="p-price"><sup>$</sup>120</p><p class="p-save" data-es="Ahorras $40 · $15 por clase">Save $40 · $15 per class</p><p class="p-note" data-es="Paga 6 y llévate 2 gratis">Pay 6, get 2 free</p></div>
+        <div class="p-card private"><span class="p-new" data-es="Tiempo limitado">Limited time</span><p class="p-name" data-es="12 clases de mat">12 Mat Classes</p><p class="p-price"><sup>$</sup>160</p><p class="p-save" data-es="Ahorras $80 · $13.33 por clase">Save $80 · $13.33 per class</p><p class="p-note" data-es="Paga 8 y llévate 4 gratis">Pay 8, get 4 free</p></div>
+      </div>
+    </div>
+
     <div class="pricing-cat">
       <p class="pricing-cat-title" data-es="Clases de mat &lt;em&gt;en el estudio&lt;/em&gt;">Studio <em>mat classes</em></p>
       <p class="pricing-cat-sub" data-es="Los paquetes funcionan como una tarjeta de ponches. Usa tus clases al ritmo que prefieras dentro del periodo de tiempo.">Packages work like a punch card. Use your classes at whatever pace you like within the time frame.</p>
       <div class="pricing-cards">
+        <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Oferta de introducción: 2 clases de mat">Intro Offer: 2 Mat Classes</p><p class="p-price"><sup>$</sup>30</p><p class="p-save" data-es="Ahorras $10 · $15 por clase">Save $10 · $15 per class</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
         <div class="p-card"><p class="p-label" data-es="Clase suelta">Drop in</p><p class="p-name" data-es="1 clase de mat">Single Mat Class</p><p class="p-price"><sup>$</sup>20</p><p class="p-note" data-es="Úsala en 4 semanas">Use within 4 weeks</p></div>
         <div class="p-card"><p class="p-label" data-es="Para comenzar">Getting started</p><p class="p-name" data-es="4 clases de mat">4 Mat Classes</p><p class="p-price"><sup>$</sup>75</p><p class="p-save" data-es="Ahorras $5 · $18.75 por clase">Save $5 · $18.75 per class</p><p class="p-note" data-es="Úsalas en 4 semanas · recomendado 1× por semana">Use within 4 weeks · recommended 1× per week</p></div>
         <div class="p-card featured"><p class="p-label" data-es="El balance ideal">Sweet spot</p><p class="p-name" data-es="8 clases de mat">8 Mat Classes</p><p class="p-price"><sup>$</sup>135</p><p class="p-save" data-es="Ahorras $25 · $16.88 por clase">Save $25 · $16.88 per class</p><p class="p-note" data-es="Úsalas en 6 semanas · recomendado 1–2× por semana">Use within 6 weeks · recommended 1–2× per week</p></div>
@@ -618,12 +1082,40 @@ details li strong{font-weight:500;color:var(--text-dark);}
 
     <div class="pricing-cat">
       <p class="pricing-cat-title" data-es="Clases privadas y semiprivadas &lt;em&gt;en equipos&lt;/em&gt;">Private &amp; semi-private <em>apparatus classes</em></p>
-      <p class="pricing-cat-sub" data-es="Sesiones personalizadas en reformer y torre, coordinadas directamente con Karla.">Personalized reformer and tower apparatus sessions, scheduled directly with Karla.</p>
+      <p class="pricing-cat-sub" data-es="Sesiones personalizadas en reformer y torre, coordinadas directamente con el estudio.">Personalized reformer and tower apparatus sessions, scheduled directly with the studio.</p>
       <div class="pricing-cards">
         <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase privada en equipos">Private Apparatus Class</p><p class="p-price"><sup>$</sup>55</p><p class="p-save" data-es="Ahorras $15">Save $15</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
         <div class="p-card"><p class="p-label" data-es="Individual">One-on-one</p><p class="p-name" data-es="Clase privada en equipos">Private Apparatus Class</p><p class="p-price"><sup>$</sup>70</p><p class="p-note" data-es="Por sesión">Per session</p></div>
         <div class="p-card private"><span class="p-new" data-es="Clientes nuevos">New customers</span><p class="p-name" data-es="Clase semiprivada en equipos">Semi-Private Apparatus Class</p><p class="p-price"><sup>$</sup>35</p><p class="p-save" data-es="Ahorras $15">Save $15</p><p class="p-note" data-es="Tarifa de introducción">First-time intro rate</p></div>
         <div class="p-card"><p class="p-label" data-es="Grupo pequeño">Small group</p><p class="p-name" data-es="Clase semiprivada en equipos">Semi-Private Apparatus Class</p><p class="p-price"><sup>$</sup>50</p><p class="p-note" data-es="Por sesión">Per session</p></div>
+      </div>
+    </div>
+
+    <div class="pricing-cat" id="gift">
+      <p class="pricing-cat-title" data-es="Regala &lt;em&gt;Pilates&lt;/em&gt;">Gift <em>Pilates</em></p>
+      <p class="pricing-cat-sub" data-es="El regalo perfecto para estas fiestas. Las gift cards de temporada están disponibles hasta el 24 de diciembre, son válidas para una persona y las clases son válidas hasta el 28 de febrero de 2027.">The perfect holiday gift. Holiday gift cards are available until December 24, valid for one person, with classes valid until February 28, 2027.</p>
+      <div class="pricing-cards">
+        <div class="p-card private"><span class="p-new" data-es="Hasta el 24 de dic.">Until Dec 24</span><p class="p-name" data-es="Gift card de 4 clases de mat">4 Mat Classes Gift Card</p><p class="p-price"><sup>$</sup>60</p><p class="p-save" data-es="Paga 3 y la 4ta es gratis">Pay 3, get the 4th free</p><p class="p-note" data-es="Un regalo ideal para empezar el año en movimiento">An ideal gift to start the year moving</p><div class="p-buy"><a class="special-book" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/275288" target="_blank" data-es="Comprar →">Buy gift →</a></div></div>
+        <div class="p-card private"><span class="p-new" data-es="Hasta el 24 de dic.">Until Dec 24</span><p class="p-name" data-es="Gift card de 8 clases de mat">8 Mat Classes Gift Card</p><p class="p-price"><sup>$</sup>120</p><p class="p-save" data-es="Paga 6 y llévate 2 gratis">Pay 6, get 2 free</p><p class="p-note" data-es="Para quien quiere hacer del Pilates parte de su rutina">For someone ready to make Pilates part of their routine</p><div class="p-buy"><a class="special-book" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/275289" target="_blank" data-es="Comprar →">Buy gift →</a></div></div>
+        <div class="p-card private"><span class="p-new" data-es="Hasta el 24 de dic.">Until Dec 24</span><p class="p-name" data-es="Gift card de 12 clases de mat">12 Mat Classes Gift Card</p><p class="p-price"><sup>$</sup>160</p><p class="p-save" data-es="Paga 8 y llévate 4 gratis">Pay 8, get 4 free</p><p class="p-note" data-es="Nuestro regalo más completo de la temporada">Our most complete gift of the season</p><div class="p-buy"><a class="special-book" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/275290" target="_blank" data-es="Comprar →">Buy gift →</a></div></div>
+        <div class="p-card"><span class="p-new" data-es="Todo el año">Any time</span><p class="p-name" data-es="Gift card regular">Regular Gift Card</p><p class="p-price" data-es="&lt;sup&gt;desde $&lt;/sup&gt;20"><sup>from $</sup>20</p><p class="p-save" data-es="Cualquier paquete a precio regular">Any package at regular price</p><p class="p-note" data-es="Desde una clase suelta ($20) hasta ilimitadas ($225)">From a single class ($20) to unlimited ($225)</p><div class="p-buy"><a class="special-book" href="https://wa.me/17872559986" target="_blank" data-es="Pregúntale al estudio →">Ask the studio →</a></div></div>
+      </div>
+    </div>
+
+    <div class="pricing-cat" id="events">
+      <p class="pricing-cat-title" data-es="&lt;em&gt;Eventos&lt;/em&gt; privados"><em>Private</em> events</p>
+      <p class="pricing-cat-sub" data-es="Cumpleaños, despedidas de soltera y reuniones con amigas. Celebra en el estudio con una clase de Pilates solo para tu grupo.">Birthdays, bachelorettes, and get-togethers with friends. Celebrate at the studio with a Pilates class just for your group.</p>
+      <div class="pricing-cards">
+        <div class="p-card featured event-card"><p class="p-label" data-es="Para celebrar">Celebrate</p><p class="p-name" data-es="Evento grupal privado">Private Group Event</p><p class="p-price"><sup>$</sup>145</p><p class="p-save" data-es="Incluye 8 espacios · la cumpleañera entra gratis">Includes 8 spots · the birthday guest is free</p>
+          <ul class="p-list">
+            <li data-es="2 horas de uso exclusivo del estudio">2 hours of exclusive studio use</li>
+            <li data-es="Clase privada de Pilates en mat de 45 minutos para tu grupo">45-minute private mat Pilates class for your group</li>
+            <li data-es="Tiempo para celebrar, compartir y tomar fotos">Time to celebrate, socialize, and take photos</li>
+            <li data-es="Para el anfitrión y hasta 7 invitados · no se requiere experiencia">For the host plus up to 7 guests · no experience needed</li>
+          </ul>
+          <p class="p-note" data-es="Compra el paquete en Punchpass y luego coordina tu fecha directamente con el estudio. Se requiere un &lt;strong&gt;depósito de $25&lt;/strong&gt; para reservar tu fecha. Sujeto a disponibilidad.">Purchase the package on Punchpass, then schedule your date directly with the studio. A <strong>$25 deposit</strong> is required to reserve your date. Subject to availability.</p>
+          <div class="special-links" style="justify-content:center;"><a class="special-book" href="https://wa.me/17872559986" target="_blank" data-es="Coordina con el estudio →">Schedule with the studio →</a><a class="special-more" href="https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/pass/275300" target="_blank" data-es="Compra en Punchpass">Purchase on Punchpass</a></div>
+        </div>
       </div>
     </div>
 
@@ -634,7 +1126,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
         <p class="perk-text" data-es="Recoge tu tarjeta de ponches física en el estudio y ponchéala en cada clase. Al completar &lt;strong&gt;10 clases&lt;/strong&gt;, recibes &lt;strong&gt;50% de descuento en una clase suelta&lt;/strong&gt; o &lt;strong&gt;$10 de descuento&lt;/strong&gt; en tu próxima compra de paquete.">Pick up your physical punch card at the studio and get it punched at every class. Once you complete <strong>10 classes</strong>, you get <strong>50% off a drop-in class</strong> or <strong>$10 off</strong> your next package purchase.</p>
       </div>
       <div class="perk-card bday">
-        <p class="perk-icon">🎂</p>
+        <p class="perk-icon">✧</p>
         <h3 class="perk-title" data-es="Una clase gratis en tu cumpleaños">A free class on your birthday</h3>
         <p class="perk-text" data-es="No olvides añadir tu fecha de nacimiento en tu cuenta de Punchpass. Te regalaremos una &lt;strong&gt;clase gratis en tu cumpleaños&lt;/strong&gt;.">Don't forget to add your birth date to your Punchpass account. We'll gift you a <strong>free class on your birthday</strong>.</p>
         <a class="perk-link" href="https://coralcorepilates.punchpass.com" target="_blank" data-es="Actualiza tu cuenta de Punchpass →">Update your Punchpass account →</a>
@@ -656,6 +1148,22 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <h2 class="sec-heading" data-es="Políticas del &lt;em&gt;estudio&lt;/em&gt;">Studio <em>policies</em></h2>
     </div>
     <div class="policies">
+    <div class="terms-card guide-card" id="client-guide">
+      <div>
+        <p class="sec-label" data-es="Guía para clientes · Fácil de leer">Client guide · Easy-to-read</p>
+        <h3 data-es="Todo lo que necesitas saber antes de tu clase">Everything you need to know before class</h3>
+        <p data-es="Reservas, cancelaciones, lista de espera, qué traer, tu salud y normas del estudio, resumidas en una guía corta. Español e inglés en el mismo PDF.">Booking, cancellations, waitlist, what to bring, your health, and studio etiquette, summed up in a short guide. Spanish and English in the same PDF.</p>
+      </div>
+      <div class="doc-btns"><a class="btn btn-peri" href="docs/coral-core-pilates-client-guide.pdf" target="_blank" data-es="Ver guía">View guide</a><a class="btn btn-line" href="docs/coral-core-pilates-client-guide.pdf" download="Coral-Core-Pilates-Client-Guide.pdf" data-es="Descargar">Download</a></div>
+    </div>
+    <div class="terms-card" id="terms">
+      <div>
+        <p class="sec-label" data-es="Relevo">Waiver</p>
+        <h3 data-es="Waiver, Términos y Condiciones">Waiver, Terms &amp; Conditions</h3>
+        <p data-es="Los términos oficiales que aceptas en Punchpass: reservas, cancelaciones, salud y participación, riesgos y responsabilidad, estacionamiento, fotos y más. Al reservar, participar o asistir, aceptas estos términos. Español e inglés en el mismo PDF.">The official terms you accept in Punchpass: booking, cancellations, health and participation, risks and responsibility, parking, photos, and more. By booking, participating, or attending, you agree to these terms. Spanish and English in the same PDF.</p>
+      </div>
+      <div class="doc-btns"><a class="btn btn-peri" href="docs/coral-core-pilates-terms.pdf" target="_blank" data-es="Ver waiver">View waiver</a><a class="btn btn-line" href="docs/coral-core-pilates-terms.pdf" download="Coral-Core-Pilates-Waiver-Terms.pdf" data-es="Descargar">Download</a></div>
+    </div>
       <details open>
         <summary data-es="Reglas y requisitos del estudio">Studio rules &amp; requirements</summary>
         <ul>
@@ -667,6 +1175,15 @@ details li strong{font-weight:500;color:var(--text-dark);}
           <li data-es="Limpia tu mat y los accesorios después de cada clase.">Clean your mat and props after each class.</li>
           <li data-es="Respeta el espacio del estudio y a los demás clientes.">Respect the studio space and your fellow clients.</li>
           <li data-es="Coral Core Pilates se reserva el derecho de admisión.">Coral Core Pilates reserves the right of admission.</li>
+          <li data-es="Para el resumen completo, consulta nuestra &lt;a href=&quot;docs/coral-core-pilates-client-guide.pdf&quot; target=&quot;_blank&quot;&gt;Guía para clientes (PDF)&lt;/a&gt;.">For the full summary, see our <a href="docs/coral-core-pilates-client-guide.pdf" target="_blank">Client Guide (PDF)</a>.</li>
+        </ul>
+      </details>
+      <details>
+        <summary data-es="Estacionamiento">Parking</summary>
+        <ul>
+          <li data-es="Hay &lt;strong&gt;estacionamiento gratis&lt;/strong&gt; disponible en el edificio Val Harbour."><strong>Free parking</strong> is available on the Val Harbour Building premises.</li>
+          <li data-es="Algunos espacios están &lt;strong&gt;reservados&lt;/strong&gt; para otros negocios y consultorios del edificio. Antes de estacionarte, verifica que tu vehículo no esté en uno de estos espacios.">Some spots are <strong>reserved</strong> for other businesses and offices in the building. Before parking, please make sure your vehicle is not in one of these reserved spots.</li>
+          <li data-es="Respetar el estacionamiento de nuestros vecinos nos ayuda a mantener una buena convivencia en el edificio. ¡Gracias!">Respecting our neighbors' parking helps us keep a good relationship with everyone in the building. Thank you!</li>
         </ul>
       </details>
       <details>
@@ -702,6 +1219,55 @@ details li strong{font-weight:500;color:var(--text-dark);}
         </ul>
       </details>
     </div>
+  </div>
+</section>
+
+<!-- TRAINING & EDUCATION -->
+<section class="training-section" id="training" data-page="about">
+  <div class="wrap">
+    <div class="center">
+      <p class="sec-label" data-es="Conoce a Karla">Meet Karla</p>
+      <h2 class="sec-heading" data-es="Formación y &lt;em&gt;educación&lt;/em&gt;">Training &amp; <em>education</em></h2>
+      <p class="body-text" style="max-width:520px;margin:0 auto;" data-es="Con raíces en el linaje clásico de Joseph Pilates y siempre aprendiendo.">Rooted in the classical lineage of Joseph Pilates and always learning.</p>
+    </div>
+
+    <article class="tr-block">
+      <div class="tr-head">
+        <span class="tr-num">01</span>
+        <div>
+          <span class="edu-label" data-es="Formación integral de instructores">Comprehensive teacher training</span>
+          <h3 class="tr-title" data-es="The Lolita&#x27;s Legacy™ Teacher Training Program">The Lolita's Legacy™ Teacher Training Program</h3>
+        </div>
+      </div>
+      <div class="tr-body">
+        <p class="tr-text" data-es="Una formación integral de instructores de Pilates de 500 horas creada por la Pilates Elder &lt;strong&gt;Lolita San Miguel&lt;/strong&gt;, nacida en Nueva York de padres puertorriqueños y una de las pocas maestras vivas certificadas directamente por Joseph Pilates. El currículo combina el trabajo clásico de Joseph Pilates con la biomecánica moderna y la ciencia del movimiento, y está reconocido por la Pilates Method Alliance (PMA) / National Pilates Certification Program.">A 500-hour comprehensive Pilates teacher training created by Pilates Elder <strong>Lolita San Miguel</strong>, born in New York to Puerto Rican parents and one of the only living master teachers directly certified by Joseph Pilates. The curriculum blends classical Joseph Pilates work with modern biomechanics and movement science, and is recognized by the Pilates Method Alliance (PMA) / National Pilates Certification Program.</p>
+        <p class="tr-text" data-es="Karla se formó bajo la guía de &lt;strong&gt;Maria Teresa Robles&lt;/strong&gt;, quien completó directamente con Lolita el Lolita San Miguel Pilates Master Mentor Program (PMMP), un programa avanzado de dos años y 160 horas.">Karla trained under <strong>Maria Teresa Robles</strong>, who completed the Lolita San Miguel Pilates Master Mentor Program (PMMP), a two-year, 160-hour advanced program, directly with Lolita.</p>
+      </div>
+      <div class="tr-collage tr-collage-a">
+        <figure class="tr-tile t-big"><img src="images/training/lolita-san-miguel.jpg" alt="Karla with Pilates Elder Lolita San Miguel, seated in the center, and fellow Lolita&#x27;s Legacy trainees" data-es-alt="Karla con la Pilates Elder Lolita San Miguel, sentada al centro, y compañeras de Lolita&#x27;s Legacy" loading="lazy" style="object-position:center 40%;"><figcaption><span class="tr-badge" data-es="Pilates Elder">Pilates Elder</span><span data-es="Con Lolita San Miguel, sentada al centro">With Lolita San Miguel, seated in the center</span></figcaption></figure>
+        <figure class="tr-tile t-wide"><img src="images/training/cohort-group.jpg" alt="Lolita&#x27;s Legacy training cohort" data-es-alt="Grupo de formación de Lolita&#x27;s Legacy" loading="lazy" style="object-position:center 35%;"></figure>
+        <figure class="tr-tile t-sq"><img src="images/training/cohort-ladder-barrel.jpg" alt="Lolita&#x27;s Legacy trainees around the ladder barrel" data-es-alt="Compañeras de Lolita&#x27;s Legacy alrededor del ladder barrel" loading="lazy" style="object-position:center 45%;"></figure>
+        <figure class="tr-tile t-sq"><img src="images/training/cohort-cadillac.jpg" alt="Lolita&#x27;s Legacy trainees on the Cadillac" data-es-alt="Compañeras de Lolita&#x27;s Legacy en el Cadillac" loading="lazy" style="object-position:center 50%;"></figure>
+      </div>
+    </article>
+
+    <article class="tr-block tr-block-b">
+      <div class="tr-head">
+        <span class="tr-num">02</span>
+        <div>
+          <span class="edu-label" data-es="Educación continua">Continuing education</span>
+          <h3 class="tr-title" data-es="A Contrology Experience">A Contrology Experience</h3>
+        </div>
+      </div>
+      <div class="tr-body">
+        <p class="tr-text" data-es="Un adiestramiento inmersivo de 3 días en el método tradicional de Pilates con &lt;strong&gt;Classic Pilates PR&lt;/strong&gt;, un estudio de Contrology. Completado el 6 de septiembre de 2026.">A 3-day immersive training in the traditional Pilates method with <strong>Classic Pilates PR</strong>, a Contrology studio. Completed September 6, 2026.</p>
+      </div>
+      <div class="tr-collage tr-collage-b">
+        <figure class="tr-tile t-big"><img src="images/training/contrology-certificate-ceremony.jpg" alt="Karla holding her Classic Pilates PR certificate with two Classic Pilates PR instructors" data-es-alt="Karla con su certificado de Classic Pilates PR junto a dos instructoras de Classic Pilates PR" loading="lazy" style="object-position:center 25%;"></figure>
+        <figure class="tr-tile t-tall"><img src="images/training/contrology-cohort.jpg" alt="A Contrology Experience participants under a photo of Joseph Pilates" data-es-alt="Participantes de A Contrology Experience bajo una foto de Joseph Pilates" loading="lazy" style="object-position:center 70%;"></figure>
+        <figure class="tr-tile t-tall"><img src="images/contrology-certificate.jpg" alt="Karla Deida&#x27;s Certificate of Achievement from Classic Pilates PR, in front of a photo of Joseph Pilates" data-es-alt="Certificado de logro de Karla Deida de Classic Pilates PR, frente a una foto de Joseph Pilates" loading="lazy" style="object-position:center 60%;"></figure>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -749,14 +1315,24 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="review-text" style="margin-top:12px;">I feel stronger and more in balance with my body and energy levels. If you’re looking to enhance your physical and mental well-being through Pilates, Karla and her Coral Core studio is the right place to be!"</p>
     </div>
     <div class="review-card">
-      <div class="review-header"><div class="reviewer-avatar">N</div><div><p class="reviewer-name">Naomy R.</p><p class="reviewer-date" data-es="Mayo 2026 · Reseña de Google">May 2026 · Google Review</p></div></div>
+      <div class="review-header"><div class="reviewer-avatar">G</div><div><p class="reviewer-name">Grissheina M.</p><p class="reviewer-date" data-es="Noviembre 2026 · Reseña de Google">November 2026 · Google Review</p></div></div>
       <p class="review-stars">★★★★★</p>
-      <p class="review-text">"I've truly enjoyed taking Pilates sessions with Coral Core Pilates. The environment is always welcoming, and Karla is patient, encouraging, and attentive to form throughout every class. Whether it's mat Pilates or reformer, her sessions are always worth it — I even find myself traveling to other towns just to keep taking her classes. Highly recommend!"</p>
+      <p class="review-text" data-es="&quot;Lugar muy limpio y acogedor, las clases y la instructora excelente y se adapta a tu ritmo. Un lugar realmente cómodo ✨&quot;">"Very clean and welcoming place, the classes and instructor are excellent and adapt to your pace. A truly comfortable place ✨"</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer-avatar">Y</div><div><p class="reviewer-name">Yolanda M.</p><p class="reviewer-date" data-es="Octubre 2026 · Reseña de Google">October 2026 · Google Review</p></div></div>
+      <p class="review-stars">★★★★★</p>
+      <p class="review-text" data-es="&quot;Excelente clase. Estas han sido mis primeras experiencias en Pilates y definitivamente me encanta!! Recomendada 100%&quot;">"Excellent class! This was my first Pilates experience and I absolutely loved it!! 100% recommended"</p>
     </div>
     <div class="review-card">
       <div class="review-header"><div class="reviewer-avatar">T</div><div><p class="reviewer-name">Thania N.</p><p class="reviewer-date" data-es="Octubre 2026 · Reseña de Google">October 2026 · Google Review</p></div></div>
       <p class="review-stars">★★★★★</p>
-      <p class="review-text">"A place full of good energy and respect."</p>
+      <p class="review-text" data-es="&quot;Un lugar lleno de buena energía y respeto.&quot;">"A place full of good energy and respect."</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header"><div class="reviewer-avatar">N</div><div><p class="reviewer-name">Naomy R.</p><p class="reviewer-date" data-es="Mayo 2026 · Reseña de Google">May 2026 · Google Review</p></div></div>
+      <p class="review-stars">★★★★★</p>
+      <p class="review-text">"I've truly enjoyed taking Pilates sessions with Coral Core Pilates. The environment is always welcoming, and Karla is patient, encouraging, and attentive to form throughout every class. Whether it's mat Pilates or reformer, her sessions are always worth it — I even find myself traveling to other towns just to keep taking her classes. Highly recommend!"</p>
     </div>
   </div>
   <div class="center">
@@ -771,13 +1347,22 @@ details li strong{font-weight:500;color:var(--text-dark);}
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact" data-page="contact">
+  <div class="join-strip" id="join">
+    <div class="join-inner">
+      <div>
+        <p class="join-title" data-es="¿Quieres unirte al &lt;em&gt;equipo&lt;/em&gt;?">Want to join the <em>team</em>?</p>
+        <p class="join-text" data-es="¿Eres instructor/a de Pilates o te apasiona el movimiento? Envíanos tu resume y cuéntanos un poco sobre ti.">Are you a Pilates instructor or passionate about movement? Send us your resume and tell us a little about yourself.</p>
+      </div>
+      <a class="btn btn-line" href="mailto:coralcorepilates@gmail.com?subject=Resume%20%E2%80%93%20Join%20the%20Coral%20Core%20team" data-es="Envía tu resume →">Send your resume →</a>
+    </div>
+  </div>
   <div class="contact-left">
     <p class="sec-label" data-es="Contáctanos">Get in touch</p>
     <h2 class="sec-heading" data-es="Nos encantaría&lt;br&gt;&lt;em&gt;saber&lt;/em&gt; de ti">We'd love to<br><em>hear</em> from you</h2>
-    <div class="contact-item"><div class="c-icon">📍</div><div><p class="c-label" data-es="Estudio">Studio</p><p class="c-value"><a href="https://maps.google.com/?cid=5243675783024213922" target="_blank">Val Harbour Building, Suite 110<br>445 González Clemente Ave (388 Blvd. Guanajibo)<br>Mayagüez, PR 00681</a></p></div></div>
-    <div class="contact-item"><div class="c-icon">✉️</div><div><p class="c-label">Email</p><p class="c-value"><a href="mailto:coralcorepilates@gmail.com">coralcorepilates@gmail.com</a></p></div></div>
-    <div class="contact-item"><div class="c-icon">💬</div><div><p class="c-label">WhatsApp</p><p class="c-value"><a href="https://wa.me/17872559986" target="_blank">(787) 255-9986</a></p></div></div>
-    <div class="contact-item"><div class="c-icon">🗓️</div><div><p class="c-label" data-es="Reservas">Booking</p><p class="c-value"><a href="https://coralcorepilates.punchpass.com" target="_blank">coralcorepilates.punchpass.com</a></p></div></div>
+    <div class="contact-item"><div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><p class="c-label" data-es="Estudio">Studio</p><p class="c-value"><a href="https://maps.google.com/?cid=5243675783024213922" target="_blank">Val Harbour Building, Suite 110<br>445 González Clemente Ave (388 Blvd. Guanajibo)<br>Mayagüez, PR 00681</a></p></div></div>
+    <div class="contact-item"><div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><p class="c-label">Email</p><p class="c-value"><a href="mailto:coralcorepilates@gmail.com">coralcorepilates@gmail.com</a></p></div></div>
+    <div class="contact-item"><div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg></div><div><p class="c-label">WhatsApp</p><p class="c-value"><a href="https://wa.me/17872559986" target="_blank">(787) 255-9986</a></p></div></div>
+    <div class="contact-item"><div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div><div><p class="c-label" data-es="Reservas">Booking</p><p class="c-value"><a href="https://coralcorepilates.punchpass.com" target="_blank">coralcorepilates.punchpass.com</a></p></div></div>
     <div class="social-row">
       <a class="social-btn" href="https://www.instagram.com/coralcorepilates" target="_blank" title="Instagram"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a class="social-btn" href="https://wa.me/17872559986" target="_blank" title="WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
@@ -801,21 +1386,42 @@ details li strong{font-weight:500;color:var(--text-dark);}
           <option value="" data-es="Selecciona un servicio…">Select a service…</option>
           <option data-es="Contemporary Basic — Clase grupal de mat">Contemporary Basic — Group mat class</option>
           <option data-es="Contemporary All Levels — Clase grupal de mat">Contemporary All Levels — Group mat class</option>
-          <option data-es="CoralFire (próximamente)">CoralFire (coming soon)</option>
+          <option data-es="CoralFire (llega en 2027)">CoralFire (coming in 2027)</option>
+          <option data-es="Clases en equipos (próximamente)">Apparatus classes (coming soon)</option>
           <option data-es="Paquete de clases">Class package</option>
           <option data-es="Membresía">Membership</option>
           <option data-es="Sesión privada en equipos">Private apparatus session</option>
           <option data-es="Sesión semiprivada en equipos">Semi-private apparatus session</option>
           <option data-es="Clases especiales / eventos">Special classes / events</option>
           <option data-es="Pilates en pareja — 21 de noviembre">Pilates for Couples — November 21</option>
-          <option data-es="Evento Movember para hombres — 7 de noviembre">Movember Men's Event — November 7</option>
           <option data-es="Evento privado / boda / despedida de soltera">Private event / wedding / bachelorette</option>
+          <option data-es="Pilates en mi evento (fuera del estudio)">Pilates at my event (off-site)</option>
+          <option data-es="Unirme al equipo">Join the team</option>
           <option data-es="Consulta general">General inquiry</option>
         </select>
       </div>
       <div class="form-group"><label class="form-label" for="f-msg" data-es="Mensaje">Message</label><textarea class="form-input form-textarea" id="f-msg" name="message" placeholder="Tell us about yourself, your event, or your goals…" data-es-placeholder="Cuéntanos sobre ti, tu evento o tus metas…"></textarea></div>
       <button type="submit" class="btn btn-peri form-submit" data-es="Enviar mensaje">Send message</button>
-      <p class="form-note" data-es="Tu mensaje llega directo al email de Karla. Normalmente responde en menos de 24 horas.">Your message goes directly to Karla's inbox. She typically replies within 24 hours.</p>
+      <p class="form-note" data-es="Tu mensaje llega directo al email del estudio. Normalmente respondemos en menos de 24 horas.">Your message goes directly to the studio's inbox. We typically reply within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section class="signup-section" id="updates">
+  <div class="signup-inner">
+    <div>
+      <p class="sec-label" data-es="Mantente al día">Stay in the loop</p>
+      <h2 data-es="Recibe &lt;em&gt;noticias&lt;/em&gt; del estudio">Get studio <em>updates</em></h2>
+      <p class="signup-sub" data-es="Clases nuevas, eventos especiales, ofertas y cambios de horario, directo a tu email. Sin spam, puedes darte de baja cuando quieras.">New classes, special events, offers, and schedule changes, straight to your inbox. No spam, unsubscribe anytime.</p>
+    </div>
+    <form class="signup-form" id="signup-form" action="https://formspree.io/f/mjgqbvlj" method="POST">
+      <input type="hidden" name="_subject" value="New email signup: studio updates">
+      <input type="hidden" name="form_type" value="Newsletter signup">
+      <label class="form-label" for="s-email" data-es="Correo electrónico">Email address</label>
+      <div class="signup-row"><input class="form-input" id="s-email" type="email" name="email" placeholder="you@email.com" required autocomplete="email"><button class="btn btn-peri" type="submit" data-es="Suscríbete">Sign up</button></div>
+      <p class="signup-msg" id="signup-ok" hidden data-es="¡Gracias! Ya estás en la lista.">Thank you! You are on the list.</p>
+      <p class="signup-msg" id="signup-err" hidden data-es="Algo salió mal. Intenta de nuevo o escríbenos por WhatsApp.">Something went wrong. Please try again or message us on WhatsApp.</p>
     </form>
   </div>
 </section>
@@ -826,13 +1432,17 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <p class="footer-addr">Val Harbour Building, Suite 110 · 445 González Clemente Ave · Mayagüez, PR 00681</p>
   </div>
   <div class="footer-links">
+    <a href="#start" data-es="¿Primera vez en Pilates?">New to Pilates?</a>
     <a href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Horario">Schedule</a>
     <a href="https://coralcorepilates.punchpass.com/passes" target="_blank" data-es="Pases">Passes</a>
+    <a href="docs/coral-core-pilates-client-guide.pdf" target="_blank" data-es="Guía para clientes">Client Guide</a>
+    <a href="docs/coral-core-pilates-terms.pdf" target="_blank" data-es="Términos y relevo">Terms &amp; Waiver</a>
+    <a href="#contact" data-es="Contáctanos">Contact us</a>
     <a href="https://wa.me/17872559986" target="_blank">WhatsApp</a>
     <a href="https://www.instagram.com/coralcorepilates" target="_blank">Instagram</a>
     <a href="https://g.page/r/CaL_eaxXR8VIEAI/review" target="_blank" data-es="Reséñanos">Review us</a>
     <a href="https://www.tripadvisor.com/Attraction_Review-g147321-d34749106-Reviews-Coral_Core_Pilates-Mayaguez_Puerto_Rico.html" target="_blank">Tripadvisor</a>
-    <a href="#contact" data-es="Contáctanos">Contact us</a>
+    <a href="#join" data-es="Únete al equipo">Join the team</a>
   </div>
   <span class="footer-copy">© 2026 Coral Core Pilates · Puerto Rico</span>
 </footer>
@@ -861,6 +1471,170 @@ details li strong{font-weight:500;color:var(--text-dark);}
   try{saved=localStorage.getItem(KEY);}catch(e){}
   var initial=saved||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en');
   if(initial==='es')setLang('es');
+})();
+(function(){
+  var form=document.getElementById('qz-form');
+  if(!form)return;
+  var out=document.getElementById('qz-results'),err=document.getElementById('qz-error'),other=document.getElementById('qz-other');
+  var R={
+    ok:['ok',"You're ready","Start with a Contemporary Basic class, which teaches the fundamentals at a comfortable pace.",'Estás lista','Empieza con una clase Contemporary Basic, donde aprendes los fundamentos a un ritmo cómodo.'],
+    s1:['doctor','Talk to your doctor first','Talk to your doctor before your first class and ask whether Pilates is right for you now. Once you have their okay, let your instructor know before class.','Habla primero con tu médico','Habla con tu médico antes de tu primera clase y pregúntale si el Pilates es adecuado para ti ahora. Cuando tengas su aprobación, déjale saber a tu instructora antes de la clase.'],
+    s2:['','Practice with modifications','You can most likely practice with modifications. Tell your instructor before class. A private or semi-private session is a great way to start, so the exercises can be tailored to your body.','Practica con modificaciones','Lo más probable es que puedas practicar con modificaciones. Déjale saber a tu instructora antes de la clase. Una sesión privada o semiprivada es una excelente forma de empezar, para adaptar los ejercicios a tu cuerpo.'],
+    preg:['doctor','Pregnant','Ask your doctor or midwife before starting, especially if Pilates is new to you. Let your instructor know how far along you are so each exercise can be adapted.','Embarazada','Consulta con tu médico o partera antes de comenzar, sobre todo si el Pilates es nuevo para ti. Déjale saber a tu instructora cuántas semanas tienes para adaptar cada ejercicio.'],
+    post:['','After giving birth, diastasis recti or pelvic floor symptoms','Make sure your provider has cleared you to exercise. Many people benefit from starting with private sessions to rebuild core and pelvic floor strength gradually.','Después del parto, diástasis de rectos o síntomas del piso pélvico','Asegúrate de que tu proveedor de salud te haya autorizado para hacer ejercicio. Muchas personas se benefician de empezar con sesiones privadas para recuperar la fuerza del core y del piso pélvico poco a poco.'],
+    sick:['','Recently sick','Wait until you feel fully recovered before coming to class.','Enferma recientemente','Espera a sentirte completamente recuperada antes de venir a clase.'],
+    other:['','Something else to share','You mentioned something else about your health. Share it with your instructor before your first class so we can plan for you.','Algo más que compartir','Mencionaste algo más sobre tu salud. Compártelo con tu instructora antes de tu primera clase para que podamos planificar para ti.'],
+    allLevels:['ok','You may also enjoy All Levels','With your Pilates experience and activity level, the Contemporary Mat Class – All Levels could be a great fit too.','También te puede gustar All Levels','Con tu experiencia en Pilates y tu nivel de actividad, la Contemporary Mat Class – All Levels también puede ser una excelente opción.']
+  };
+  var last=null;
+  function val(n){var c=form.querySelector('input[name="'+n+'"]:checked');return c?c.value:null;}
+  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+  function render(keys){
+    var es=document.documentElement.lang==='es',h='';
+    keys.forEach(function(k){var r=R[k];h+='<div class="qz-result '+r[0]+'"><h4>'+esc(es?r[3]:r[1])+'</h4><p>'+esc(es?r[4]:r[2])+'</p></div>';});
+    h+='<p class="qz-warn">'+(es?'<strong>Durante cualquier clase:</strong> detente y avísale a tu instructora enseguida si sientes dolor en el pecho, mareo, falta de aire fuera de lo normal o un dolor agudo en cualquier parte.':'<strong>During any class:</strong> stop and tell your instructor right away if you feel chest pain, dizziness, unusual shortness of breath, or sharp pain anywhere.')+'</p>';
+    h+='<div class="qz-cta"><a class="btn btn-peri" href="https://coralcorepilates.punchpass.com/classes" target="_blank">'+(es?'Reserva tu primera clase':'Book your first class')+'</a><a class="btn btn-line" href="https://wa.me/17872559986" target="_blank">'+(es?'Escríbenos por WhatsApp':'Message the studio on WhatsApp')+'</a><button type="button" class="btn btn-line" id="qz-print-btn">'+(es?'Imprimir o guardar PDF':'Print or save as PDF')+'</button></div>';
+    out.innerHTML=h;out.hidden=false;
+    document.getElementById('qz-print-btn').addEventListener('click',printResults);
+  }
+  function txt(el){return el?el.textContent.trim():'';}
+  function printResults(){
+    var es=document.documentElement.lang==='es';
+    var d=new Date().toLocaleDateString(es?'es-PR':'en-US',{year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('qz-print-head').innerHTML='<h2>Coral Core Pilates · '+esc(es?'¿Es el Pilates para mí?':'Is Pilates right for me?')+'</h2><p>'+esc((es?'Resultados del cuestionario · ':'Questionnaire results · ')+d)+'</p><p>'+esc(es?'Esta es una autoevaluación, no una evaluación médica. No sustituye el consejo de tu médico.':'This is a self-check, not a medical evaluation. It does not replace advice from your doctor.')+'</p><h3>'+esc(es?'Tus resultados':'Your results')+'</h3>';
+    var h='<h3>'+esc(es?'Tus respuestas':'Your answers')+'</h3><table>';
+    form.querySelectorAll('.qz-q').forEach(function(q){
+      var c=q.querySelector('input:checked');
+      h+='<tr><td>'+esc(txt(q.querySelector('.qz-num')))+'</td><td>'+esc(txt(q.querySelector('.qz-text')))+'</td><td>'+esc(c?txt(c.nextElementSibling):'—')+'</td></tr>';
+    });
+    h+='</table>';
+    var note=document.getElementById('qz-other-text').value.trim();
+    if(val('q20')==='yes'&&note)h+='<p style="margin-top:8px;"><strong>'+esc(es?'Nota (pregunta 20): ':'Note (question 20): ')+'</strong>'+esc(note)+'</p>';
+    var g='';
+    form.querySelectorAll('.qz-group').forEach(function(grp){
+      var picked=Array.prototype.map.call(grp.querySelectorAll('input:checked'),function(i){return txt(i.nextElementSibling);});
+      if(picked.length)g+='<tr><td></td><td>'+esc(txt(grp.querySelector('.qz-text')))+'</td><td style="width:auto;text-align:left;">'+esc(picked.join(', '))+'</td></tr>';
+    });
+    if(g)h+='<h3>'+esc(es?'Tu actividad y tus metas':'Your activity and goals')+'</h3><table>'+g+'</table>';
+    h+='<p style="margin-top:14px;">coralcorepilates.com · WhatsApp (787) 255-9986</p>';
+    document.getElementById('qz-print-answers').innerHTML=h;
+    window.print();
+  }
+  form.addEventListener('change',function(e){
+    if(e.target.name==='q20')other.hidden=e.target.value!=='yes';
+    var q=e.target.closest('.qz-q');if(q)q.classList.remove('missing');
+  });
+  form.addEventListener('reset',function(){other.hidden=true;out.hidden=true;err.hidden=true;last=null;form.querySelectorAll('.missing').forEach(function(q){q.classList.remove('missing');});});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var a={},first=null;
+    for(var i=1;i<=20;i++){a[i]=val('q'+i);var q=document.getElementById('qz-q'+i);q.classList.toggle('missing',!a[i]);if(!a[i]&&!first)first=q;}
+    if(first){err.hidden=false;out.hidden=true;window.scrollTo(0,first.getBoundingClientRect().top+window.scrollY-120);return;}
+    err.hidden=true;
+    function any(f,t){for(var i=f;i<=t;i++)if(a[i]==='yes')return true;return false;}
+    var k=[];
+    if(any(1,6))k.push('s1');
+    if(any(7,14))k.push('s2');
+    if(a[15]==='yes')k.push('preg');
+    if(a[16]==='yes'||a[17]==='yes'||a[18]==='yes')k.push('post');
+    if(a[19]==='yes')k.push('sick');
+    if(!any(1,19))k.unshift('ok');
+    if(a[20]==='yes')k.push('other');
+    if(val('experience')==='2'&&val('activity')==='2'&&!any(1,19))k.push('allLevels');
+    last=k;render(k);
+    window.scrollTo(0,out.getBoundingClientRect().top+window.scrollY-120);
+  });
+  document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){if(last)render(last);});});
+})();
+(function(){
+  var f=document.getElementById('signup-form');
+  if(!f)return;
+  var ok=document.getElementById('signup-ok'),bad=document.getElementById('signup-err');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();ok.hidden=true;bad.hidden=true;
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
+      .then(function(r){if(!r.ok)throw r;f.reset();ok.hidden=false;})
+      .catch(function(){bad.hidden=false;});
+  });
+})();
+(function(){
+  var f=document.getElementById('pq-form');
+  if(!f)return;
+  var out=document.getElementById('pq-result'),err=document.getElementById('pq-error'),last=null;
+  var PP='https://coralcorepilates.punchpass.com/org/20826/catalogs/purchase/';
+  var now=new Date(),BF=now<new Date(2026,11,7),GIFT=now<new Date(2026,11,25);
+  var P={
+    intro:{n:['Intro Offer: 2 Mat Classes','Oferta de introducción: 2 clases de mat'],p:30,u:'pass/275282',w:['The easiest way to get to know us: 2 mat classes for $30, just for new students.','La forma más fácil de conocernos: 2 clases de mat por $30, solo para estudiantes nuevos.']},
+    drop:{n:['Single Mat Class','1 clase de mat'],p:20,u:'pass/267390',w:['Pay as you go, one class at a time. Use within 4 weeks.','Paga por clase. Úsala en 4 semanas.']},
+    m4:{n:['4 Mat Classes','4 clases de mat'],p:75,u:'pass/267391',w:['One class a week for a month. Use within 4 weeks.','Una clase a la semana por un mes. Úsalas en 4 semanas.'],bf:[60,'pass/275284']},
+    m8:{n:['8 Mat Classes','8 clases de mat'],p:135,u:'pass/267392',w:['Our sweet spot for 1–2 classes a week. Use within 6 weeks.','El balance ideal para 1–2 clases a la semana. Úsalas en 6 semanas.'],bf:[120,'pass/275285']},
+    m12:{n:['12 Mat Classes','12 clases de mat'],p:185,u:'pass/267393',w:['A steady routine of 2–3 classes a week, without a membership. Use within 8 weeks.','Una rutina de 2–3 clases a la semana, sin membresía. Úsalas en 8 semanas.'],bf:[160,'pass/275286']},
+    unl:{n:['Unlimited Mat Classes','Clases de mat ilimitadas'],p:225,u:'pass/267508',w:['Come as often as you like for 4 weeks. Pays for itself by your 12th class.','Ven todas las veces que quieras por 4 semanas. Se paga sola a partir de tu clase 12.']},
+    mem12:{n:['12 Mat Classes Membership','Membresía de 12 clases de mat'],p:165,per:1,u:'membership/267507',w:['Our best value per mat class ($13.75) for 3 classes a week, with rollover classes. Includes a tote bag and a friend pass each cycle.','Nuestro mejor precio por clase de mat ($13.75) para 3 clases a la semana, con clases acumulables. Incluye tote bag y un pase para un amigo cada ciclo.']},
+    mem43:{n:['4 Mat Classes + 3 Privates','4 clases de mat + 3 privadas'],p:265,per:1,u:'membership/268465',w:['1 weekly group mat class plus 3 private apparatus sessions every 4 weeks. Saves $25 each cycle.','1 clase grupal de mat semanal más 3 sesiones privadas en equipos cada 4 semanas. Ahorras $25 cada ciclo.']},
+    mem82:{n:['8 Mat Classes + 2 Privates','8 clases de mat + 2 privadas'],p:240,per:1,u:'membership/268464',w:['2 weekly group mat classes plus 2 private apparatus sessions every 4 weeks. Saves $60 each cycle.','2 clases grupales de mat semanales más 2 sesiones privadas en equipos cada 4 semanas. Ahorras $60 cada ciclo.']},
+    privNew:{n:['Private Apparatus Class (new customers)','Clase privada en equipos (clientes nuevos)'],p:55,u:'pass/262154',w:['One-on-one reformer and tower session at the first-time rate.','Sesión individual en reformer y torre a la tarifa de introducción.']},
+    priv:{n:['Private Apparatus Class','Clase privada en equipos'],p:70,u:'pass/262153',w:['One-on-one reformer and tower session, tailored to your goals.','Sesión individual en reformer y torre, adaptada a tus metas.']},
+    gift4:{n:['4 Mat Classes Gift Card','Gift card de 4 clases de mat'],p:60,u:'pass/275288',w:['Pay 3, get the 4th free. A perfect first taste of Pilates. Available until Dec 24.','Paga 3 y la 4ta es gratis. Ideal para empezar en Pilates. Disponible hasta el 24 de dic.']},
+    gift8:{n:['8 Mat Classes Gift Card','Gift card de 8 clases de mat'],p:120,u:'pass/275289',w:['Pay 6, get 2 free. For someone ready to make Pilates a routine. Available until Dec 24.','Paga 6 y llévate 2 gratis. Para quien quiere hacer del Pilates una rutina. Disponible hasta el 24 de dic.']},
+    gift12:{n:['12 Mat Classes Gift Card','Gift card de 12 clases de mat'],p:160,u:'pass/275290',w:['Pay 8, get 4 free. Our most complete gift. Available until Dec 24.','Paga 8 y llévate 4 gratis. Nuestro regalo más completo. Disponible hasta el 24 de dic.']},
+    giftReg:{n:['Gift Card (regular price)','Gift card (precio regular)'],p:null,u:null,w:['Any package can be given as a gift at regular price. Message the studio to set it up.','Cualquier paquete se puede regalar a precio regular. Escríbenos para coordinarlo.']}
+  };
+  function val(n){var c=f.querySelector('input[name="'+n+'"]:checked');return c?c.value:null;}
+  function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+  function pick(a){
+    var also=[];
+    if(a.who==='gift'){
+      if(!GIFT)return {k:'giftReg',also:[]};
+      var g=a.freq==='try'||a.freq==='1'?'gift4':(a.freq==='2'?'gift8':'gift12');
+      return {k:g,also:[]};
+    }
+    var isNew=a.new==='yes';
+    if(a.type==='private'){return {k:isNew?'privNew':'priv',also:isNew?[]:['mem43']};}
+    if(a.type==='mix'){
+      var k=(a.freq==='2'||a.freq==='3'||a.freq==='4')?'mem82':'mem43';
+      if(a.commit==='no')return {k:a.freq==='1'||a.freq==='try'?'m4':'m8',also:[isNew?'privNew':'priv'],mixNote:1};
+      return {k:k,also:isNew?['intro']:[]};
+    }
+    if(a.freq==='try')return {k:isNew?'intro':'drop',also:isNew?[]:['m4']};
+    var r;
+    if(a.freq==='1')r='m4';
+    else if(a.freq==='2')r='m8';
+    else if(a.freq==='3')r=a.commit==='yes'?'mem12':'m12';
+    else r='unl';
+    if(isNew&&r!=='unl')also.push('intro');
+    if(a.freq==='3'&&a.commit==='no')also.push('mem12');
+    return {k:r,also:also};
+  }
+  function render(res){
+    var es=document.documentElement.lang==='es',L=es?1:0,x=P[res.k];
+    var price=x.p===null?'':('<p class="pq-price">$'+x.p+(x.per?' <small>'+(es?'cada 4 semanas':'every 4 weeks')+'</small>':'')+'</p>');
+    var deal='';
+    if(x.bf&&BF)deal='<span class="pq-deal">'+(es?'Early Black Friday: $'+x.bf[0]+' hasta el 6 de dic.':'Early Black Friday: $'+x.bf[0]+' until Dec 6')+'</span>';
+    var href=x.u?PP+(x.bf&&BF?x.bf[1]:x.u):'https://wa.me/17872559986';
+    var btn='<a class="btn btn-peri" href="'+href+'" target="_blank">'+(x.u?(es?'Comprar en Punchpass':'Buy on Punchpass'):(es?'Escríbenos':'Message the studio'))+'</a>';
+    var h='<div class="pq-main"><div><p class="pq-tag">'+(es?'Te recomendamos':'We recommend')+'</p><h4>'+esc(x.n[L])+'</h4>'+price+'<p class="pq-why">'+esc(x.w[L])+'</p>'+deal+'</div>'+btn+'</div>';
+    if(res.mixNote)h+='<p class="pq-also">'+(es?'Como prefieres flexibilidad, combina un paquete de mat con sesiones privadas individuales:':'Since you prefer flexibility, pair a mat package with individual private sessions:')+'</p>';
+    if(res.also.length){
+      h+='<p class="pq-also">'+(res.mixNote?'':(es?'También considera: ':'Also consider: '))+res.also.map(function(k){var y=P[k];return '<a href="'+PP+y.u+'" target="_blank">'+esc(y.n[L])+' ($'+y.p+(y.per?(es?' cada 4 semanas':' every 4 weeks'):'')+')</a>';}).join(' · ')+'</p>';
+    }
+    h+='<p class="pq-also">'+(es?'¿Tienes dudas? <a href="https://wa.me/17872559986" target="_blank">Escríbenos por WhatsApp</a>.':'Still unsure? <a href="https://wa.me/17872559986" target="_blank">Message the studio on WhatsApp</a>.')+'</p>';
+    out.innerHTML=h;out.hidden=false;
+  }
+  function giftMode(){var g=val('who')==='gift';f.querySelectorAll('.pq-q').forEach(function(q){var n=q.querySelector('input').name;if(n==='new'||n==='type'||n==='commit')q.hidden=g;});}
+  f.addEventListener('change',function(e){var q=e.target.closest('.pq-q');if(q)q.classList.remove('missing');if(e.target.name==='who')giftMode();});
+  f.addEventListener('reset',function(){setTimeout(giftMode,0);out.hidden=true;err.hidden=true;last=null;f.querySelectorAll('.missing').forEach(function(q){q.classList.remove('missing');});});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var a={},first=null;
+    ['who','new','type','freq','commit'].forEach(function(n){a[n]=val(n);});
+    var need=a.who==='gift'?['who','freq']:['who','new','type','freq','commit'];
+    f.querySelectorAll('.pq-q').forEach(function(q){var n=q.querySelector('input').name,miss=need.indexOf(n)>=0&&!a[n];q.classList.toggle('missing',miss);if(miss&&!first)first=q;});
+    if(first){err.hidden=false;out.hidden=true;return;}
+    err.hidden=true;last=pick(a);render(last);
+    window.scrollTo(0,out.getBoundingClientRect().top+window.scrollY-140);
+  });
+  document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){if(last)render(last);});});
 })();
 (function(){
   document.documentElement.classList.add('js-tabs');
