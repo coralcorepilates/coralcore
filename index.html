@@ -211,6 +211,17 @@ section{scroll-margin-top:70px;}
 .special{background:#fff;display:flex;flex-direction:column;border-top:3px solid var(--deep-blue);}
 .special-flyer{display:block;background:var(--lilac-pale);}
 .special-flyer img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;}
+.flyer-carousel{position:relative;background:var(--lilac-pale);}
+.fc-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth;}
+.fc-track::-webkit-scrollbar{display:none;}
+.fc-slide{flex:0 0 100%;scroll-snap-align:start;display:block;}
+.fc-slide img{width:100%;aspect-ratio:1545/1999;object-fit:cover;display:block;}
+.fc-arrow{position:absolute;top:calc(50% - 10px);transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,0.85);color:var(--lilac-dark);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 2px;}
+.fc-prev{left:8px;}.fc-next{right:8px;}
+.fc-arrow:hover{background:#fff;}
+.fc-dots{display:flex;justify-content:center;gap:7px;padding:10px 0 2px;background:#fff;}
+.fc-dot{width:7px;height:7px;border-radius:50%;border:none;padding:0;background:var(--lilac);cursor:pointer;}
+.fc-dot.on{background:var(--lilac-dark);}
 .special-body{padding:18px 20px 20px;display:flex;flex-direction:column;}
 .special-date{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--deep-blue);font-weight:500;margin-bottom:4px;}
 .special-name{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.2;margin-bottom:8px;}
@@ -735,7 +746,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
       <p class="sec-label" data-es="Próximamente">Coming up</p>
       <h3 data-es="Clases especiales">Special classes</h3>
       <div class="specials-list">
-        <div class="special">
+        <div class="special" data-end="2026-11-22">
           <a class="special-flyer" href="images/events/pilates-for-couples.jpg" target="_blank"><img src="images/events/pilates-for-couples.jpg" alt="Pilates for Couples flyer, Saturday November 21 at 9:30 and 10:30 AM, $30 per couple" loading="lazy"></a>
           <div class="special-body">
             <p class="special-date" data-es="Sábado, 21 de noviembre · 9:30 y 10:30 AM">Saturday, November 21 · 9:30 &amp; 10:30 AM</p>
@@ -743,6 +754,21 @@ details li strong{font-weight:500;color:var(--text-dark);}
             <p class="special-price">$30 <span style="font-family:'Jost',sans-serif;font-size:11px;color:var(--text-mid);letter-spacing:0.1em;text-transform:uppercase;" data-es="por pareja">per couple</span></p>
             <p class="special-desc" data-es="Trae a tu pareja a una clase de Pilates hecha para dos. Escoge la sesión de las 9:30 o las 10:30 AM.">Bring your partner for a Pilates class made for two. Choose the 9:30 or 10:30 AM session.</p>
             <div class="special-links"><a class="special-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reserva tu espacio →">Book your spot →</a></div>
+          </div>
+        </div>
+        <div class="special" data-end="2026-12-07">
+          <div class="flyer-carousel" aria-roledescription="carousel" aria-label="Matcha Sunday flyers">
+            <div class="fc-track"><a class="fc-slide" href="images/events/matcha-sunday.jpg" target="_blank"><img src="images/events/matcha-sunday.jpg" alt="Matcha Sunday flyer: Sunday December 6, 8:50 to 11:30 AM, $20 per session or use your mat package" loading="lazy"></a><a class="fc-slide" href="images/events/popup-yoga-class.jpg" target="_blank"><img src="images/events/popup-yoga-class.jpg" alt="Pop-up Yoga Class flyer: Hatha yoga at 8:50 AM with instructor Alejandra María Peña Avilés" loading="lazy"></a><a class="fc-slide" href="images/events/pilates-christmas-gathering.jpg" target="_blank"><img src="images/events/pilates-christmas-gathering.jpg" alt="Pilates Class flyer: sessions at 10:00 and 10:45 AM, followed by a Christmas gathering at 11:30 AM" loading="lazy"></a></div>
+            <button type="button" class="fc-arrow fc-prev" aria-label="Previous flyer">&#8249;</button><button type="button" class="fc-arrow fc-next" aria-label="Next flyer">&#8250;</button>
+            <div class="fc-dots"><button type="button" class="fc-dot on" aria-label="Flyer 1"></button><button type="button" class="fc-dot" aria-label="Flyer 2"></button><button type="button" class="fc-dot" aria-label="Flyer 3"></button></div>
+          </div>
+          <div class="special-body">
+            <p class="special-date" data-es="Domingo, 6 de diciembre · 8:50–11:30 AM">Sunday, December 6 · 8:50–11:30 AM</p>
+            <p class="special-name" data-es="Matcha Sunday">Matcha Sunday</p>
+            <p class="special-price">$20 <span style="font-family:'Jost',sans-serif;font-size:10px;display:block;margin-top:2px;line-height:1.4;color:var(--text-mid);letter-spacing:0.1em;text-transform:uppercase;" data-es="por sesión · o usa tu paquete de mat">per session · or use your mat package</span></p>
+            <p class="special-desc" data-es="Una mañana de yoga, Pilates y matcha en el estudio, junto a Cafe D&#x27;OR y Olimpia. Matcha disponible para la venta en el estudio.">A morning of yoga, Pilates and matcha at the studio, with Cafe D'OR and Olimpia. Matcha available for purchase at the studio.</p>
+            <ul class="special-program"><li data-es="&lt;b&gt;8:50 AM&lt;/b&gt;Yoga Hatha pop-up con Alejandra María Peña Avilés"><b>8:50 AM</b>Pop-up Hatha Yoga with Alejandra María Peña Avilés</li><li data-es="&lt;b&gt;10:00 o 10:45 AM&lt;/b&gt;Clase de Pilates (escoge una sesión)"><b>10:00 or 10:45 AM</b>Pilates class (choose one session)</li><li data-es="&lt;b&gt;11:30 AM&lt;/b&gt;Compartir navideño gratuito"><b>11:30 AM</b>Complimentary Christmas gathering</li></ul>
+            <div class="special-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reserva tu espacio →">Book your spot →</a></div>
           </div>
         </div>
       </div>
@@ -999,7 +1025,8 @@ details li strong{font-weight:500;color:var(--text-dark);}
     <div class="sched-specials">
       <p class="ss-title" data-es="Clases especiales &lt;em&gt;próximas&lt;/em&gt;">Upcoming <em>special classes</em></p>
       <ul class="ss-list">
-        <li class="ss-row"><span class="ss-date" data-es="Sáb, 21 nov">Sat, Nov 21</span><span class="ss-name" data-es="Pilates en pareja">Pilates for couples</span><span class="ss-time" data-es="9:30 y 10:30 AM">9:30 &amp; 10:30 AM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row" data-end="2026-11-22"><span class="ss-date" data-es="Sáb, 21 nov">Sat, Nov 21</span><span class="ss-name" data-es="Pilates en pareja">Pilates for couples</span><span class="ss-time" data-es="9:30 y 10:30 AM">9:30 &amp; 10:30 AM</span><a class="ss-book" href="https://app.punchpass.com/instances?course=214535" target="_blank" data-es="Reservar">Book</a></li>
+        <li class="ss-row" data-end="2026-12-07"><span class="ss-date" data-es="Dom, 6 dic">Sun, Dec 6</span><span class="ss-name" data-es="Matcha Sunday: yoga, Pilates y compartir navideño">Matcha Sunday: yoga, Pilates &amp; Christmas gathering</span><span class="ss-time">8:50–11:30 AM</span><a class="ss-book" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reservar">Book</a></li>
       </ul>
       <a class="ss-more" href="#specials" data-es="Ver detalles y flyers →">See details &amp; flyers →</a>
     </div>
@@ -1384,6 +1411,7 @@ details li strong{font-weight:500;color:var(--text-dark);}
           <option data-es="Sesión semiprivada en equipos">Semi-private apparatus session</option>
           <option data-es="Clases especiales / eventos">Special classes / events</option>
           <option data-es="Pilates en pareja — 21 de noviembre">Pilates for Couples — November 21</option>
+          <option data-es="Matcha Sunday — 6 de diciembre">Matcha Sunday — December 6</option>
           <option data-es="Evento privado / boda / despedida de soltera">Private event / wedding / bachelorette</option>
           <option data-es="Pilates en mi evento (fuera del estudio)">Pilates at my event (off-site)</option>
           <option data-es="Unirme al equipo">Join the team</option>
@@ -1545,6 +1573,27 @@ details li strong{font-weight:500;color:var(--text-dark);}
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
       .then(function(r){if(!r.ok)throw r;f.reset();ok.hidden=false;})
       .catch(function(){bad.hidden=false;});
+  });
+})();
+(function(){
+  document.querySelectorAll('.flyer-carousel').forEach(function(c){
+    var tr=c.querySelector('.fc-track'),dots=c.querySelectorAll('.fc-dot'),n=dots.length,timer;
+    function idx(){return Math.round(tr.scrollLeft/tr.clientWidth);}
+    function go(i){i=(i+n)%n;tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'});}
+    tr.addEventListener('scroll',function(){var i=idx();dots.forEach(function(d,k){d.classList.toggle('on',k===i);});});
+    dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);});});
+    c.querySelector('.fc-prev').addEventListener('click',function(){go(idx()-1);});
+    c.querySelector('.fc-next').addEventListener('click',function(){go(idx()+1);});
+    function start(){stop();timer=setInterval(function(){go(idx()+1);},4500);}
+    function stop(){clearInterval(timer);}
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){start();c.addEventListener('mouseenter',stop);c.addEventListener('mouseleave',start);tr.addEventListener('touchstart',stop,{passive:true});}
+  });
+})();
+(function(){
+  var t=new Date();t.setHours(0,0,0,0);
+  document.querySelectorAll('[data-end]').forEach(function(el){
+    var p=el.getAttribute('data-end').split('-');
+    if(t>=new Date(+p[0],p[1]-1,+p[2]))el.remove();
   });
 })();
 (function(){
