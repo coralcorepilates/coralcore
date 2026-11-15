@@ -271,6 +271,16 @@ section{scroll-margin-top:70px;}
 .pricing-cta{text-align:center;margin-top:40px;}
 
 /* SEASONAL PROMO */
+.event-promo{background:#fff;padding:22px 40px;border-bottom:0.5px solid var(--lilac-pale);}
+.ep-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:20px;background:var(--lilac-pale);border-left:3px solid var(--lilac-dark);padding:14px 20px 14px 14px;}
+.ep-thumb{flex:0 0 auto;}
+.ep-thumb img{width:62px;aspect-ratio:1545/1999;object-fit:cover;display:block;box-shadow:0 2px 8px rgba(0,0,0,0.12);}
+.ep-text{flex:1;min-width:0;}
+.ep-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--deep-blue);font-weight:500;margin-bottom:2px;}
+.ep-title{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.15;margin-bottom:3px;}
+.ep-title em{font-style:italic;color:var(--lilac-dark);}
+.ep-desc{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.55;}
+.ep-links{display:flex;flex-direction:column;align-items:center;gap:8px;flex:0 0 auto;}
 .promo-section{background:var(--pale-blue);padding:36px 40px 40px;}
 .promo-section .wrap{max-width:880px;}
 .promo-section .sec-label{margin-bottom:8px;}
@@ -554,6 +564,11 @@ details li strong{font-weight:500;color:var(--text-dark);}
   .gallery-section{padding:56px 18px;}
   .specials-section{padding:0 18px 56px;}
   .promo-section{padding:32px 18px;}
+  .event-promo{padding:16px 18px;}
+  .ep-inner{flex-wrap:wrap;gap:12px 14px;padding:12px;}
+  .ep-thumb img{width:54px;}
+  .ep-text{flex:1 1 180px;}
+  .ep-links{flex-direction:row;width:100%;justify-content:flex-start;gap:14px;}
   .promo-section .pricing-cards{grid-template-columns:repeat(2,1fr);}
   .quiz-section{padding:56px 18px;}
   .start-section{padding:48px 18px;}
@@ -623,6 +638,18 @@ details li strong{font-weight:500;color:var(--text-dark);}
 
 <!-- STUDIO LOCATION -->
 <!-- EARLY BLACK FRIDAY -->
+<section class="event-promo" id="matcha-promo" data-page="home" data-end="2026-12-07">
+  <div class="ep-inner">
+    <a class="ep-thumb" href="#specials"><img src="images/events/matcha-sunday.jpg" alt="Matcha Sunday flyer"></a>
+    <div class="ep-text">
+      <p class="ep-label" data-es="Domingo, 6 de diciembre · 8:50–11:30 AM">Sunday, December 6 · 8:50–11:30 AM</p>
+      <p class="ep-title" data-es="Matcha &lt;em&gt;Sunday&lt;/em&gt;">Matcha <em>Sunday</em></p>
+      <p class="ep-desc" data-es="Yoga Hatha, Pilates y un compartir navideño gratuito, con matcha disponible en el estudio. $20 por sesión o usa tu paquete de mat.">Hatha yoga, Pilates and a complimentary Christmas gathering, with matcha available at the studio. $20 per session or use your mat package.</p>
+    </div>
+    <div class="ep-links"><a class="special-book" href="https://coralcorepilates.punchpass.com/classes" target="_blank" data-es="Reserva tu espacio →">Book your spot →</a><a class="special-more" href="#specials" data-es="Ver detalles">See details</a></div>
+  </div>
+</section>
+
 <section class="promo-section" id="black-friday" data-page="home">
   <div class="wrap">
     <div class="center">
